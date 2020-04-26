@@ -1,0 +1,808 @@
+/*************************通用样式-begin***************************/
+body{
+    color: #000;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+/*设置字体*/
+@font-face {
+    font-family: lk;
+    src: url('../fonts/lk.eot') format('embedded-opentype'),
+    url('../fonts/lk.svg') format('svg'),
+    url('../fonts/lk.ttf') format('truetype'),
+    url('../fonts/lk.woff') format('woff');
+}
+
+[class^="icon-"],
+[class*=" icon-"]{
+    font-family: lk;
+    font-style: normal;
+}
+
+/*按钮的自定义*/
+.btn-lk {
+    color: #ffffff;
+    background-color: #8330F0;
+    border-color: #9318F2;
+}
+
+.btn-lk:hover,
+.btn-lk:focus,
+.btn-lk:active,
+.btn-lk.active,
+.open .dropdown-toggle.btn-lk {
+    color: #ffffff;
+    background-color: #9146F2;
+    border-color: #9318F2;
+}
+
+.btn-lk:active,
+.btn-lk.active,
+.open .dropdown-toggle.btn-lk {
+    background-image: none;
+}
+
+.btn-lk.disabled,
+.btn-lk[disabled],
+fieldset[disabled] .btn-lk,
+.btn-lk.disabled:hover,
+.btn-lk[disabled]:hover,
+fieldset[disabled] .btn-lk:hover,
+.btn-lk.disabled:focus,
+.btn-lk[disabled]:focus,
+fieldset[disabled] .btn-lk:focus,
+.btn-lk.disabled:active,
+.btn-lk[disabled]:active,
+fieldset[disabled] .btn-lk:active,
+.btn-lk.disabled.active,
+.btn-lk[disabled].active,
+fieldset[disabled] .btn-lk.active {
+    background-color: #8330F0;
+    border-color: #9318F2;
+}
+
+.btn-lk .badge {
+    color: #8330F0;
+    background-color: #ffffff;
+}
+
+/*************************通用样式-end***************************/
+
+/* 导航字体样式 */
+#lk_header .nav-link {
+	color:rgba(255,255,255,0.5);
+	
+}
+#lk_header .nav-link1{
+	color: #fff;
+}
+
+/* 首页 */
+.shouye{
+	position: relative;
+}
+
+#lk_header .navbar-lk{
+   /* border-bottom: 1px solid #e0e0e0; */
+	position:absolute ;
+	top: 0;
+	z-index: 9999;
+	/* background-color: lightblue; */
+	width:100% ;
+}
+
+#lk_header .navbar-lk .navbar-brand{
+    height: 90px;
+    /*background-color: red;*/
+    margin-left: 15px;
+    margin-right: 30px;
+}
+
+#lk_header .navbar-lk .navbar-brand img{
+   width: 166px;
+   height: 40px;
+   margin-right: 40px;
+}
+
+#lk_header .navbar-lk .navbar-nav>li>a{
+    height: 70px;
+    /*background-color: red;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right:37px;
+	/* color: #fff; */
+	
+}
+
+#lk_header .navbar-lk .navbar-nav>li>a:hover{
+   /* border-bottom: 2px solid purple; */
+}
+
+#lk_header .navbar-lk .navbar-toggler{
+    margin-top: 5px;
+}
+/*************************头部-end***************************/
+
+
+
+/*************************轮播图-begin***************************/
+#lk_carousel{
+
+}
+/* 轮播样式 */
+/* .carousel-indicators{
+	margin-left: -40%;
+}
+.carousel-indicators li{
+	margin-right: 10px;
+} */
+.carousel-indicators .active{
+	background-color: #1677FF;
+}
+
+/*  */
+#lk_carousel .carousel-item{
+   /* background: no-repeat center center;
+    -webkit-background-size: cover;
+    background-size: cover; */
+}
+
+#lk_carousel .carousel-item img{
+    width: 100%;
+}
+
+
+/* @media screen and (max-width: 576px){
+    #lk_carousel .carousel-item1{
+       height: 400px ;
+    }
+} */
+/*************************轮播图-end***************************/
+
+/* 服务介绍 */
+#lk_introduction {
+	background-color:#F9F9F9; 
+	padding: 62px 0 50px 0;
+	
+}
+#lk_introduction .introduction{
+	
+}
+#lk_introduction .introduction .textword{
+	font-size:20px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+   color:rgba(153,153,153,1);
+	
+
+}
+
+/* 分校 */
+
+#lk_school{
+	/* border-top: 1px solid #ddd; */
+	margin-top: 52px;
+
+}
+#lk_school .line{
+	width:80%;
+	height:1px;
+	background:rgba(153,153,153,1);
+	
+}
+#lk_school .more a{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:#999;
+	
+}
+#lk_school .content{
+	width: 100%;
+	height: 350px;
+/* 	background-color: #0056B3; */
+
+	
+}
+#lk_school .content .school{
+	/* width: 100%; */
+	overflow-x:scroll;
+	display: flex;	
+	align-items: center;
+    justify-content: space-between;
+	
+}
+#lk_school .content .school .schoolList{
+	display: flex;
+	flex-direction: column;
+	
+	/* align-items: center; */
+	margin-right: 40px;
+		
+}
+#lk_school .content .school .schoolList img{
+	width: 500px;
+	height: 260px;
+	margin-bottom: 10px;
+}
+#lk_school .content .school .schoolList .schoolName{
+	font-size:20px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+	margin-bottom: 10px;
+	
+}
+#lk_school .content .school .schoolList .intro{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(51,51,51,1);
+
+}
+
+/* 移动端样式/pc端去掉横向滚动条*/
+#lk_school .content1 .school1::-webkit-scrollbar {
+	display:none
+	}
+#lk_school .content .school::-webkit-scrollbar {
+	display:none
+	}
+	/* ::-webkit-scrollbar {
+		display:none
+		} */
+#lk_school .content1{
+	width: 100%;
+	height: 200px;
+/* 	background-color: #0056B3; */
+	
+}
+#lk_school .content1 .school1{
+	width: 100%;
+	overflow-x:scroll;
+	display: flex;	
+	align-items: center;
+	justify-content: space-between;
+	
+}
+#lk_school .content1 .school1 .schoolList1{
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+	width: 50%;
+	/* margin: 10px 20px; */
+	margin-right: 40px;
+}
+#lk_school .content1 .school1 .schoolList1 img{
+	width: 200px;
+	height: 150px;
+}
+#lk_school .content1 .school1 .schoolList1 .schoolName1{
+	font-size:20px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+	
+}
+#lk_school .content1 .school1 .schoolList1 .intro1{
+	font-size:10px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(51,51,51,1);
+
+}
+
+/*************************学历教育-begin***************************/
+#lk_hot{
+	/* border-top: 1px solid #999; */
+    /*background-color: purple;*/
+	margin-top: 62px;
+}
+#lk_hot .line{
+	width:80%;
+	height:1px;
+	background:rgba(153,153,153,1);
+	
+}
+#lk_hot .more a{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:#999;
+	
+}
+#lk_hot .container{
+	width: 100%;
+}
+#lk_hot .container img{
+	width: 560px;
+	height: 280px;
+	}
+#lk_hot .container h6{
+	font-size:20px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+	
+}
+#lk_hot .container p{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	line-height:22px;
+}
+/*************************学历教育-end***************************/
+
+
+
+/*************************研博新闻-begin***************************/
+
+#lk_ybnews .line{
+	width:80%;
+	height:1px;
+	background:rgba(153,153,153,1);
+	
+}
+#lk_ybnews .more a{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:#999;
+	
+}
+#lk_ybnews .container{
+	width: 100%;
+}
+#lk_ybnews .container img{
+	width: 381px;
+	height: 212px;
+	}
+#lk_ybnews .container h6{
+	font-size:20px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+	
+}
+#lk_ybnews .container p{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	line-height:22px;
+}
+/*************************研博新闻-end***************************/
+
+
+
+/*************************教育新闻-begin***************************/
+#lk_edu_news .line{
+	width:80%;
+	height:1px;
+	background:rgba(153,153,153,1);
+	
+}
+#lk_edu_news .more a{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:#999;
+	
+}
+#lk_edu_news .container{
+	width: 100%;
+}
+#lk_edu_news .container img{
+	width: 381px;
+	height: 212px;
+	}
+#lk_edu_news .container h6{
+	font-size:20px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+	
+}
+#lk_edu_news .container p{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	line-height:22px;
+}
+/*************************教育新闻-end***************************/
+
+
+
+/*************************公益活动-begin***************************/
+#lk_active{
+    /*background-color: red;*/
+}
+#lk_active .line{
+	width:80%;
+	height:1px;
+	background:rgba(153,153,153,1);
+	
+}
+#lk_active .more a{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:#999;
+	
+}
+#lk_active .container{
+	width: 100%;
+}
+#lk_active .container img{
+	width: 300px;
+	height: 212px;
+	}
+#lk_active .container h6{
+	font-size:20px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+	
+}
+#lk_active .container p{
+	font-size:10px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	line-height:22px;
+}
+/* 小屏幕 */
+#lk_active .container .visible-xs-block img{
+	width: 381px;
+	height: 212px;
+	}
+/*************************公益活动-end***************************/
+
+
+
+/*************************关于我们-begin***************************/
+#lk_footer{
+    width: 100%;
+	height: 80px;
+ 
+}
+
+#lk_footer .container {
+	padding-top: 20px;
+	border-top: 1px solid #979797;
+   font-size:20px;
+   font-family:PingFangSC-Regular,PingFang SC;
+   font-weight:400;
+   color:rgba(153,153,153,1);
+
+}
+
+
+/*************************关于我们-end***************************/
+
+
+/* 研博分校2级页面 */
+#yb_school2{
+	margin-top: 60px;
+}
+#yb_school2 .container{
+	width: 100%;
+}
+#yb_school2 .container .media-left{
+	width:493px;
+	height: 260px;
+	overflow: hidden;
+	margin-top: 30px;
+	
+}
+#yb_school2 .container img{
+	/* width:493px;
+	height: 260px; */
+	height:100%;
+	width: 100%;	
+	
+	transition: all 1s;
+	
+	}
+#yb_school2 .container img:hover{
+	cursor: pointer;
+	 -webkit-transform: scale(1.5);
+	  transform: scale(1.5);
+}
+#yb_school2 .container h6{
+	font-size:30px;
+	font-family:Microsoft YaHei;
+	font-weight:400;
+	
+	color:rgba(51,51,51,1);
+	
+	
+}
+#yb_school2 .container p .Tel{
+	font-size:20px;
+	font-family:Microsoft YaHei;
+	font-weight:400;
+	color:blue;
+}
+#yb_school2 .container p .Add{
+	font-size:20px;
+	font-family:Microsoft YaHei;
+	font-weight:400;
+	color:blue;
+}
+#yb_school2 .container p .number{
+	font-size:20px;
+	font-family:Microsoft YaHei;
+	font-weight:400;	
+	color:rgba(51,51,51,1);
+	
+}
+#yb_school2 .container p.text-muted{
+	margin: 0 0 10px;
+} 
+#yb_school2 .container p .number{
+	margin-bottom: 60px;
+}
+/* 研博分校2级页面 */
+
+
+
+/* 学历教育2级页面 */
+#yb_education2{
+	/* margin-top: 60px; */
+}
+#yb_education2 .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+	/* background:rgba(242,242,242,1); */
+	/* color: #1677FF; */
+	font-size: 15px;
+	/* border-radius:4px; */
+	
+}
+#yb_education2 .nav-pills .nav-link{
+	/* color: #333333; */
+	font-size: 15px;
+	padding: 8px 10px;
+
+}
+#yb_education2 .nav-pills .staic{
+	font-size:20px;
+	font-weight:normal;
+	color:blue;
+	opacity:1;
+	padding-right: 20px;
+}
+#yb_education2 .nav-pills1{
+	/* border-top: 1px solid #999999;
+	width: 100%; */
+	
+	
+}
+/* #yb_education2 .nav-pills1 .tab-pane{
+	background-color: #F4F4F4;
+} */
+
+#yb_education2 #lk_hotschool .container{
+	width: 100%;
+	
+	
+}
+#yb_education2 #lk_hotschool .container img{
+	width: 381px;
+	height: 212px;
+	}
+#yb_education2 #lk_hotschool .container h6{
+	font-size:20px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+	
+}
+#yb_education2 #lk_hotschool .container p a{
+	font-size:16px;
+	font-weight:normal;
+	color:rgba(22,119,255,1);
+	text-decoration:underline;
+	margin:0 10px;
+	
+}
+
+
+
+.fenye{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	
+
+}
+/* 学历教育2级页面 */
+
+
+
+
+/* 新闻2级页面------ */
+/* #yb_news2{
+	margin-top: 60px;
+} */
+#yb_news2 .nav-pills .nav-link{
+margin: 0 30px;
+}
+/* #yb_news2 .tab-content{
+	border-top: 1px solid #999999;
+} */
+#yb_news2 .tab-content .tab-pane{
+	padding-top: 50px;
+}
+#yb_news2  .container img{
+	width: 381px;
+	height: 212px;
+	}
+#yb_news2 .container h6{
+	font-size:20px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+	
+}
+#yb_news2 .container p{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	line-height:22px;
+}
+
+/* 新闻2级页面---- */
+
+
+
+
+/* 公益2级页面------ */
+#yb_active2{
+	margin-top: 80px;
+}
+#yb_active2  .container img{
+	width: 381px;
+	height: 212px;
+	}
+#yb_active2 .container h6{
+	font-size:20px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+	
+}
+#yb_active2 .container p{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	line-height:22px;
+}
+
+
+/* 公益2级页面---- */
+
+
+/* 研博关于二级页面------ */
+#yb_culture{
+	margin: 60px 0;
+}
+#yb_culture .title{
+	margin-bottom:40px;
+}
+#yb_culture .container p{
+	font-size:15px;
+	font-family:PingFang SC;
+	font-weight:400;
+	color:rgba(51,51,51,1);
+	
+}
+#yb_culture .container .row img{
+		
+}
+#yb_culture .container .row .Efficient,.Legneds{
+	margin-top: 56px;
+}
+
+/* 发展历程 */
+#yb_develope{
+	/* padding-top: 60px; */
+}
+#yb_develope .title{
+	margin-bottom:40px;
+}
+#yb_develope .container p{
+	font-size:15px;
+	font-family:PingFang SC;
+	font-weight:400;
+	color:rgba(51,51,51,1);
+	
+}
+#yb_develope .container .row img{
+		
+}
+#yb_develope .container .row .Efficient,.Legneds{
+	margin-top: 56px;
+}
+/* 联系我们 */
+#yb_contact{
+	margin: 60px 0;
+}
+
+
+/* 研博关于二级页面------ */
+
+
+
+/* 分校xiangq--3级页面 */
+#schoolDetail {
+
+position: absolute;
+top: 107px;
+width: 100%;
+}
+
+#schoolDetail .container{
+/* 	width: 100%; */
+	
+	
+}
+#schoolDetail .container img{
+	width: 250px;
+	height: 150px;
+	cursor: pointer;
+	}
+/* 分校xiangq--3级页面 */
+
+
+
+/* 学历教育招生简章3级页面 */
+#eduDetail{
+	/* margin-top: 60px; */
+	
+}
+
+
+/* 学历教育招生简章3级页面 */
+
+
+
+
+
+
+/* 移动端导航栏自定义 */
+.mobile_nav{
+	width: 100%;
+	background: #000000;
+	position: absolute;
+	top: 107px;
+	display: none;
+	z-index: 999999;
+	
+	
+}
+.mobile_nav .content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.mobile_nav div{
+	text-align: center;
+	height: 80px;
+	line-height: 80px;
+}
+.mobile_nav div a{
+	color: #FFFFFF;
+	font-size: 20px;
+}
