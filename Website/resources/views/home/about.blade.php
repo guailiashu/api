@@ -23,28 +23,42 @@
 
                 <div class="collapse navbar-collapse" id="lk_nav">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1" href="index.html">首页<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item ">
-                            <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link2" href="ybSchool.html">分校</a>
-                        </li>
+{{--                        <li class="nav-item active">--}}
+{{--                            <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1" href="index.html">首页<span class="sr-only">(current)</span></a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item ">--}}
+{{--                            <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link2" href="ybSchool.html">分校</a>--}}
+{{--                        </li>--}}
 
-                        <li class="nav-item">
-                            <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link3" href="education.html">学历</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link4" href="news.html">新闻</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link5" href="active.html">公益</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="color: #fff;" class="nav-link nav-link6" href="about.html">关于研博</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link7 color7" target="_blank" href="http://shop.jd.com">研博商城</a>
-                        </li>
+{{--                        <li class="nav-item">--}}
+{{--                            <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link3" href="education.html">学历</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link4" href="news.html">新闻</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link5" href="active.html">公益</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a style="color: #fff;" class="nav-link nav-link6" href="about.html">关于研博</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link nav-link7 color7" target="_blank" href="http://shop.jd.com">研博商城</a>--}}
+{{--                        </li>--}}
+
+                        @foreach($column as $name)
+
+                            @if($name->c_route == 'index')
+                                <li class="nav-item active">
+                                    <a class="nav-link nav-link1 color1" href={{route($name->c_route)}}>{{$name->column}}<span class="sr-only">(current)</span></a>
+                                </li>
+                            @else
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link6 color6"  href={{route($name->c_route)}}>{{$name->column}}</a>
+                                </li>
+                            @endif
+
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -63,27 +77,35 @@
     <div class="content">
 
 
-        <div class="index1">
-            <a href="index.html">首页</a>
-        </div>
-        <div class="index2">
-            <a href="ybSchool.html">分校</a>
-        </div>
-        <div class="index3">
-            <a href="education.html">学历</a>
-        </div>
-        <div class="index4">
-            <a href="news.html">新闻</a>
-        </div>
-        <div class="index5">
-            <a href="active.html">公益</a>
-        </div>
-        <div class="index6">
-            <a href="about.html">关于研博</a>
-        </div>
-        <div class="index">
-            <a href="http://shop.jd.com">研博商城</a>
-        </div>
+{{--        <div class="index1">--}}
+{{--            <a href="index.html">首页</a>--}}
+{{--        </div>--}}
+{{--        <div class="index2">--}}
+{{--            <a href="ybSchool.html">分校</a>--}}
+{{--        </div>--}}
+{{--        <div class="index3">--}}
+{{--            <a href="education.html">学历</a>--}}
+{{--        </div>--}}
+{{--        <div class="index4">--}}
+{{--            <a href="news.html">新闻</a>--}}
+{{--        </div>--}}
+{{--        <div class="index5">--}}
+{{--            <a href="active.html">公益</a>--}}
+{{--        </div>--}}
+{{--        <div class="index6">--}}
+{{--            <a href="about.html">关于研博</a>--}}
+{{--        </div>--}}
+{{--        <div class="index">--}}
+{{--            <a href="http://shop.jd.com">研博商城</a>--}}
+{{--        </div>--}}
+
+        @foreach($column as $name)
+
+            <div class="index">
+                <a href={{route($name->c_route)}}>{{$name->column}}</a>
+            </div>
+
+        @endforeach
     </div>
 </div>
 

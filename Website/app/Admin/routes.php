@@ -11,7 +11,8 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('admin.home');
-    
+
     $router->resource('home/navigations',NavigationController::class);//导航栏
 
 });
+

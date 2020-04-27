@@ -10,7 +10,7 @@
 	<body style="background-color:#F4F4F4">
 	  <div class="shouye" >
 		<header id="lk_header">
-		  
+
 		    <nav class="navbar navbar-expand-lg navbar-light navbar-lk">
 		        <div class="container">
 		            <a class="navbar-brand d-flex justify-content-center align-items-center" href="#">
@@ -20,31 +20,45 @@
 		                    aria-controls="lk_nav" aria-expanded="false" aria-label="Toggle navigation">
 		                <span class="navbar-toggler-icon"></span>
 		            </button>
-		
+
 		            <div class="collapse navbar-collapse" id="lk_nav">
 		                <ul class="navbar-nav mr-auto">
-		                    <li class="nav-item active">
-		                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1" href="index.html">首页<span class="sr-only">(current)</span></a>
-		                    </li>
-							<li class="nav-item ">
-							    <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link2" href="ybSchool.html">分校</a>
-							</li>
-		                   
-		                    <li class="nav-item">
-		                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link3" href="education.html">学历</a>
-		                    </li>
-		                    <li class="nav-item">
-		                        <a style="color: #fff;" class="nav-link nav-link4" href="news.html">新闻</a>
-		                    </li>
-		                    <li class="nav-item">
-		                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link5"  href="active.html">公益</a>
-		                    </li>
-		                    <li class="nav-item">
-		                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link6"  href="about.html">关于研博</a>
-		                    </li>
-							<li class="nav-item">
-							    <a class="nav-link nav-link7 color7" target="_blank"  href="http://shop.jd.com">研博商城</a>
-							</li>
+{{--		                    <li class="nav-item active">--}}
+{{--		                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1" href="index.html">首页<span class="sr-only">(current)</span></a>--}}
+{{--		                    </li>--}}
+{{--							<li class="nav-item ">--}}
+{{--							    <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link2" href="ybSchool.html">分校</a>--}}
+{{--							</li>--}}
+{{--		                   --}}
+{{--		                    <li class="nav-item">--}}
+{{--		                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link3" href="education.html">学历</a>--}}
+{{--		                    </li>--}}
+{{--		                    <li class="nav-item">--}}
+{{--		                        <a style="color: #fff;" class="nav-link nav-link4" href="news.html">新闻</a>--}}
+{{--		                    </li>--}}
+{{--		                    <li class="nav-item">--}}
+{{--		                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link5"  href="active.html">公益</a>--}}
+{{--		                    </li>--}}
+{{--		                    <li class="nav-item">--}}
+{{--		                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link6"  href="about.html">关于研博</a>--}}
+{{--		                    </li>--}}
+{{--							<li class="nav-item">--}}
+{{--							    <a class="nav-link nav-link7 color7" target="_blank"  href="http://shop.jd.com">研博商城</a>--}}
+{{--							</li>--}}
+
+                            @foreach($column as $name)
+
+                                @if($name->c_route == 'index')
+                                    <li class="nav-item active">
+                                        <a class="nav-link nav-link1 color1" href={{route($name->c_route)}}>{{$name->column}}<span class="sr-only">(current)</span></a>
+                                    </li>
+                                @else
+                                    <li class="nav-item">
+                                        <a class="nav-link nav-link6 color6"  href={{route($name->c_route)}}>{{$name->column}}</a>
+                                    </li>
+                                @endif
+
+                            @endforeach
 		                </ul>
 		            </div>
 		        </div>
@@ -56,40 +70,48 @@
 		</div>
 		<!-- 研博新闻内容 -->
 		<div style="position: absolute;top: 540px;"></div>
-		
+
 		<!-- 移动端导航自定义 -->
 		<div class="mobile_nav">
 			<div class="content">
-				
-			
-			<div class="index1">
-				<a href="index.html">首页</a>
-			</div>
-			<div class="index2">
-				<a href="ybSchool.html">分校</a>
-			</div>
-			<div class="index3">
-				<a href="education.html">学历</a>
-			</div>
-			<div class="index4">
-				<a href="news.html">新闻</a>
-			</div>
-			<div class="index5">
-				<a href="active.html">公益</a>
-			</div>
-			<div class="index6">
-				<a href="about.html">关于研博</a>
-			</div>
-			<div class="index">
-				<a href="http://shop.jd.com">研博商城</a>
-			</div>
+
+
+{{--			<div class="index1">--}}
+{{--				<a href="index.html">首页</a>--}}
+{{--			</div>--}}
+{{--			<div class="index2">--}}
+{{--				<a href="ybSchool.html">分校</a>--}}
+{{--			</div>--}}
+{{--			<div class="index3">--}}
+{{--				<a href="education.html">学历</a>--}}
+{{--			</div>--}}
+{{--			<div class="index4">--}}
+{{--				<a href="news.html">新闻</a>--}}
+{{--			</div>--}}
+{{--			<div class="index5">--}}
+{{--				<a href="active.html">公益</a>--}}
+{{--			</div>--}}
+{{--			<div class="index6">--}}
+{{--				<a href="about.html">关于研博</a>--}}
+{{--			</div>--}}
+{{--			<div class="index">--}}
+{{--				<a href="http://shop.jd.com">研博商城</a>--}}
+{{--			</div>--}}
+
+                @foreach($column as $name)
+
+                    <div class="index">
+                        <a href={{route($name->c_route)}}>{{$name->column}}</a>
+                    </div>
+
+                @endforeach
 			</div>
 		</div>
-		
-		
+
+
 		<section id="yb_news2">
 			<div class="container-fluid" style="background-color: #fff;padding: 30px 0;box-shadow:0px 3px 6px rgba(0,0,0,0.16);">
-				
+
 			  <div class="container">
 				 <ul class="nav nav-pills  d-flex justify-content-center " id="pills-tab" role="tablist">
 				   <li class="nav-item">
@@ -98,11 +120,11 @@
 				   <li class="nav-item">
 				     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#edu_news" role="tab" aria-controls="pills-profile" aria-selected="false">教育新闻</a>
 				   </li>
-				  
+
 				 </ul>
-				</div>				
 				</div>
-				
+				</div>
+
 				 <div class="container">
 				 <div class="tab-content" id="pills-tabContent">
 				   <div class="tab-pane fade show active" id="yb_news" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -122,7 +144,7 @@
 					                     </h6>
 					                     <p class="text-muted">
 					                        2020-02-12
-											
+
 					                     </p>
 					                 </div>
 					             </div>
@@ -159,7 +181,7 @@
 					                </div>
 					            </div>
 					        </div>
-					        
+
 					       <div class="col-md-4 col-lg-4">
 					           <div class="media d-flex flex-column   mb-3  ">
 					               <div class="media-left mr-2">
@@ -176,7 +198,7 @@
 					               </div>
 					           </div>
 					       </div>
-					 	   
+
 					 	  <div class="col-md-4 col-lg-4">
 					 	      <div class="media d-flex flex-column   mb-3  ">
 					 	          <div class="media-left mr-2">
@@ -193,7 +215,7 @@
 					 	          </div>
 					 	      </div>
 					 	  </div>
-					 	   
+
 					 	  <div class="col-md-4 col-lg-4">
 					 	      <div class="media d-flex flex-column   mb-3  ">
 					 	          <div class="media-left mr-2">
@@ -210,10 +232,10 @@
 					 	          </div>
 					 	      </div>
 					 	  </div>
-					       
+
 					     </div>
 					 </div>
-					 
+
 					 <!-- 分页1：研博新闻 -->
 					 <div class="fenye yb_fenye container ">
 					 	<nav aria-label="Page navigation example">
@@ -236,7 +258,7 @@
 					 	  </ul>
 					 	</nav>
 					 </div>
-					 
+
 					</div>
 				   <div class="tab-pane fade" id="edu_news" role="tabpanel" aria-labelledby="pills-profile-tab">
 					  <!-- 教育新闻内容 -->
@@ -291,7 +313,7 @@
 				               </div>
 				           </div>
 				       </div>
-				       
+
 				      <div class="col-md-4 col-lg-4">
 				          <div class="media d-flex flex-column   mb-3  ">
 				              <div class="media-left mr-2">
@@ -308,7 +330,7 @@
 				              </div>
 				          </div>
 				      </div>
-					   
+
 					  <div class="col-md-4 col-lg-4">
 					      <div class="media d-flex flex-column   mb-3  ">
 					          <div class="media-left mr-2">
@@ -325,7 +347,7 @@
 					          </div>
 					      </div>
 					  </div>
-					   
+
 					  <div class="col-md-4 col-lg-4">
 					      <div class="media d-flex flex-column   mb-3  ">
 					          <div class="media-left mr-2">
@@ -342,10 +364,10 @@
 					          </div>
 					      </div>
 					  </div>
-				      
+
 				    </div>
 				</div>
-					
+
 					<!-- 分页2：教育新闻 -->
 					<div class="fenye edu_fenye container ">
 						<nav aria-label="Page navigation example">
@@ -367,17 +389,17 @@
 						    </li>
 						  </ul>
 						</nav>
-					</div>  
-					  
 					</div>
-				  
+
+					</div>
+
 				 </div>
-				 
-				 
+
+
 			  </div>
 		</section>
-		
-		
+
+
 		<!--------------------尾部-begin------------------------------>
 		<footer id="lk_footer">
 		    <div class="container ">
@@ -394,16 +416,16 @@
 			$(function () {
 				var _height = $(window).height(); //获取当前窗口的高度,赋值给轮播图
 				  $('.mobile_nav').css('height', _height-107)
-				
-				
-				
-				
-				
-				
+
+
+
+
+
+
 				//研博新闻 分页切换
-				
+
 				  $(document).on('click', '.prev1', function () {
-				//1- get first element to check if it has class 'active', 
+				//1- get first element to check if it has class 'active',
 				// to prevent class 'active' from moving to prev button on click,
 				// if explanation isn't clear try removing if(){} to see it.
 				      const first = $(this).siblings().first();
@@ -436,30 +458,30 @@
 				      }
 				    });
 				  var pageItem = $(".pagination1 li").not(".prev1,.next1");
-				
+
 				   pageItem.click(function() {
 				     pageItem.removeClass("active");
 				     $(this).not(".prev1,.next1").addClass("active");
 				   });
-				
 
-				
+
+
 				$('.nav-link4').click(function () {
 					// 刷新
-					location.reload() 
-					
-					 
+					location.reload()
+
+
 				})
-			
-				
+
+
 				})
-				
-				
+
+
 			$(function () {
 				// 教育新闻 分页切换
-				
+
 				  $(document).on('click', '.prev2', function () {
-				//1- get first element to check if it has class 'active', 
+				//1- get first element to check if it has class 'active',
 				// to prevent class 'active' from moving to prev button on click,
 				// if explanation isn't clear try removing if(){} to see it.
 				      const first = $(this).siblings().first();
@@ -492,39 +514,39 @@
 				      }
 				    });
 				  var pageItem = $(".pagination2 li").not(".prev2,.next2");
-				
+
 				   pageItem.click(function() {
 				     pageItem.removeClass("active");
 				     $(this).not(".prev2,.next2").addClass("active");
 				   });
-				
+
 			})
 		</script>
 		<script type="text/javascript">
 			if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
 			   $(function(){
-			
-				 // $('#lk_header .collapse').css("background-color", "black") 
+
+				 // $('#lk_header .collapse').css("background-color", "black")
 				   $('#lk_header .collapse').hide()
 				    $('.navbar-toggler').click(function(){
 				    $('.mobile_nav').toggle()
-				   }) 
-				   
+				   })
+
 			   })
-				
+
 			}else{
-				// $('#lk_header .collapse').css("background-color", "none") 
+				// $('#lk_header .collapse').css("background-color", "none")
 				 $('.mobile_nav').hide()
 			}
-			
-			
+
+
 		// 判断触摸滑动事件
 		  var body = document.querySelector('body');
 		  /*绑定touchmove*/
 		        body.addEventListener('touchmove',function(e){
 		            // console.log('touchmove');
 		            // console.log(e.isTrusted);
-		
+
 					// $('.collapse').collapse('hide')
 					 $('.mobile_nav').fadeOut("slow");
 				})
