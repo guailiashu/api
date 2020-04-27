@@ -27,7 +27,7 @@ class StaticController extends Controller
     //学历
     public function education()
     {
-        return View('home.adcution');
+        return View('home.education');
     }
 
 
