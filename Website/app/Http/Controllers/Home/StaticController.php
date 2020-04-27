@@ -15,6 +15,7 @@ class StaticController extends Controller
 
        $mag = DB::table('navigation')->get();
 
+
         return View('home.index')->with('column',$mag);
     }
 
