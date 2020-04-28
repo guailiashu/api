@@ -220,10 +220,6 @@
 
 
 
-
-{{--                        //根据模块分类--}}
-{{--// 分校模块--}}
-@if( $item == 'school')
     <section id="lk_school" >
 
         <div class="container d-flex justify-content-between align-items-center   mb-3">
@@ -238,65 +234,82 @@
 
             <!-- 轮播改变 -->
             <div id="pic" class="carousel carousel1 slide" data-ride="carousel">
-
                 <div class="carousel-inner">
 
-                    {{--                            //遍历两组数据--}}
-                    @foreach($value['title'] as $key =>$val)
 
-                        {{--                        //最外层为  class="carousel-item active" ，其余的为 class="carousel-item"--}}
-                    @if( $key == 1)
+{{--                        //根据模块分类--}}
+                        @if( $item == 'school')
 
-                            <div class="carousel-item active">
-                                <div class="school" >
 
-{{--                                    {{ $val['one']->image }}--}}
-{{--                                    {{ $val['two']->image }}--}}
 
-                                    <div class="schoolList">
-                                        <img class="img-fluid"   src={{ $val['one']->image }} >
-                                        <div class="schoolName">{{$val['one']->name}}</div>
-                                        <div class="intro">{{$val['one']->title}}</div>
-                                    </div>
 
-                                    <div class="schoolList">
-                                    <img class="img-fluid"   src={{ $val['two']->image }} >
-                                    <div class="schoolName">{{$val['two']->name}}</div>
-                                    <div class="intro">{{$val['two']->title}}</div>
-                                   </div>
+                    @elseif($item == 'education')
 
-                                </div>
+
+                    @elseif($item == 'news')
+
+
+                    @elseif($item == 'active')
+
+
+                            @endif
+    {{--                            //遍历两组数据--}}
+                            @foreach($value['title'] as $key =>$val)
+
+
+                        {{ $loop->iteration . '/' . $loop->count  }}
+
+
+
+{{--                        //最外层为  class="carousel-item active" ，其余的为 class="carousel-item"--}}
+                        <div class="carousel-item active">
+                            <div class="school" >
+
+
+                                @foreach($val as $school_key=>$school_val)
+
+{{--                                //预定 one和two 来区分 ，根据实际情况修改--}}
+                                    @if($school_key== 'one')
+
+                                        <div class="schoolList">
+                                            <img class="img-fluid"  src={{ $school_val->image }} >
+                                            <div class="schoolName">{{$school_val->name}}</div>
+                                            <div class="intro">{{$school_val->title}}</div>
+                                        </div>
+
+                                    @elseif($school_key== 'two')
+
+                                        <div class="schoolList">
+                                            <img class="img-fluid"  src={{ $school_val->image }} >
+                                            <div class="schoolName">{{$school_val->name}}</div>
+                                            <div class="intro">{{$school_val->title}}</div>
+                                        </div>
+                                    @endif
+
+                                @endforeach
+
+
+{{--                                @foreach($val as $school_key=>$school_val)--}}
+{{--                                        {{$school_val->image }}--}}
+{{--                                    {{$school_key}}--}}
+{{--                                @endforeach--}}
+
+
+{{--                                    <div class="schoolList">--}}
+{{--                                        <img class="img-fluid"  src={{$val->image}} >--}}
+{{--                                        <div class="schoolName">{{$val->name}}</div>--}}
+{{--                                        <div class="intro">{{$val->title}}</div>--}}
+{{--                                    </div>--}}
+
                             </div>
+                        </div>
+                            @endforeach
 
 
 
 
-{{--                        //第2张分校图--}}
-                        @elseif($key == 2)
 
 
-                            <div class="carousel-item ">
-                                <div class="school" >
-
-                                    <div class="schoolList">
-                                        <img class="img-fluid"   src={{ $val['one']->image }} >
-                                        <div class="schoolName">{{$val['one']->name}}</div>
-                                        <div class="intro">{{$val['one']->title}}</div>
-                                    </div>
-
-                                    <div class="schoolList">
-                                        <img class="img-fluid"   src={{ $val['two']->image }} >
-                                        <div class="schoolName">{{$val['two']->name}}</div>
-                                        <div class="intro">{{$val['two']->title}}</div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        @endif
-
-
-                    @endforeach
 
 
                 </div>
@@ -313,20 +326,6 @@
         </div>
 
     </section>
-
-
-
-@elseif($item == 'education')
-
-
-@elseif($item == 'news')
-
-
-@elseif($item == 'active')
-
-
-@endif
-
 
 
 @endforeach
