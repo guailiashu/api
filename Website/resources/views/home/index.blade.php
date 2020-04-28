@@ -235,19 +235,28 @@
             <!-- 轮播改变 -->
             <div id="pic" class="carousel carousel1 slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="school" >
+
 
 {{--                            //遍历两组数据--}}
                             @foreach($value['title'] as $key =>$val)
 
+{{--                               //最外层为  class="carousel-item active" ，其余的为 class="carousel-item"--}}
+
+
+
+{{--                    @if()--}}
+{{--                        --}}
+{{--                        @else--}}
+{{--                        --}}
+{{--                        @endif--}}
+                        <div class="carousel-item active">
+                            <div class="school" >
+
 
                                 @foreach($val as $school_key=>$school_val)
 
-
-
 {{--                                //预定 one和two 来区分 ，根据实际情况修改--}}
-                                @if($school_key== 'one')
+                                    @if($school_key== 'one')
 
                                         <div class="schoolList">
                                             <img class="img-fluid"  src={{ $school_val->image }} >
@@ -256,14 +265,13 @@
                                         </div>
 
                                     @elseif($school_key== 'two')
+
                                         <div class="schoolList">
                                             <img class="img-fluid"  src={{ $school_val->image }} >
                                             <div class="schoolName">{{$school_val->name}}</div>
                                             <div class="intro">{{$school_val->title}}</div>
                                         </div>
-                                @endif
-
-
+                                    @endif
 
                                 @endforeach
 
@@ -280,19 +288,15 @@
 {{--                                        <div class="intro">{{$val->title}}</div>--}}
 {{--                                    </div>--}}
 
-
+                            </div>
+                        </div>
                             @endforeach
 
 
-{{--                            <div class="schoolList">--}}
-{{--                                <img class="img-fluid" src="images/22.png" >--}}
-{{--                                <div class="schoolName">北京分校</div>--}}
-{{--                                <div class="intro">这是北京分校</div>--}}
-{{--                            </div>--}}
 
 
-                        </div>
-                    </div>
+
+
 
 
                 </div>

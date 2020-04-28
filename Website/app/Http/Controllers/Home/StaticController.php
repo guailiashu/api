@@ -29,8 +29,8 @@ class StaticController extends Controller
             if($s_route[1] !='index'&& $s_route[1] !='about'){
 
                 if($s_route[1] == 'news'){//新闻页面
-                    $get_mag[$key]['title'] = DB::table('home_news')->limit(4)->get();
-                    $get_mag[$key]['routes'] = $val;
+                    $get_mag[$s_route[1]]['title'] = DB::table('home_news')->limit(4)->get();
+                    $get_mag[$s_route[1]]['routes'] = $val;
 
                 }elseif($s_route[1] == 'school'){//分校  两张一组
 
@@ -77,16 +77,16 @@ class StaticController extends Controller
                         $data_num = $title;
                     }
 
-                    $get_mag[$key]['title'] = $data_num;
-                    $get_mag[$key]['routes'] = $val;
+                    $get_mag[$s_route[1]]['title'] = $data_num;
+                    $get_mag[$s_route[1]]['routes'] = $val;
 
                 }elseif($s_route[1] == 'active'){//公益
-                    $get_mag[$key]['title'] = DB::table('home_actives')->limit(2)->get();
-                    $get_mag[$key]['routes'] = $val;
+                    $get_mag[$s_route[1]]['title'] = DB::table('home_actives')->limit(2)->get();
+                    $get_mag[$s_route[1]]['routes'] = $val;
 
                 }elseif($s_route[1] == 'education'){//学历
-                    $get_mag[$key]['title'] = DB::table('home_educations')->limit(4)->get();
-                    $get_mag[$key]['routes'] = $val;
+                    $get_mag[$s_route[1]]['title'] = DB::table('home_educations')->limit(4)->get();
+                    $get_mag[$s_route[1]]['routes'] = $val;
 
                 }
                 $home_mage = $get_mag;
