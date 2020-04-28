@@ -14,13 +14,13 @@ class StaticController extends Controller
     public function index()
     {
 
-       $mag = $this->getNavigation();//获取导航栏数据
+        $mag = $this->getNavigation();//获取导航栏数据
 
         //获取页面展示数据
         foreach ($mag as $key=>$val){
 
-        //$val->c_route 获取对应路由
-        $s_route=explode('/',$val->c_route);
+            //$val->c_route 获取对应路由
+            $s_route=explode('/',$val->c_route);
 
             /**
              * 根据路由查对应的数据表
@@ -32,8 +32,52 @@ class StaticController extends Controller
                     $get_mag[$key]['title'] = DB::table('home_news')->limit(4)->get();
                     $get_mag[$key]['routes'] = $val;
 
-                }elseif($s_route[1] == 'school'){//分校
-                    $get_mag[$key]['title'] = DB::table('home_schools')->limit(2)->get();
+                }elseif($s_route[1] == 'school'){//分校  两张一组
+
+                    //两两分组
+                    $data = DB::table('home_schools')
+                        ->orderBy('id','desc')
+                        ->limit(4)
+                        ->get();
+
+
+                    foreach ($data as $school_key=>$school_val){
+
+                         //获取分校对应数据下标
+                        $sub_key = $school_key + 1;
+
+                        //数据的总数
+                        $data_count = $data->count();
+
+                        //对应余数分组 余数为1 2 的为一组
+                        $remainder = $sub_key%($data_count/2);
+
+                        //暂时因为分两组  除数小于1的为一组
+                        $divide = $sub_key/2;
+
+                        if($divide<=1){
+                            //第一组
+                            if($remainder == 1)
+                            {
+                                $title[1]['one'] = $school_val;
+                            }else{
+                                $title[1]['two'] = $school_val;
+                            }
+
+                        }else{
+                         //第二组
+
+                            if($remainder == 1)
+                            {
+                                $title[2]['one'] = $school_val;
+                            }else{
+                                $title[2]['two'] = $school_val;
+                            }
+                        }
+                        $data_num = $title;
+                    }
+
+                    $get_mag[$key]['title'] = $data_num;
                     $get_mag[$key]['routes'] = $val;
 
                 }elseif($s_route[1] == 'active'){//公益
@@ -48,7 +92,7 @@ class StaticController extends Controller
                 $home_mage = $get_mag;
             }
         }
-//dd($home_mage);
+//        dd($home_mage);
       return View('home.index')->with('column',$mag)->with('home',$home_mage);
     }
 

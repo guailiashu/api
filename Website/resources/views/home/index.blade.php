@@ -219,7 +219,7 @@
 @foreach($home as $item => $value)
 
 
-    //模块
+
     <section id="lk_school" >
 
         <div class="container d-flex justify-content-between align-items-center   mb-3">
@@ -228,6 +228,7 @@
             <div class="more"><a class="toSchool" href={{ route($value['routes']->c_route) }}>查看更多</a></div>
 
         </div>
+{{--        {{ $item }}--}}
 
         <div  class="container d-none d-sm-none d-md-block content">
 
@@ -237,15 +238,47 @@
                     <div class="carousel-item active">
                         <div class="school" >
 
+{{--                            //遍历两组数据--}}
                             @foreach($value['title'] as $key =>$val)
 
-                                {{ $loop->index }}/{{$loop->count}}
 
-                                    <div class="schoolList">
-                                        <img class="img-fluid"  src={{$val->image}} >
-                                        <div class="schoolName">{{$val->name}}</div>
-                                        <div class="intro">{{$val->title}}</div>
-                                    </div>
+                                @foreach($val as $school_key=>$school_val)
+
+
+
+{{--                                //预定 one和two 来区分 ，根据实际情况修改--}}
+                                @if($school_key== 'one')
+
+                                        <div class="schoolList">
+                                            <img class="img-fluid"  src={{ $school_val->image }} >
+                                            <div class="schoolName">{{$school_val->name}}</div>
+                                            <div class="intro">{{$school_val->title}}</div>
+                                        </div>
+
+                                    @elseif($school_key== 'two')
+                                        <div class="schoolList">
+                                            <img class="img-fluid"  src={{ $school_val->image }} >
+                                            <div class="schoolName">{{$school_val->name}}</div>
+                                            <div class="intro">{{$school_val->title}}</div>
+                                        </div>
+                                @endif
+
+
+
+                                @endforeach
+
+
+{{--                                @foreach($val as $school_key=>$school_val)--}}
+{{--                                        {{$school_val->image }}--}}
+{{--                                    {{$school_key}}--}}
+{{--                                @endforeach--}}
+
+
+{{--                                    <div class="schoolList">--}}
+{{--                                        <img class="img-fluid"  src={{$val->image}} >--}}
+{{--                                        <div class="schoolName">{{$val->name}}</div>--}}
+{{--                                        <div class="intro">{{$val->title}}</div>--}}
+{{--                                    </div>--}}
 
 
                             @endforeach
