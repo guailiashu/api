@@ -4479,7 +4479,7 @@
 				// 招生专业，简章等
 				$('#yb_education2 #lk_hotschool .container p a').click(function(event) {
 					event.stopPropagation();
-					var url = 'eduDetail.html'
+					var url = 'eduDetail.blade.php'
 					var schoolName = $(this).attr('rel')
 					// $(location).attr('href', url+"?value="+picAlt);
 					// window.open("http://www.jb51.net");

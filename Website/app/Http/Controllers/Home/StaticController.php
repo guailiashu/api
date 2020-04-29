@@ -10,6 +10,10 @@ use mysql_xdevapi\Exception;
 
 class StaticController extends Controller
 {
+    /**
+     * 导航栏目
+     */
+
     //主页
     public function index()
     {
@@ -104,7 +108,13 @@ class StaticController extends Controller
     public function ybSchool()
     {
         $mag = $this->getNavigation();//获取导航栏数据
-        return View('home.ybSchool')->with('column',$mag);
+
+        $school_data = DB::table('home_schools')
+            ->orderBy('id','desc')
+            ->limit(4)
+            ->get();
+
+        return View('home.ybSchool')->with('column',$mag)->with('schools',$school_data);
     }
 
     //学历
@@ -141,12 +151,30 @@ class StaticController extends Controller
     }
 
 
-    //导航栏
+    /**
+     * 详情模块
+     */
+
+
+    //分校详情页
+    public function schoolDetail()
+    {
+        dd(1111);
+
+        return View('home.schoolDetail');
+    }
+
+
+    //导航栏数据封装
     public function getNavigation()
     {
         $mag = DB::table('navigations')->where('anable','=',1)->get();
         return $mag;
     }
+
+
+
+
 
 }
 

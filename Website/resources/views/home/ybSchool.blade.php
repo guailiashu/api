@@ -76,30 +76,6 @@
 		<div class="mobile_nav">
 			<div class="content">
 
-
-{{--			<div class="index1">--}}
-{{--				<a href="index.html">首页</a>--}}
-{{--			</div>--}}
-{{--			<div class="index2">--}}
-{{--				<a href="ybSchool.html">分校</a>--}}
-{{--			</div>--}}
-{{--			<div class="index3">--}}
-{{--				<a href="education.html">学历</a>--}}
-{{--			</div>--}}
-{{--			<div class="index4">--}}
-{{--				<a href="news.html">新闻</a>--}}
-{{--			</div>--}}
-{{--			<div class="index5">--}}
-{{--				<a href="active.html">公益</a>--}}
-{{--			</div>--}}
-{{--			<div class="index6">--}}
-{{--				<a href="about.html">关于研博</a>--}}
-{{--			</div>--}}
-{{--			<div class="index">--}}
-{{--				<a href="http://shop.jd.com">研博商城</a>--}}
-{{--			</div>--}}
-
-
                 @foreach($column as $name)
 
                     <div class="index">
@@ -117,135 +93,31 @@
 		    <!--内容-->
 		    <div class="container">
 		        <div class="row">
-		            <div class="col-md-6 col-lg-6">
-		                <div class="media d-flex flex-column   mb-3 ">
-		                    <div class="media-left mr-2 img-fluid">
-		                        <img src="images/22.png" alt="湖南分校" class="media-object   "
-		                           >
 
-		                    </div>
-		                    <div class="media-body ">
-		                        <h6 class="media-heading mt-3">
-		                          湖南分校
-		                        </h6>
-		                        <p class="text-muted ">
-		                           <span class="Tel">Tel:</span>
-								   <span class="number">0731-89781969</span>
-		                        </p>
-								<p class="text-muted  ">
-								   <span class="Add">Add:</span>
-								   <span class="number">湖南长沙市芙蓉广场中天国际行政公馆21楼</span>
-								</p>
-		                    </div>
-		                </div>
-		            </div>
-		            <div class="col-md-6 col-lg-6">
-		                <div class="media d-flex flex-column   mb-3  ">
-		                    <div class="media-left mr-2 img-fluid">
-		                        <img src="images/22.png" alt="湖北分校" class="media-object  "
-		                          >
-		                    </div>
-		                   <div class="media-body ">
-		                       <h6 class="media-heading mt-3">
-		                         湖北分校
-		                       </h6>
-		                       <p class="text-muted ">
-		                          <span class="Tel">Tel:</span>
-		                   	   <span class="number">0731-89781969</span>
-		                       </p>
-		                   	<p class="text-muted ">
-		                   	   <span class="Add">Add:</span>
-		                   	   <span class="number">湖南长沙市芙蓉广场中天国际行政公馆21楼</span>
-		                   	</p>
-		                   </div>
-		                </div>
-		            </div>
-		            <div class="col-md-6 col-lg-6">
-		                <div class="media d-flex flex-column   mb-3  ">
-		                    <div class="media-left mr-2  img-fluid">
-		                        <img src="images/22.png" alt="广西分校" class="media-object  "
-		                             >
-		                    </div>
-		                    <div class="media-body ">
-		                        <h6 class="media-heading mt-3">
-		                          广西分校
-		                        </h6>
-		                        <p class="text-muted ">
-		                           <span class="Tel">Tel:</span>
-		                    	   <span class="number">0731-89781969</span>
-		                        </p>
-		                    	<p class="text-muted ">
-		                    	   <span class="Add">Add:</span>
-		                    	   <span class="number">湖南长沙市芙蓉广场中天国际行政公馆21楼</span>
-		                    	</p>
-		                    </div>
-		                </div>
-		            </div>
-		            <div class="col-md-6 col-lg-6">
-		                <div class="media d-flex flex-column   mb-3  ">
-		                    <div class="media-left  img-fluid mr-2">
-		                        <img src="images/22.png" alt="广东分校" class="media-object  "
-		                            >
-		                    </div>
-		                   <div class="media-body ">
-		                       <h6 class="media-heading mt-3">
-		                         广东分校
-		                       </h6>
-		                       <p class="text-muted ">
-		                          <span class="Tel">Tel:</span>
-		                   	   <span class="number">0731-89781969</span>
-		                       </p>
-		                   	<p class="text-muted ">
-		                   	   <span class="Add">Add:</span>
-		                   	   <span class="number">湖南长沙市芙蓉广场中天国际行政公馆21楼</span>
-		                   	</p>
-		                   </div>
-		                </div>
-		            </div>
+                    @foreach($schools as $school_key=>$school_value)
+                        <div class="col-md-6 col-lg-6">
+                            <div class="media d-flex flex-column   mb-3 ">
+                                <div class="media-left mr-2 img-fluid">
+                                    <img src={{ $school_value->image  }} alt="{{ $school_value->name  }}" class="media-object   ">
 
-					<div class="col-md-6 col-lg-6">
-					    <div class="media d-flex flex-column   mb-3  ">
-					        <div class="media-left  img-fluid mr-2">
-					            <img src="images/22.png" alt="北京分校" class="media-object "
-					                >
-					        </div>
-					       <div class="media-body ">
-					           <h6 class="media-heading mt-3">
-					             北京分校
-					           </h6>
-					           <p class="text-muted ">
-					              <span class="Tel">Tel:</span>
-					       	   <span class="number">0731-89781969</span>
-					           </p>
-					       	<p class="text-muted ">
-					       	   <span class="Add">Add:</span>
-					       	   <span class="number">湖南长沙市芙蓉广场中天国际行政公馆21楼</span>
-					       	</p>
-					       </div>
-					    </div>
-					</div>
+                                </div>
+                                <div class="media-body ">
+                                    <h6 class="media-heading mt-3">
+                                        {{ $school_value->name  }}
+                                    </h6>
+                                    <p class="text-muted ">
+                                        <span class="Tel">Tel:</span>
+                                        <span class="number">{{ $school_value->tel  }}</span>
+                                    </p>
+                                    <p class="text-muted  ">
+                                        <span class="Add">Add:</span>
+                                        <span class="number">{{ $school_value->address  }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
 
-					<div class="col-md-6 col-lg-6">
-					    <div class="media d-flex flex-column   mb-3  ">
-					        <div class="media-left  img-fluid mr-2">
-					            <img src="images/22.png" alt="天津分校" class="media-object "
-					                >
-					        </div>
-					       <div class="media-body ">
-					           <h6 class="media-heading mt-3">
-					            天津分校
-					           </h6>
-					           <p class="text-muted ">
-					              <span class="Tel">Tel:</span>
-					       	   <span class="number">0731-89781969</span>
-					           </p>
-					       	<p class="text-muted ">
-					       	   <span class="Add">Add:</span>
-					       	   <span class="number">湖南长沙市芙蓉广场中天国际行政公馆21楼</span>
-					       	</p>
-					       </div>
-					    </div>
-					</div>
 
 
 		        </div>
@@ -253,12 +125,7 @@
 		</section>
 
 	<!--------------------尾部-begin------------------------------>
-	<footer id="lk_footer">
-	    <div class="container ">
-	    	Copyright © 2017 研博教育集团 版权所有 桂ICP备17001896号-3
-			<!-- <h3>地址:湖北省武汉市洪山区珞瑜路889-1号30楼（整层）</h3> -->
-	    </div>
-	</footer>
+@include('home.layouts._footer')
 	<!--------------------尾部-end------------------------------>
 
 		<script src="lib/js/jquery-3.3.1.js"></script>
@@ -298,7 +165,7 @@
 
 
 				$('.media-left img').click(function () {
-					var url='schoolDetail.html'
+					var url='schoolDetail.blade.php'
 				    var picAlt =  $(this).attr('alt')
 				  // $(location).attr('href', url+"?value="+picAlt);
 				    // window.open("http://www.jb51.net");

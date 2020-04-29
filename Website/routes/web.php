@@ -17,13 +17,16 @@ Route::get('/', function () {
 
 
 Route::namespace('Home')->group(function (){
+    //一级目录
     Route::get('index','StaticController@index')->name('home/index');//首页
     Route::get('about','StaticController@about')->name('home/about');//关于研博
     Route::get('active','StaticController@active')->name('home/active');//公益
     Route::get('education','StaticController@education')->name('home/education');//学历
     Route::get('news','StaticController@news')->name('home/news');//新闻
     Route::get('school','StaticController@ybSchool')->name('home/school');//分校
-//    Route::get('index','StaticController@index')->name('home/index');//
+
+    //二级目录
+    Route::get('schoolDetail','StaticController@schoolDetail')->name('home/schoolDetail');//分校详情
 
 
 });
