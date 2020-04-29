@@ -98,7 +98,7 @@
                         <div class="col-md-6 col-lg-6">
                             <div class="media d-flex flex-column   mb-3 ">
                                 <div class="media-left mr-2 img-fluid">
-                                    <img src={{ $school_value->image  }} alt="{{ $school_value->name  }}" class="media-object   ">
+                                    <img src={{ $school_value->image  }} alt="{{ $school_value->id  }}" class="media-object   ">
 
                                 </div>
                                 <div class="media-body ">
@@ -165,11 +165,13 @@
 
 
 				$('.media-left img').click(function () {
-					var url='schoolDetail.blade.php'
+					{{--var url= "{{route('home/schoolDetail')}}"--}}
+                    var url= "{{url('schoolDetail')}}"
 				    var picAlt =  $(this).attr('alt')
 				  // $(location).attr('href', url+"?value="+picAlt);
 				    // window.open("http://www.jb51.net");
-                   window.location.href = encodeURI(url + "?value=" + picAlt);
+                   // window.location.href = encodeURI(url + "?value=" + picAlt);
+                    window.location.href = encodeURI(url +'/'+ picAlt);
 				})
 				})
 		</script>

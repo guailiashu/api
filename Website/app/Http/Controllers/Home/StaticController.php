@@ -157,12 +157,30 @@ class StaticController extends Controller
 
 
     //分校详情页
-    public function schoolDetail()
+    public function schoolDetail(Request $request)
     {
-        dd(1111);
+        //获取返回的具体分校对应id编号
+        $school_id = $request->schoolId;
 
-        return View('home.schoolDetail');
+        //获取分校的图片数据
+        $school_db_data = DB::table('home_school_images')
+            ->where('school_id',$school_id)
+            ->get();
+
+        $mag = $this->getNavigation();//获取导航栏数据
+        return View('home.schoolDetail')->with('column',$mag)->with('school_data',$school_db_data);
     }
+
+
+//    分校详情页 未带参数测试
+    public function schoolDetailA()
+    {
+
+//        $a = public_path();
+//        dd($a);
+        return View('home.schoolDetailCopy');
+    }
+
 
 
     //导航栏数据封装

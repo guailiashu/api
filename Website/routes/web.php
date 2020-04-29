@@ -13,7 +13,14 @@
 Route::get('/', function () {
 
     Route::get('index','Home/StaticController@index');//默认首页
+
 });
+
+
+Route::get('user/{id}', function ($id) {
+    return 'User '.$id;
+});
+
 
 
 Route::namespace('Home')->group(function (){
@@ -26,7 +33,8 @@ Route::namespace('Home')->group(function (){
     Route::get('school','StaticController@ybSchool')->name('home/school');//分校
 
     //二级目录
-    Route::get('schoolDetail','StaticController@schoolDetail')->name('home/schoolDetail');//分校详情
+    Route::get('schoolDetail/{schoolId}','StaticController@schoolDetail')->name('home/schoolDetail');//分校详情
+    Route::get('schoolDetail','StaticController@schoolDetailA')->name('home/schoolDetailA');//分校详情 无参数
 
 
 });
