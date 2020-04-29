@@ -53,42 +53,21 @@
 
                 <div class="collapse navbar-collapse" id="lk_nav" >
                     <ul class="navbar-nav mr-auto">
-{{--                        <li class="nav-item active">--}}
-{{--                            <a class="nav-link nav-link1 color1" href="#">首页<span class="sr-only">(current)</span></a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item ">--}}
-{{--                            <a class="nav-link nav-link2 color2" href={{ route('home/school') }}>分校</a>--}}
-{{--                        </li>--}}
 
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link nav-link3 color3" href="education.html">学历</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link nav-link4 color4" href="news.html">新闻</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link nav-link5 color5"  href="active.html">公益</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link nav-link6 color6"  href="about.html">关于研博</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link nav-link7 color7" target="_blank"  href="http://shop.jd.com">研博商城</a>--}}
-{{--                        </li>--}}
 
                         @foreach($column as $name)
 
                             @if($name->c_route == 'index')
-                                    <li class="nav-item active">
-                                        <a class="nav-link nav-link1 color1" href={{route($name->c_route)}}>{{$name->column}}<span class="sr-only">(current)</span></a>
-                                    </li>
-                                @else
-                                    <li class="nav-item">
-                                        <a class="nav-link nav-link6 color6"  href={{route($name->c_route)}}>{{$name->column}}</a>
-                                    </li>
-                                @endif
+                                <li class="nav-item active">
+                                    <a class="nav-link nav-link1 color1" href={{route($name->c_route)}}>{{$name->column}}<span class="sr-only">(current)</span></a>
+                                </li>
+                            @else
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link6 color6"  href={{route($name->c_route)}}>{{$name->column}}</a>
+                                </li>
+                            @endif
 
-                            @endforeach
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -106,12 +85,6 @@
             <li data-target="#lk_carousel" data-slide-to="2"></li>
         </ol>
 
-        <!-- <div class="carousel-item active" data-sm-img="images/slide_01_900x410.jpg"
-             data-lg-img="images/slide_01_2000x410.jpg"></div>
-        <div class="carousel-item" data-sm-img="images/slide_02_900x410.jpg"
-             data-lg-img="images/slide_02_2000x410.jpg"></div>
-        <div class="carousel-item" data-sm-img="images/slide_03_900x410.jpg"
-             data-lg-img="images/slide_03_2000x410.jpg"></div> -->
         <div class="carousel-inner ">
             <div class="carousel-item active">
                 <img src="images/slide_01_900x410.jpg" class="d-block w-100" alt="...">
@@ -124,18 +97,7 @@
             </div>
         </div>
 
-        <!-- 超小屏幕 -->
-        <!-- <div class="carousel-inner  d-none d-xs-block d-sm-none ">
-            <div class="carousel-item sm active">
-                <img src="images/slide_01_900x410.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item sm">
-                <img src="images/slide_02_900x410.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item sm">
-                <img src="images/slide_03_900x410.jpg" class="d-block w-100" alt="...">
-            </div>
-        </div> -->
+
 
         <a class="carousel-control-prev" href="#lk_carousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -163,32 +125,12 @@
     <div class="content">
 
 
-{{--        <div class="index1">--}}
-{{--            <a href="index.html">首页</a>--}}
-{{--        </div>--}}
-{{--        <div class="index2">--}}
-{{--            <a href="ybSchool.html">分校</a>--}}
-{{--        </div>--}}
-{{--        <div class="index3">--}}
-{{--            <a href="education.html">学历</a>--}}
-{{--        </div>--}}
-{{--        <div class="index4">--}}
-{{--            <a href="news.html">新闻</a>--}}
-{{--        </div>--}}
-{{--        <div class="index5">--}}
-{{--            <a href="active.html">公益</a>--}}
-{{--        </div>--}}
-{{--        <div class="index6">--}}
-{{--            <a href="about.html">关于研博</a>--}}
-{{--        </div>--}}
-{{--        <div class="index">--}}
-{{--            <a href="http://shop.jd.com">研博商城</a>--}}
-{{--        </div>--}}
+
         @foreach($column as $name)
 
-                    <div class="index">
-                        <a href={{route($name->c_route)}}>{{$name->column}}</a>
-                    </div>
+            <div class="index">
+                <a href={{route($name->c_route)}}>{{$name->column}}</a>
+            </div>
 
         @endforeach
 
@@ -221,111 +163,228 @@
 
 
 
-{{--                        //根据模块分类--}}
-{{--// 分校模块--}}
-@if( $item == 'school')
-    <section id="lk_school" >
+    {{--                        //根据模块分类--}}
+    {{--// 分校模块--}}
+    @if( $item == 'school')
+        <section id="lk_school" >
 
-        <div class="container d-flex justify-content-between align-items-center   mb-3">
-            <h2> {{ $value['routes']->column}}</h2>
-            <div class="line d-none d-sm-none d-md-block"></div>
-            <div class="more"><a class="toSchool" href={{ route($value['routes']->c_route) }}>查看更多</a></div>
+            <div class="container d-flex justify-content-between align-items-center   mb-3">
+                <h2> {{ $value['routes']->column}}</h2>
+                <div class="line d-none d-sm-none d-md-block"></div>
+                <div class="more"><a class="toSchool" href={{ route($value['routes']->c_route) }}>查看更多</a></div>
 
-        </div>
-
-
-        <div  class="container d-none d-sm-none d-md-block content">
-
-            <!-- 轮播改变 -->
-            <div id="pic" class="carousel carousel1 slide" data-ride="carousel">
-
-                <div class="carousel-inner">
-
-                    {{--                            //遍历两组数据--}}
-                    @foreach($value['title'] as $key =>$val)
-
-                        {{--                        //最外层为  class="carousel-item active" ，其余的为 class="carousel-item"--}}
-                    @if( $key == 1)
-
-                            <div class="carousel-item active">
-                                <div class="school" >
-
-{{--                                    {{ $val['one']->image }}--}}
-{{--                                    {{ $val['two']->image }}--}}
-
-                                    <div class="schoolList">
-                                        <img class="img-fluid"   src={{ $val['one']->image }} >
-                                        <div class="schoolName">{{$val['one']->name}}</div>
-                                        <div class="intro">{{$val['one']->title}}</div>
-                                    </div>
-
-                                    <div class="schoolList">
-                                    <img class="img-fluid"   src={{ $val['two']->image }} >
-                                    <div class="schoolName">{{$val['two']->name}}</div>
-                                    <div class="intro">{{$val['two']->title}}</div>
-                                   </div>
-
-                                </div>
-                            </div>
-
-
-
-
-{{--                        //第2张分校图--}}
-                        @elseif($key == 2)
-
-
-                            <div class="carousel-item ">
-                                <div class="school" >
-
-                                    <div class="schoolList">
-                                        <img class="img-fluid"   src={{ $val['one']->image }} >
-                                        <div class="schoolName">{{$val['one']->name}}</div>
-                                        <div class="intro">{{$val['one']->title}}</div>
-                                    </div>
-
-                                    <div class="schoolList">
-                                        <img class="img-fluid"   src={{ $val['two']->image }} >
-                                        <div class="schoolName">{{$val['two']->name}}</div>
-                                        <div class="intro">{{$val['two']->title}}</div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        @endif
-
-
-                    @endforeach
-
-
-                </div>
-                <a class="carousel-control-prev" href="#pic" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#pic" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
 
-        </div>
 
-    </section>
+            <div  class="container d-none d-sm-none d-md-block content">
+
+                <!-- 轮播改变 -->
+                <div id="pic" class="carousel carousel1 slide" data-ride="carousel">
+
+                    <div class="carousel-inner">
+
+                        {{--                            //遍历两组数据--}}
+                        @foreach($value['title'] as $key =>$val)
+
+                            {{--                        //最外层为  class="carousel-item active" ，其余的为 class="carousel-item"--}}
+                            @if( $key == 1)
+
+                                <div class="carousel-item active">
+                                    <div class="school" >
+
+                                        {{--                                    {{ $val['one']->image }}--}}
+                                        {{--                                    {{ $val['two']->image }}--}}
+
+                                        <div class="schoolList">
+                                            <img class="img-fluid"   src={{ $val['one']->image }} >
+                                            <div class="schoolName">{{$val['one']->name}}</div>
+                                            <div class="intro">{{$val['one']->title}}</div>
+                                        </div>
+
+                                        <div class="schoolList">
+                                            <img class="img-fluid"   src={{ $val['two']->image }} >
+                                            <div class="schoolName">{{$val['two']->name}}</div>
+                                            <div class="intro">{{$val['two']->title}}</div>
+                                        </div>
+
+                                    </div>
+                                </div>
 
 
 
-@elseif($item == 'education')
+
+                                {{--                        //第2张分校图--}}
+                            @elseif($key == 2)
 
 
-@elseif($item == 'news')
+                                <div class="carousel-item ">
+                                    <div class="school" >
+
+                                        <div class="schoolList">
+                                            <img class="img-fluid"   src={{ $val['one']->image }} >
+                                            <div class="schoolName">{{$val['one']->name}}</div>
+                                            <div class="intro">{{$val['one']->title}}</div>
+                                        </div>
+
+                                        <div class="schoolList">
+                                            <img class="img-fluid"   src={{ $val['two']->image }} >
+                                            <div class="schoolName">{{$val['two']->name}}</div>
+                                            <div class="intro">{{$val['two']->title}}</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            @endif
 
 
-@elseif($item == 'active')
+                        @endforeach
 
 
-@endif
+                    </div>
+                    <a class="carousel-control-prev" href="#pic" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#pic" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    @elseif($item == 'education')
+
+
+        <section id="lk_hot">
+            <!--标题-->
+{{--            <div class="container d-flex justify-content-between align-items-center   mb-3">--}}
+{{--                <h2>学历教育</h2>--}}
+{{--                <div class="line d-none d-sm-none d-md-block"></div>--}}
+{{--                <div class="more"><a class="toEdu" href="education.html">查看更多</a></div>--}}
+
+{{--            </div>--}}
+
+            <div class="container d-flex justify-content-between align-items-center   mb-3">
+                <h2> {{ $value['routes']->column}}</h2>
+                <div class="line d-none d-sm-none d-md-block"></div>
+                <div class="more"><a class="toSchool" href={{ route($value['routes']->c_route) }}>查看更多</a></div>
+
+            </div>
+
+            <div class="container">
+                <div class="row">
+
+            <!--内容-->
+            @foreach($value['title'] as $education_key=>$education_val)
+
+
+                        <div class="col-md-6 col-lg-6">
+                            <div class="media d-flex flex-column mb-3 xuelijiaoyu">
+                                <div class="media-left mr-2">
+                                    <img src={{ $education_val->image }} alt="" class="media-object  img-fluid ">
+                                </div>
+                                <div class="media-body ">
+                                    <h6 class="media-heading mt-3">
+                                      {{ $education_val->name }}
+                                    </h6>
+                                    <p class="text-muted">
+                                        {{ $education_val->title }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+            @endforeach
+
+            </div>
+                </div>
+        </section>
+
+
+
+
+    @elseif($item == 'news')
+
+        <!--------------------研博新闻-begin------------------------------>
+        <section id="lk_ybnews">
+            <!--标题-->
+            <div class="container d-flex justify-content-between align-items-center   mb-3">
+                <h2> {{ $value['routes']->column}}</h2>
+                <div class="line d-none d-sm-none d-md-block"></div>
+                <div class="more"><a class="toSchool" href={{ route($value['routes']->c_route) }}>查看更多</a></div>
+            </div>
+            <!--内容-->
+            <div class="container">
+                <div class="row">
+
+                        @foreach($value['title'] as $news_key=>$news_val)
+                        <div class="col-md-4 col-lg-4">
+                            <div class="media d-flex flex-column   mb-3  news">
+                                <div class="media-left mr-2">
+                                    <img src={{$news_val->image}} alt="" class="media-object  img-fluid "
+                                    >
+                                </div>
+                                <div class="media-body ">
+                                    <h6 class="media-heading mt-3">
+                                        {{$news_val->title}}
+                                    </h6>
+                                    <p class="text-muted">
+                                        {{$news_val->created_at}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+
+                </div>
+            </div>
+        </section>
+
+    @elseif($item == 'active')
+        <section id="lk_active" >
+            <!--标题-->
+            <div class="container d-flex justify-content-between align-items-center   mb-3">
+                <h2> {{ $value['routes']->column}}</h2>
+                <div class="line d-none d-sm-none d-md-block"></div>
+                <div class="more"><a class="toSchool" href={{ route($value['routes']->c_route) }}>查看更多</a></div>
+            </div>
+            <!--内容-->
+
+            <div class="container">
+                <div class="row">
+                @foreach($value['title'] as $active_key=>$active_val)
+
+                        <!-- 中大屏幕显示，小屏幕，超小屏幕不显示 -->
+                        <div class="col-md-6 col-lg-6 d-none d-sm-none d-md-none d-lg-block">
+                            <div class="media d-flex   mb-3  active">
+                                <div class="media-left mr-2">
+                                    <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                </div>
+                                <div class="d-none d-sm-none d-md-block media-body ">
+                                    <h6 class="media-heading ">
+                                        {{$active_val->title}}
+                                    </h6>
+                                    <p class="text-muted">
+                                        {{$active_val->details}} . . .
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                @endforeach
+                </div>
+            </div>
+        </section>
+
+
+    @endif
 
 
 
@@ -336,444 +395,7 @@
 
 
 
-<!--------------------服务介绍-end------------------------------>
 
-<!--------------------分校-begin------------------------------>
-{{--<section id="lk_school" >--}}
-{{--    <!--标题-->--}}
-{{--    <div class="container d-flex justify-content-between align-items-center   mb-3">--}}
-{{--        <h2>研博分校</h2>--}}
-{{--        <div class="line d-none d-sm-none d-md-block"></div>--}}
-{{--        <div class="more"><a class="toSchool" href="ybSchool.html">查看更多</a></div>--}}
-
-{{--    </div>--}}
-{{--    <!--内容-->--}}
-
-{{--    <div  class="container d-none d-sm-none d-md-block content">--}}
-
-
-{{--        <!-- 轮播改变 -->--}}
-{{--        <div id="pic" class="carousel carousel1 slide" data-ride="carousel">--}}
-{{--            <div class="carousel-inner">--}}
-{{--                <div class="carousel-item active">--}}
-{{--                    <div class="school" >--}}
-
-{{--                        <div class="schoolList">--}}
-{{--                            <img class="img-fluid"  src="images/22.png" >--}}
-{{--                            <div class="schoolName">北京分校</div>--}}
-{{--                            <div class="intro">这是北京分校</div>--}}
-{{--                        </div>--}}
-
-{{--                            <div class="schoolList">--}}
-{{--                                <img class="img-fluid" src="images/22.png" >--}}
-{{--                                <div class="schoolName">北京分校</div>--}}
-{{--                                <div class="intro">这是北京分校</div>--}}
-{{--                            </div>--}}
-
-
-
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="carousel-item">--}}
-{{--                    <div class="school" >--}}
-
-{{--                        <div class="schoolList">--}}
-{{--                            <img class="img-fluid"  src="images/22.png" >--}}
-{{--                            <div class="schoolName">武汉分校</div>--}}
-{{--                            <div class="intro">这是武汉分校</div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="schoolList">--}}
-{{--                            <img  src="images/22.png" >--}}
-{{--                            <div class="schoolName">武汉分校</div>--}}
-{{--                            <div class="intro">这是武汉分校</div>--}}
-{{--                        </div>--}}
-
-
-
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="carousel-item">--}}
-{{--                    <div class="school" >--}}
-
-{{--                        <div class="schoolList">--}}
-{{--                            <img class="img-fluid" src="images/22.png" >--}}
-{{--                            <div class="schoolName">广州分校</div>--}}
-{{--                            <div class="intro">这是广州分校</div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="schoolList">--}}
-{{--                            <img class="img-fluid" src="images/22.png" >--}}
-{{--                            <div class="schoolName">广州分校</div>--}}
-{{--                            <div class="intro">这是广州分校</div>--}}
-{{--                        </div>--}}
-
-
-
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <a class="carousel-control-prev" href="#pic" role="button" data-slide="prev">--}}
-{{--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
-{{--                <span class="sr-only">Previous</span>--}}
-{{--            </a>--}}
-{{--            <a class="carousel-control-next" href="#pic" role="button" data-slide="next">--}}
-{{--                <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
-{{--                <span class="sr-only">Next</span>--}}
-{{--            </a>--}}
-{{--        </div>--}}
-
-{{--    </div>--}}
-
-
-{{--    <!-- 移动端展示的效果 -->--}}
-{{--    <div class="container content1 visible-xs-block d-sm-none ">--}}
-{{--        <div  class="school1">--}}
-
-{{--            <div class="schoolList1">--}}
-{{--                <img  src="images/22.png" >--}}
-{{--                <div class="schoolName">武汉分校</div>--}}
-{{--                <div class="intro">这是武汉分校</div>--}}
-{{--            </div>--}}
-
-{{--            <div class="schoolList1">--}}
-{{--                <img  src="images/22.png" >--}}
-{{--                <div class="schoolName">武汉分校</div>--}}
-{{--                <div class="intro">这是武汉分校</div>--}}
-{{--            </div>--}}
-
-{{--            <div class="schoolList1">--}}
-{{--                <img  src="images/22.png" >--}}
-{{--                <div class="schoolName">武汉分校</div>--}}
-{{--                <div class="intro">这是武汉分校</div>--}}
-{{--            </div>--}}
-
-{{--            <div class="schoolList1">--}}
-{{--                <img  src="images/22.png" >--}}
-{{--                <div class="schoolName">武汉分校</div>--}}
-{{--                <div class="intro">这是武汉分校</div>--}}
-{{--            </div>--}}
-
-{{--            <div class="schoolList1">--}}
-{{--                <img  src="images/22.png" >--}}
-{{--                <div class="schoolName">武汉分校</div>--}}
-{{--                <div class="intro">这是武汉分校</div>--}}
-{{--            </div>--}}
-
-
-
-
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</section>--}}
-
-{{--<!--------------------分校-end------------------------------>--}}
-
-{{--<!--------------------学历教育-begin------------------------------>--}}
-{{--<section id="lk_hot">--}}
-{{--    <!--标题-->--}}
-{{--    <div class="container d-flex justify-content-between align-items-center   mb-3">--}}
-{{--        <h2>学历教育</h2>--}}
-{{--        <div class="line d-none d-sm-none d-md-block"></div>--}}
-{{--        <div class="more"><a class="toEdu" href="education.html">查看更多</a></div>--}}
-
-{{--    </div>--}}
-{{--    <!--内容-->--}}
-{{--    <div class="container">--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-md-6 col-lg-6">--}}
-{{--                <div class="media d-flex flex-column mb-3 xuelijiaoyu">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/22.png" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class="media-body ">--}}
-{{--                        <h6 class="media-heading mt-3">--}}
-{{--                            成人高考--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            成人高考简单介绍--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-6 col-lg-6">--}}
-{{--                <div class="media d-flex flex-column   mb-3  xuelijiaoyu">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/22.png" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class="media-body ">--}}
-{{--                        <h6 class="media-heading mt-3">--}}
-{{--                            自学考试--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            自学考试简单介绍--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-6 col-lg-6">--}}
-{{--                <div class="media d-flex flex-column   mb-3  xuelijiaoyu">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/22.png" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class="media-body ">--}}
-{{--                        <h6 class="media-heading mt-3">--}}
-{{--                            网络教育--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            网络教育简单介绍--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-6 col-lg-6">--}}
-{{--                <div class="media d-flex flex-column   mb-3  xuelijiaoyu">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/22.png" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class="media-body ">--}}
-{{--                        <h6 class="media-heading mt-3">--}}
-{{--                            职业资格证--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            职业资格证简单介绍--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</section>--}}
-{{--<!--------------------学历教育-end------------------------------>--}}
-
-{{--<!--------------------研博新闻-begin------------------------------>--}}
-{{--<section id="lk_ybnews">--}}
-{{--    <!--标题-->--}}
-{{--    <div class="container d-flex justify-content-between align-items-center  mt-3 mb-3">--}}
-{{--        <h2>研博新闻</h2>--}}
-{{--        <div class="line d-none d-sm-none d-md-block"></div>--}}
-{{--        <div class="more"><a class="toYbnew" href="news.html">查看更多</a></div>--}}
-
-{{--    </div>--}}
-{{--    <!--内容-->--}}
-{{--    <div class="container">--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-md-4 col-lg-4">--}}
-{{--                <div class="media d-flex flex-column   mb-3  news">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/ad.jpg" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class="media-body ">--}}
-{{--                        <h6 class="media-heading mt-3">--}}
-{{--                            2019年研博年度盛典--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            2020-02-12--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-4 col-lg-4">--}}
-{{--                <div class="media d-flex flex-column   mb-3  news">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/ad.jpg" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class="media-body ">--}}
-{{--                        <h6 class="media-heading mt-3">--}}
-{{--                            研博毕业季：归来仍是少年--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            2020-02-12--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-4 col-lg-4">--}}
-{{--                <div class="media d-flex flex-column   mb-3  news">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/ad.jpg" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class="media-body ">--}}
-{{--                        <h6 class="media-heading mt-3">--}}
-{{--                            研博毕业季：归来仍是少年--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            2020-02-12--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-
-
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</section>--}}
-{{--<!--------------------研博新闻-end------------------------------>--}}
-
-{{--<!--------------------教育新闻-begin------------------------------>--}}
-{{--<section id="lk_edu_news">--}}
-{{--    <!--标题-->--}}
-{{--    <div class="container d-flex justify-content-between align-items-center  mt-3 mb-3">--}}
-{{--        <h2>教育新闻</h2>--}}
-{{--        <div class="line d-none d-sm-none d-md-block"></div>--}}
-{{--        <div class="more"><a class="toEdunew" href="news.html">查看更多</a></div>--}}
-
-{{--    </div>--}}
-{{--    <!--内容-->--}}
-{{--    <div class="container">--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-md-4 col-lg-4">--}}
-{{--                <div class="media d-flex flex-column   mb-3  news">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/ad.jpg" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class="media-body ">--}}
-{{--                        <h6 class="media-heading mt-3">--}}
-{{--                            2019年研博年度盛典--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            2020-02-12--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-4 col-lg-4">--}}
-{{--                <div class="media d-flex flex-column   mb-3  news">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/ad.jpg" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class="media-body ">--}}
-{{--                        <h6 class="media-heading mt-3">--}}
-{{--                            研博毕业季：归来仍是少年--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            2020-02-12--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-4 col-lg-4">--}}
-{{--                <div class="media d-flex flex-column   mb-3  news">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/ad.jpg" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class="media-body ">--}}
-{{--                        <h6 class="media-heading mt-3">--}}
-{{--                            研博毕业季：归来仍是少年--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            2020-02-12--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-
-
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</section>--}}
-{{--<!--------------------教育新闻-end------------------------------>--}}
-
-{{--<!--------------------公益活动-begin------------------------------>--}}
-{{--<section id="lk_active" >--}}
-{{--    <!--标题-->--}}
-{{--    <div class="container d-flex justify-content-between align-items-center  mt-3 mb-3">--}}
-{{--        <h2>公益活动</h2>--}}
-{{--        <div class="line d-none d-sm-none d-md-block"></div>--}}
-{{--        <div class="more"><a class="toActive" href="active.html">查看更多</a></div>--}}
-
-{{--    </div>--}}
-{{--    <!--内容-->--}}
-{{--    <div class="container">--}}
-{{--        <div class="row">--}}
-{{--            <!-- 中大屏幕显示，小屏幕，超小屏幕不显示 -->--}}
-{{--            <div class="col-md-6 col-lg-6 d-none d-sm-none d-md-none d-lg-block">--}}
-{{--                <div class="media d-flex   mb-3  active">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/ad.jpg" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class="d-none d-sm-none d-md-block media-body ">--}}
-{{--                        <h6 class="media-heading ">--}}
-{{--                            公益助学-巴善小学扶贫助学公益捐赠活动顺利开展！--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            2019年11月5日，研博教育集团公益事业部联合深圳市尖岗汇聚慈善基金会本通公益慈善基金以及其他社会公益组织、企 业、爱心...--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-6 col-lg-6 d-none d-sm-none d-md-none d-lg-block">--}}
-{{--                <div class="media d-flex   mb-3  active">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/ad.jpg" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class=" d-none d-sm-none d-md-block media-body ">--}}
-{{--                        <h6 class="media-heading ">--}}
-{{--                            公益助学-巴善小学扶贫助学公益捐赠活动顺利开展！--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            2019年11月5日，研博教育集团公益事业部联合深圳市尖岗汇聚慈善基金会本通公益慈善基金以及其他社会公益组织、企 业、爱心...--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <!-- 中大屏幕显示，小屏幕，超小屏幕不显示 -->--}}
-
-{{--            <!-- 大屏幕不显示，中，小屏幕，超小屏幕才显示 -->--}}
-{{--            <div class="col-md-6 col-lg-6 visible-xs-block d-sm-block d-md-block d-lg-none">--}}
-{{--                <div class="media d-flex flex-column  mb-3  ">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/ad.jpg" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class=" media-body mt-3">--}}
-{{--                        <h6 class="media-heading ">--}}
-{{--                            公益助学-巴善小学扶贫助学公益捐赠活动顺利开展！--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            2019年11月5日，研博教育集团公益事业部联合深圳市尖岗汇聚慈善基金会本通公益慈善基金以及其他社会公益组织、企 业、爱心...--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-6 col-lg-6 visible-xs-block  d-sm-block d-md-block d-lg-none">--}}
-{{--                <div class="media d-flex flex-column  mb-3 ">--}}
-{{--                    <div class="media-left mr-2">--}}
-{{--                        <img src="images/ad.jpg" alt="" class="media-object  img-fluid "--}}
-{{--                        >--}}
-{{--                    </div>--}}
-{{--                    <div class="  media-body mt-3">--}}
-{{--                        <h6 class="media-heading ">--}}
-{{--                            公益助学-巴善小学扶贫助学公益捐赠活动顺利开展！--}}
-{{--                        </h6>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            2019年11月5日，研博教育集团公益事业部联合深圳市尖岗汇聚慈善基金会本通公益慈善基金以及其他社会公益组织、企 业、爱心...--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <!-- 中大屏幕不显示，小屏幕，超小屏幕才显示 -->--}}
-
-
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</section>--}}
 <!--------------------公益活动-end------------------------------>
 
 <!--------------------尾部-begin------------------------------>
@@ -857,25 +479,21 @@
 
         // 跳转分页
         $('.school').click(function () {
-            $(location).attr('href', 'ybSchool.html');
-
+            window.location.href="{{route('home/school')}}";
         })
 
         $('.xuelijiaoyu').click(function () {
-            $(location).attr('href', 'education.html');
-
+            window.location.href="{{route('home/education')}}";
         })
 
         $('.news').click(function () {
-            $(location).attr('href', 'news.html');
-
+            window.location.href="{{route('home/news')}}";
         })
 
         $('.active').click(function () {
-            $(location).attr('href', 'active.html');
-
+            {{--$(location).attr('href', {{route('home/active')}});--}}
+            window.location.href="{{route('home/active')}}";
         })
-
 
     })
 </script>

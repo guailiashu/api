@@ -29,7 +29,7 @@ class StaticController extends Controller
             if($s_route[1] !='index'&& $s_route[1] !='about'){
 
                 if($s_route[1] == 'news'){//新闻页面
-                    $get_mag[$s_route[1]]['title'] = DB::table('home_news')->limit(4)->get();
+                    $get_mag[$s_route[1]]['title'] = DB::table('home_news')->limit(3)->get();
                     $get_mag[$s_route[1]]['routes'] = $val;
 
                 }elseif($s_route[1] == 'school'){//分校  两张一组
@@ -81,7 +81,10 @@ class StaticController extends Controller
                     $get_mag[$s_route[1]]['routes'] = $val;
 
                 }elseif($s_route[1] == 'active'){//公益
-                    $get_mag[$s_route[1]]['title'] = DB::table('home_actives')->limit(2)->get();
+                    $get_mag[$s_route[1]]['title'] = DB::table('home_actives')
+                        ->orderBy('updated_at','desc')
+                        ->limit(2)
+                        ->get();
                     $get_mag[$s_route[1]]['routes'] = $val;
 
                 }elseif($s_route[1] == 'education'){//学历
@@ -92,6 +95,7 @@ class StaticController extends Controller
                 $home_mage = $get_mag;
             }
         }
+
 //        dd($home_mage);
       return View('home.index')->with('column',$mag)->with('home',$home_mage);
     }
