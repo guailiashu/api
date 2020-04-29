@@ -51,16 +51,19 @@
 {{--                        </li>--}}
 
 
-                        @foreach($column as $name)
+                        @foreach($column as $c_key=>$name)
 
-                            @if($name->c_route == 'index')
+                            @if($name['c_route'] == 'index')
+
                                 <li class="nav-item active">
-                                    <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1 " href={{route($name->c_route)}}>{{$name->column}}<span class="sr-only">(current)</span></a>
+                                    <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1 " href={{url($name['c_route'])}}>{{ $name['column'] }}<span class="sr-only">(current)</span></a>
                                 </li>
                             @else
                                 <li class="nav-item">
-                                    <a class="nav-link nav-link6 color6"  href={{url($name->c_route)}}>{{$name->column}}</a>
+                                    <a class="nav-link nav-link6 color6"  href={{url($name['c_route'])}}>{{ $name['column'] }}</a>
                                 </li>
+
+
                             @endif
 
                         @endforeach
@@ -114,7 +117,7 @@
 
         @foreach($column as $name)
                     <div class="index1">
-                        <a {{url($name->c_route)}}>{{$name->column}}</a>
+                        <a {{url($name['c_route'])}}>{{$name['column']}}</a>
                     </div>
         @endforeach
 

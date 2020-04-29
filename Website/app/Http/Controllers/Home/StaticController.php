@@ -120,8 +120,11 @@ class StaticController extends Controller
     //学历
     public function education()
     {
+        $education_data = DB::table('home_educations')->get();
+
+
         $mag = $this->getNavigation();//获取导航栏数据
-        return View('home.education')->with('column',$mag);
+        return View('home.education')->with('column',$mag)->with('data',$education_data);
     }
 
 
@@ -168,17 +171,17 @@ class StaticController extends Controller
             ->get();
 
         $mag = $this->getNavigation();//获取导航栏数据
-        return View('home.schoolDetail')->with('column',$mag)->with('school_data',$school_db_data);
-    }
 
+        //因为路由带参数，导致页面渲染中路径变化，需要修改路由
+        foreach( $mag as $key=>$val)
+        {
+            $s_route=explode('/',$val->c_route);
+            $Detail_route[$key]['id'] = $val->id;
+            $Detail_route[$key]['c_route'] = $s_route[1];
+            $Detail_route[$key]['column'] = $val->column;
+        }
 
-//    分校详情页 未带参数测试
-    public function schoolDetailA()
-    {
-
-//        $a = public_path();
-//        dd($a);
-        return View('home.schoolDetailCopy');
+        return View('home.schoolDetail')->with('column',$Detail_route)->with('school_data',$school_db_data);
     }
 
 
