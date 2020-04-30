@@ -78,29 +78,28 @@
                         @foreach($edu_data as $key=>$val)
 
 
-                            {{ $val->type_name}}
-{{--                            @if('pills-zixue'==$val->type_name)--}}
+                            @if('pills-zixue'==$val->type_name)
 
-{{--                                <li class="nav-item">--}}
-{{--                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-zixue" role="tab" aria-controls="pills-home"--}}
-{{--                                       aria-selected="true">自学考试</a>--}}
-{{--                                </li>--}}
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-zixue" role="tab" aria-controls="pills-home"
+                                       aria-selected="true">自学考试</a>
+                                </li>
 
-{{--                            @elseif('pills-adult'==$val->type_name)--}}
+                            @elseif('pills-adult'==$val->type_name)
 
-{{--                                <li class="nav-item">--}}
-{{--                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-adult" role="tab" aria-controls="pills-profile"--}}
-{{--                                       aria-selected="false">成人高考</a>--}}
-{{--                                </li>--}}
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-adult" role="tab" aria-controls="pills-profile"
+                                       aria-selected="false">成人高考</a>
+                                </li>
 
-{{--                            @elseif('pills-web'==$val->type_name)--}}
+                            @elseif('pills-web'==$val->type_name)
 
-{{--                                <li class="nav-item">--}}
-{{--                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-web" role="tab" aria-controls="pills-contact"--}}
-{{--                                       aria-selected="false">网络教育</a>--}}
-{{--                                </li>--}}
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-web" role="tab" aria-controls="pills-contact"
+                                       aria-selected="false">网络教育</a>
+                                </li>
 
-{{--                            @endif--}}
+                            @endif
 
 
                         @endforeach
@@ -111,71 +110,165 @@
 
 
 			<div class="tab-content" id="pills-tabContent">
-				<div class="tab-pane fade show active" id="pills-zixue" role="tabpanel" aria-labelledby="pills-home-tab">
-					<!-- 第二栏 地区 -->
-					<div class="container-fluid" style="background-color: #fff;padding:19px 0;box-shadow:0px 3px 6px rgba(0,0,0,0.16);">
-						<div class="container">
-							<ul class="nav  nav-pills" id="pills-tab" role="tablist">
-								<li class="nav-item">
-									<a class="nav-link staic disabled" id="pills-home-tab" data-toggle="pill" href="#" role="tab" aria-controls="pills-home"
-									 aria-selected="false">地区</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-hot" role="tab" aria-controls="pills-home"
-					    				 aria-selected="true">热点</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-place1" role="tab" aria-controls="pills-profile"
-									 aria-selected="false">广东</a>
-								</li>
 
-{{--								<li class="nav-item">--}}
-{{--									<a class="nav-link" href="https://www.eol.cn/" target="_blank" role="tab">更多</a>--}}
-{{--								</li>--}}
-							</ul>
-						</div>
-                    </div>
+{{--                一级目录（分类）--}}
+                @foreach($edu_data as $key=>$val)
 
 
-					<div class=" nav-pills1 tab-content" id="pills-tabContent">
-						<div class="tab-pane fade show active" id="pills-hot" role="tabpanel" aria-labelledby="pills-home-tab">
-							<!-- 第三栏热点院校 -->
-							<div id="lk_hotschool" class="mt-3">
+                    @if('pills-zixue'==$val->type_name)
+
+                        <div class="tab-pane fade show active" id="pills-zixue" role="tabpanel" aria-labelledby="pills-home-tab">
+                            <!-- 第二栏 地区 -->
+                            <div class="container-fluid" style="background-color: #fff;padding:19px 0;box-shadow:0px 3px 6px rgba(0,0,0,0.16);">
+                                <div class="container">
+                                    <ul class="nav  nav-pills" id="pills-tab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link staic disabled" id="pills-home-tab" data-toggle="pill" href="#" role="tab" aria-controls="pills-home"
+                                               aria-selected="false">地区</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-hot" role="tab" aria-controls="pills-home"
+                                               aria-selected="true">热点</a>
+                                        </li>
+
+{{--                                       二级目录（地区）--}}
+                                         @foreach($edu_address as $edu_key=>$edu_val)
+
+                                             @if($val->type_name == $edu_val->type_name)
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="{{"#".$edu_val->add_type_name}}" role="tab" aria-controls="pills-profile"
+                                                       aria-selected="false">{{$edu_val->address}}</a>
+                                                </li>
+
+                                            @endif
+
+                                        @endforeach
+
+                                        {{--								<li class="nav-item">--}}
+                                        {{--									<a class="nav-link" href="https://www.eol.cn/" target="_blank" role="tab">更多</a>--}}
+                                        {{--								</li>--}}
+                                    </ul>
+                                </div>
+                            </div>
 
 
-								<!--内容-->
-								<div class="container">
-									<div class="row">
+                            <div class=" nav-pills1 tab-content" id="pills-tabContent">
 
 
-										<div class="col-md-4 col-lg-4">
-											<div class="media d-flex flex-column align-items-center   mb-3  ">
-												<div class="media-left mr-2">
-													<img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-												</div>
-												<div class="media-body text-center">
-													<h6 class="media-heading mt-3 ">
-														湖南大学
-													</h6>
-													<p class="text-muted ">
-														<a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
-													</p>
-												</div>
-											</div>
-										</div>
+
+                                <div class="tab-pane fade show active" id="pills-hot" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <!-- 第三栏热点院校 -->
+                                    <div id="lk_hotschool" class="mt-3">
+
+                                        rrrrrr
+                                    </div>
+                                </div>
 
 
-									</div>
-								</div>
-
-							</div>
 
 
-						</div>
 
-					</div>
+                                <div class="tab-pane fade" id="pills-place2" role="tabpanel" aria-labelledby="pills-profile-tab">
 
-				</div>
+                                    <div id="lk_hotschool" class="mt-3">
+
+                                        rrrrr
+                                    </div>
+                                </div>
+
+                            {{--  三级目录 其他栏目   对应学校--}}
+
+
+                            <!--内容-->
+                                @foreach($edu_address as $edu_key=>$edu_val)
+
+
+                                    @foreach($data as $data_key=>$data_val)
+
+
+                                        @if('pills-place1'==$edu_val->add_type_name && $edu_val->enducation_id == $data_val->enducation_id)
+
+                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                                                <div id="lk_hotschool" class="mt-3">
+
+                                                    <div class="container">
+                                                        <div class="row">
+
+
+
+                                                            <div class="col-md-4 col-lg-4">
+                                                                <div class="media d-flex flex-column align-items-center  mb-3  ">
+
+                                                                    <div class="media-left mr-2">
+                                                                        <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                    </div>
+                                                                    <div class="media-body text-center">
+                                                                        <h6 class="media-heading mt-3">
+                                                                            {{$data_val->name}}
+                                                                        </h6>
+                                                                        <p class="text-muted">
+                                                                            <a href="#" rel="北京大学">招生简章</a> <a href="#" rel="北京大学">主考专业</a> <a href="#" rel="北京大学">专业选择</a>
+                                                                        </p>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                        @elseif('pills-place2'==$edu_val->add_type_name && $edu_val->enducation_id == $data_val->enducation_id)
+
+
+                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                                                <div id="lk_hotschool" class="mt-3">
+
+                                                    222
+                                                </div>
+                                            </div>
+
+                                        @endif
+
+                                    @endforeach
+
+
+                                @endforeach
+
+
+                            </div>
+
+                        </div>
+
+                    @elseif('pills-adult'==$val->type_name)
+
+                        <div class="tab-pane fade" id="pills-adult" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                            1111
+
+                        </div>
+
+                    @elseif('pills-web'==$val->type_name)
+
+                        <div class="tab-pane fade" id="pills-web" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+                            222
+
+                        </div>
+
+                    @endif
+
+
+                @endforeach
+
+
+
 			</div>
 
 		</section>

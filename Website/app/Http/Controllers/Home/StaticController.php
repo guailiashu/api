@@ -138,10 +138,19 @@ class StaticController extends Controller
         //获取类型数据
         $educations = DB::table('home_educations')->get();
 
+//        dd($education_adds_data);
+
+        $mag = $this->getNavigation();//获取导航栏数据
+
+//        return View('home.education')
+//            ->with('edu_data',$educations)//一级学历分类数据集合
+//            ->with('edu_address',$education_data)//二级地区数据
+//            ->with('data',$education_adds_data)//对应三级联动的“高校”数据
+//            ->with('column',$mag);//导航栏
 
 
         /**
-         * 编辑三级分类目录
+         * 编辑三级分类目录   暂时不用多级树方式
          */
 
         //第一层 ： 类型层
@@ -185,15 +194,9 @@ class StaticController extends Controller
             }
         }
 
-            
+dd($aggregate);
 
-        $mag = $this->getNavigation();//获取导航栏数据
 
-        return View('home.education')
-            ->with('edu_data',$educations)//一级学历分类数据集合
-            ->with('edu_address',$education_data)//二级地区数据
-            ->with('data',$aggregate)//对应三级联动的“高校”数据
-            ->with('column',$mag);//导航栏
     }
 
 
