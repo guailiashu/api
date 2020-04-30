@@ -112,288 +112,169 @@
 		<section id="yb_news2">
 			<div class="container-fluid" style="background-color: #fff;padding: 30px 0;box-shadow:0px 3px 6px rgba(0,0,0,0.16);">
 
-			  <div class="container">
-				 <ul class="nav nav-pills  d-flex justify-content-center " id="pills-tab" role="tablist">
-				   <li class="nav-item">
-				     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#yb_news" role="tab" aria-controls="pills-home" aria-selected="true">研博新闻</a>
-				   </li>
-				   <li class="nav-item">
-				     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#edu_news" role="tab" aria-controls="pills-profile" aria-selected="false">教育新闻</a>
-				   </li>
 
+                <div class="container">
+				 <ul class="nav nav-pills  d-flex justify-content-center " id="pills-tab" role="tablist">
+
+{{--                    首层--}}
+                     @foreach($type_data as $type_key=>$type_val)
+
+                         @if('yb_news' == $type_val->type_name)
+                             <li class="nav-item">
+                                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="{{"#".$type_val->type_name }}" role="tab" aria-controls="pills-home" aria-selected="true">研博新闻</a>
+                             </li>
+                         @elseif('edu_news' == $type_val->type_name)
+
+                             <li class="nav-item">
+                                 <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="{{"#".$type_val->type_name }}" role="tab" aria-controls="pills-profile" aria-selected="false">教育新闻</a>
+                             </li>
+                             @endif
+                     @endforeach
 				 </ul>
 				</div>
 				</div>
 
 				 <div class="container">
 				 <div class="tab-content" id="pills-tabContent">
-				   <div class="tab-pane fade show active" id="yb_news" role="tabpanel" aria-labelledby="pills-home-tab">
-					 <!--  研博新闻内容 -->
-					 <!--内容-->
-					 <div class="container container1">
-					     <div class="row">
-					         <div class="col-md-4 col-lg-4">
-					             <div class="media d-flex flex-column   mb-3  ">
-					                 <div class="media-left mr-2">
-					                     <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-					                        >
-					                 </div>
-					                 <div class="media-body ">
-					                     <h6 class="media-heading mt-3">
-					                        2019年研博年度盛典
-					                     </h6>
-					                     <p class="text-muted">
-					                        2020-02-12
 
-					                     </p>
-					                 </div>
-					             </div>
-					         </div>
-					        <div class="col-md-4 col-lg-4">
-					            <div class="media d-flex flex-column   mb-3  ">
-					                <div class="media-left mr-2">
-					                    <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-					                       >
-					                </div>
-					                <div class="media-body ">
-					                    <h6 class="media-heading mt-3">
-					                       2019年研博年度盛典
-					                    </h6>
-					                    <p class="text-muted">
-					                       2020-02-12
-					                    </p>
-					                </div>
-					            </div>
-					        </div>
-					        <div class="col-md-4 col-lg-4">
-					            <div class="media d-flex flex-column   mb-3  ">
-					                <div class="media-left mr-2">
-					                    <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-					                       >
-					                </div>
-					                <div class="media-body ">
-					                    <h6 class="media-heading mt-3">
-					                       2019年研博年度盛典
-					                    </h6>
-					                    <p class="text-muted">
-					                       2020-02-12
-					                    </p>
-					                </div>
-					            </div>
-					        </div>
 
-					       <div class="col-md-4 col-lg-4">
-					           <div class="media d-flex flex-column   mb-3  ">
-					               <div class="media-left mr-2">
-					                   <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-					                      >
-					               </div>
-					               <div class="media-body ">
-					                   <h6 class="media-heading mt-3">
-					                      2019年研博年度盛典
-					                   </h6>
-					                   <p class="text-muted">
-					                      2020-02-12
-					                   </p>
-					               </div>
-					           </div>
-					       </div>
+{{--                     对应分层--}}
+                     @foreach($type_data as $type_key=>$type_val)
 
-					 	  <div class="col-md-4 col-lg-4">
-					 	      <div class="media d-flex flex-column   mb-3  ">
-					 	          <div class="media-left mr-2">
-					 	              <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-					 	                 >
-					 	          </div>
-					 	          <div class="media-body ">
-					 	              <h6 class="media-heading mt-3">
-					 	                 2019年研博年度盛典
-					 	              </h6>
-					 	              <p class="text-muted">
-					 	                 2020-02-12
-					 	              </p>
-					 	          </div>
-					 	      </div>
-					 	  </div>
+                         @if('yb_news' == $type_val->type_name)
 
-					 	  <div class="col-md-4 col-lg-4">
-					 	      <div class="media d-flex flex-column   mb-3  ">
-					 	          <div class="media-left mr-2">
-					 	              <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-					 	                 >
-					 	          </div>
-					 	          <div class="media-body ">
-					 	              <h6 class="media-heading mt-3">
-					 	                 2019年研博年度盛典
-					 	              </h6>
-					 	              <p class="text-muted">
-					 	                 2020-02-12
-					 	              </p>
-					 	          </div>
-					 	      </div>
-					 	  </div>
+                             <div class="tab-pane fade show active" id="yb_news" role="tabpanel" aria-labelledby="pills-home-tab">
+                                 <!--  研博新闻内容 -->
+                                 <!--内容-->
+                                 <div class="container container1">
+                                     <div class="row">
 
-					     </div>
-					 </div>
 
-					 <!-- 分页1：研博新闻 -->
-					 <div class="fenye yb_fenye container ">
-					 	<nav aria-label="Page navigation example">
-					 	  <ul class="pagination pagination1 justify-content-center">
-					 	    <li class="page-item prev1 ">
-					 	      <a class="page-link" href="#"  aria-label="Previous">
-					 	        <span aria-hidden="true">&laquo;</span>
-					 	      </a>
-					 	    </li>
-					 	    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-					 	    <li class="page-item"><a class="page-link" href="#">2</a></li>
-					 	    <li class="page-item"><a class="page-link" href="#">3</a></li>
-					 		<li class="page-item"><a class="page-link" href="#">4</a></li>
-					 		<li class="page-item"><a class="page-link" href="#">5</a></li>
-					 	    <li class="page-item next1">
-					 	      <a class="page-link" href="#" aria-label="Next">
-					 	        <span aria-hidden="true">&raquo;</span>
-					 	      </a>
-					 	    </li>
-					 	  </ul>
-					 	</nav>
-					 </div>
 
-					</div>
-				   <div class="tab-pane fade" id="edu_news" role="tabpanel" aria-labelledby="pills-profile-tab">
-					  <!-- 教育新闻内容 -->
-				<!--内容-->
-				<div class="container container2">
-				    <div class="row">
-				        <div class="col-md-4 col-lg-4">
-				            <div class="media d-flex flex-column   mb-3  ">
-				                <div class="media-left mr-2">
-				                    <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-				                       >
-				                </div>
-				                <div class="media-body ">
-				                    <h6 class="media-heading mt-3">
-				                       2019年研博年度盛典
-				                    </h6>
-				                    <p class="text-muted">
-				                       2020-02-12
-				                    </p>
-				                </div>
-				            </div>
-				        </div>
-				       <div class="col-md-4 col-lg-4">
-				           <div class="media d-flex flex-column   mb-3  ">
-				               <div class="media-left mr-2">
-				                   <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-				                      >
-				               </div>
-				               <div class="media-body ">
-				                   <h6 class="media-heading mt-3">
-				                      2019年研博年度盛典
-				                   </h6>
-				                   <p class="text-muted">
-				                      2020-02-12
-				                   </p>
-				               </div>
-				           </div>
-				       </div>
-				       <div class="col-md-4 col-lg-4">
-				           <div class="media d-flex flex-column   mb-3  ">
-				               <div class="media-left mr-2">
-				                   <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-				                      >
-				               </div>
-				               <div class="media-body ">
-				                   <h6 class="media-heading mt-3">
-				                      2019年研博年度盛典
-				                   </h6>
-				                   <p class="text-muted">
-				                      2020-02-12
-				                   </p>
-				               </div>
-				           </div>
-				       </div>
+                                                 @foreach($data as $data_key=>$data_val)
 
-				      <div class="col-md-4 col-lg-4">
-				          <div class="media d-flex flex-column   mb-3  ">
-				              <div class="media-left mr-2">
-				                  <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-				                     >
-				              </div>
-				              <div class="media-body ">
-				                  <h6 class="media-heading mt-3">
-				                     2019年研博年度盛典
-				                  </h6>
-				                  <p class="text-muted">
-				                     2020-02-12
-				                  </p>
-				              </div>
-				          </div>
-				      </div>
+                                                     @if($type_val->type_name == $data_val->type_name )
+                                                 <div class="col-md-4 col-lg-4">
 
-					  <div class="col-md-4 col-lg-4">
-					      <div class="media d-flex flex-column   mb-3  ">
-					          <div class="media-left mr-2">
-					              <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-					                 >
-					          </div>
-					          <div class="media-body ">
-					              <h6 class="media-heading mt-3">
-					                 2019年研博年度盛典
-					              </h6>
-					              <p class="text-muted">
-					                 2020-02-12
-					              </p>
-					          </div>
-					      </div>
-					  </div>
+                                                     <div class="media d-flex flex-column   mb-3  ">
+                                                         <div class="media-left mr-2">
+                                                             <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid "
+                                                             >
+                                                         </div>
+                                                         <div class="media-body ">
+                                                             <h6 class="media-heading mt-3">
+                                                                 {{$data_val->title}}
+                                                             </h6>
+                                                             <p class="text-muted">
+                                                                 {{ $data_val->updated_at}}
 
-					  <div class="col-md-4 col-lg-4">
-					      <div class="media d-flex flex-column   mb-3  ">
-					          <div class="media-left mr-2">
-					              <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-					                 >
-					          </div>
-					          <div class="media-body ">
-					              <h6 class="media-heading mt-3">
-					                 2019年研博年度盛典
-					              </h6>
-					              <p class="text-muted">
-					                 2020-02-12
-					              </p>
-					          </div>
-					      </div>
-					  </div>
+                                                             </p>
+                                                         </div>
 
-				    </div>
-				</div>
+                                                     </div>
+                                                 </div>
+                                                         @endif
+                                                 @endforeach
 
-					<!-- 分页2：教育新闻 -->
-					<div class="fenye edu_fenye container ">
-						<nav aria-label="Page navigation example">
-						  <ul class="pagination pagination2 justify-content-center">
-						    <li class="page-item prev2 ">
-						      <a class="page-link" href="#"  aria-label="Previous">
-						        <span aria-hidden="true">&laquo;</span>
-						      </a>
-						    </li>
-						    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-						    <li class="page-item"><a class="page-link" href="#">2</a></li>
-						    <li class="page-item"><a class="page-link" href="#">3</a></li>
-							<li class="page-item"><a class="page-link" href="#">4</a></li>
-							<li class="page-item"><a class="page-link" href="#">5</a></li>
-						    <li class="page-item next2">
-						      <a class="page-link" href="#" aria-label="Next">
-						        <span aria-hidden="true">&raquo;</span>
-						      </a>
-						    </li>
-						  </ul>
-						</nav>
-					</div>
 
-					</div>
+
+                                     </div>
+                                 </div>
+
+                                 <!-- 分页1：研博新闻 -->
+                                 <div class="fenye yb_fenye container ">
+                                     <nav aria-label="Page navigation example">
+                                         <ul class="pagination pagination1 justify-content-center">
+                                             <li class="page-item prev1 ">
+                                                 <a class="page-link" href="#"  aria-label="Previous">
+                                                     <span aria-hidden="true">&laquo;</span>
+                                                 </a>
+                                             </li>
+                                             <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                             <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                             <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                             <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                             <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                             <li class="page-item next1">
+                                                 <a class="page-link" href="#" aria-label="Next">
+                                                     <span aria-hidden="true">&raquo;</span>
+                                                 </a>
+                                             </li>
+                                         </ul>
+                                     </nav>
+                                 </div>
+
+                             </div>
+
+                         @elseif('edu_news' == $type_val->type_name)
+
+                             <div class="tab-pane fade" id="edu_news" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                 <!-- 教育新闻内容 -->
+                                 <!--内容-->
+                                 <div class="container container2">
+                                     <div class="row">
+
+                                         @foreach($data as $data_key=>$data_val)
+
+                                             @if($type_val->type_name == $data_val->type_name )
+                                                 <div class="col-md-4 col-lg-4">
+
+                                                     <div class="media d-flex flex-column   mb-3  ">
+                                                         <div class="media-left mr-2">
+                                                             <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid "
+                                                             >
+                                                         </div>
+                                                         <div class="media-body ">
+                                                             <h6 class="media-heading mt-3">
+                                                                 {{$data_val->title}}
+                                                             </h6>
+                                                             <p class="text-muted">
+                                                                 {{ $data_val->updated_at}}
+
+                                                             </p>
+                                                         </div>
+
+                                                     </div>
+                                                 </div>
+                                             @endif
+                                         @endforeach
+
+
+                                     </div>
+                                 </div>
+
+                                 <!-- 分页2：教育新闻 -->
+                                 <div class="fenye edu_fenye container ">
+                                     <nav aria-label="Page navigation example">
+                                         <ul class="pagination pagination2 justify-content-center">
+                                             <li class="page-item prev2 ">
+                                                 <a class="page-link" href="#"  aria-label="Previous">
+                                                     <span aria-hidden="true">&laquo;</span>
+                                                 </a>
+                                             </li>
+                                             <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                             <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                             <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                             <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                             <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                             <li class="page-item next2">
+                                                 <a class="page-link" href="#" aria-label="Next">
+                                                     <span aria-hidden="true">&raquo;</span>
+                                                 </a>
+                                             </li>
+                                         </ul>
+                                     </nav>
+                                 </div>
+
+                             </div>
+
+
+                         @endif
+
+                     @endforeach
 
 				 </div>
+
 
 
 			  </div>

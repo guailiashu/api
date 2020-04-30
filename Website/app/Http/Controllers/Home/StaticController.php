@@ -138,16 +138,7 @@ class StaticController extends Controller
         //获取类型数据
         $educations = DB::table('home_educations')->get();
 
-//
-//        $meta =array();
-//        for($i = 0; $i < 3; $i++) {
-//            $tmp_url = $meta['quote'.($i+1)]=1;
-//        }
-//
-//  dd($tmp_url);
 
-
-//        dd($educations);
 
         /**
          * 编辑三级分类目录
@@ -194,22 +185,44 @@ class StaticController extends Controller
             }
         }
 
-
-dd($aggregate);
-exit;
-        dd($education_adds_data);
+            
 
         $mag = $this->getNavigation();//获取导航栏数据
-        return View('home.education')->with('column',$mag)->with('data',$education_data);
+
+        return View('home.education')
+            ->with('edu_data',$educations)//一级学历分类数据集合
+            ->with('edu_address',$education_data)//二级地区数据
+            ->with('data',$aggregate)//对应三级联动的“高校”数据
+            ->with('column',$mag);//导航栏
     }
 
 
     //新闻
     public function news()
     {
-        $mag = $this->getNavigation();//获取导航栏数据
-        return View('home.news')->with('column',$mag);
 
+        /**
+         * home_news 新闻详情页
+         * home_news_types 新闻类别
+         */
+        //新闻数据
+        $news_data = DB::table('home_news_types')
+            ->leftJoin('home_news','home_news_types.id','=','home_news.type_id')
+//            ->limit(6)
+//            ->orderBy('updated_at','desc')
+            ->get();
+
+        //分类数据
+        $news_type = DB::table('home_news_types')
+            ->get();
+
+        $mag = $this->getNavigation();//获取导航栏数据
+
+
+        return View('home.news')
+            ->with('column',$mag) //导航栏
+            ->with('data',$news_data) //新闻数据
+            ->with('type_data',$news_type); //分类数据
     }
 
 
