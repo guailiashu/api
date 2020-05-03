@@ -47,13 +47,17 @@
 
                             @foreach($column as $name)
 
-                                @if($name->c_route == 'index')
+                                @if($name->c_route == 'home/index')
                                     <li class="nav-item active">
-                                        <a class="nav-link nav-link1 color1" href={{route($name->c_route)}}>{{$name->column}}<span class="sr-only">(current)</span></a>
+                                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1" href="index.html">首页<span class="sr-only">(current)</span></a>
+                                    </li>
+                                @elseif($name->c_route == 'home/active')
+                                    <li class="nav-item">
+                                        <a style="color: #fff;" class="nav-link nav-link5"  href="active.html">公益</a>
                                     </li>
                                 @else
                                     <li class="nav-item">
-                                        <a class="nav-link nav-link6 color6"  href={{route($name->c_route)}}>{{$name->column}}</a>
+                                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link6"  href={{route($name->c_route)}}>{{$name->column}}</a>
                                     </li>
                                 @endif
 
@@ -114,106 +118,27 @@
 				<!--内容-->
 				<div class="container ">
 				    <div class="row">
+
+                        @foreach($data as $page_key=>$page_val)
+
 				        <div class="col-md-4 col-lg-4">
 				            <div class="media d-flex flex-column   mb-3  ">
 				                <div class="media-left mr-2">
-				                    <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
+				                    <img src="{{$page_val->image}}" alt="" class="media-object  img-fluid "
 				                       >
 				                </div>
 				                <div class="media-body ">
 				                    <h6 class="media-heading mt-3">
-				                       2019年研博年度盛典
+                                        {{$page_val->name}}
 				                    </h6>
 				                    <p class="text-muted">
-				                       2020-02-12
+                                        {{$page_val->created_at}}
 
 				                    </p>
 				                </div>
 				            </div>
 				        </div>
-				       <div class="col-md-4 col-lg-4">
-				           <div class="media d-flex flex-column   mb-3  ">
-				               <div class="media-left mr-2">
-				                   <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-				                      >
-				               </div>
-				               <div class="media-body ">
-				                   <h6 class="media-heading mt-3">
-				                      2019年研博年度盛典
-				                   </h6>
-				                   <p class="text-muted">
-				                      2020-02-12
-				                   </p>
-				               </div>
-				           </div>
-				       </div>
-				       <div class="col-md-4 col-lg-4">
-				           <div class="media d-flex flex-column   mb-3  ">
-				               <div class="media-left mr-2">
-				                   <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-				                      >
-				               </div>
-				               <div class="media-body ">
-				                   <h6 class="media-heading mt-3">
-				                      2019年研博年度盛典
-				                   </h6>
-				                   <p class="text-muted">
-				                      2020-02-12
-				                   </p>
-				               </div>
-				           </div>
-				       </div>
-
-				      <div class="col-md-4 col-lg-4">
-				          <div class="media d-flex flex-column   mb-3  ">
-				              <div class="media-left mr-2">
-				                  <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-				                     >
-				              </div>
-				              <div class="media-body ">
-				                  <h6 class="media-heading mt-3">
-				                     2019年研博年度盛典
-				                  </h6>
-				                  <p class="text-muted">
-				                     2020-02-12
-				                  </p>
-				              </div>
-				          </div>
-				      </div>
-
-					  <div class="col-md-4 col-lg-4">
-					      <div class="media d-flex flex-column   mb-3  ">
-					          <div class="media-left mr-2">
-					              <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-					                 >
-					          </div>
-					          <div class="media-body ">
-					              <h6 class="media-heading mt-3">
-					                 2019年研博年度盛典
-					              </h6>
-					              <p class="text-muted">
-					                 2020-02-12
-					              </p>
-					          </div>
-					      </div>
-					  </div>
-
-					  <div class="col-md-4 col-lg-4">
-					      <div class="media d-flex flex-column   mb-3  ">
-					          <div class="media-left mr-2">
-					              <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
-					                 >
-					          </div>
-					          <div class="media-body ">
-					              <h6 class="media-heading mt-3">
-					                 2019年研博年度盛典
-					              </h6>
-					              <p class="text-muted">
-					                 2020-02-12
-					              </p>
-					          </div>
-					      </div>
-					  </div>
+                        @endforeach
 
 				    </div>
 				</div>
@@ -225,25 +150,13 @@
 		<div class="fenye container ">
 			<nav aria-label="Page navigation example">
 			  <ul class="pagination justify-content-center">
-			    <li class="page-item prev ">
-			      <a class="page-link" href="#"  aria-label="Previous">
-			        <span aria-hidden="true">&laquo;</span>
-			      </a>
-			    </li>
-			    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item"><a class="page-link" href="#">2</a></li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-				<li class="page-item"><a class="page-link" href="#">4</a></li>
-				<li class="page-item"><a class="page-link" href="#">5</a></li>
-			    <li class="page-item next">
-			      <a class="page-link" href="#" aria-label="Next">
-			        <span aria-hidden="true">&raquo;</span>
-			      </a>
-			    </li>
+                  {!! $data->render() !!}
 			  </ul>
 			</nav>
 		</div>
-
+{{--        <div class="fenye container ">--}}
+{{--            --}}
+{{--        </div>--}}
 
 		<!--------------------尾部-begin------------------------------>
 		<footer id="lk_footer">

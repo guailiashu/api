@@ -27,9 +27,14 @@
 
                                 @foreach($column as $name)
 
-                                    @if($name->c_route == 'index')
+                                    @if($name->c_route == 'home/index')
+
                                         <li class="nav-item active">
-                                            <a class="nav-link nav-link1 color1" href={{route($name->c_route)}}>{{$name->column}}<span class="sr-only">(current)</span></a>
+                                            <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1" href={{route($name->c_route)}}>{{$name->column}}<span class="sr-only">(current)</span></a>
+                                        </li>
+                                    @elseif($name->c_route == 'home/education')
+                                        <li class="nav-item">
+                                            <a style="color: #fff;" class="nav-link nav-link3" href={{route($name->c_route)}}>{{$name->column}}</a>
                                         </li>
                                     @else
                                         <li class="nav-item">
@@ -136,10 +141,12 @@
 
                                              @if($val->type_name == $edu_val->type_name)
 
+
                                                 <li class="nav-item">
                                                     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="{{"#".$edu_val->add_type_name}}" role="tab" aria-controls="pills-profile"
                                                        aria-selected="false">{{$edu_val->address}}</a>
                                                 </li>
+
 
                                             @endif
 
@@ -161,66 +168,250 @@
                                     <!-- 第三栏热点院校 -->
                                     <div id="lk_hotschool" class="mt-3">
 
-                                        rrrrrr
+                                        <!--内容-->
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3 ">
+                                                                湖南大学
+                                                            </h6>
+                                                            <p class="text-muted ">
+                                                                <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                北京大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="北京大学">招生简章</a> <a href="#" rel="北京大学">主考专业</a> <a href="#" rel="北京大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column  align-items-center mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                清华大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="清华大学">招生简章</a> <a href="#" rel="清华大学">主考专业</a> <a href="#" rel="清华大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                天津大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="天津大学">招生简章</a> <a href="#" rel="天津大学">主考专业</a> <a href="#" rel="天津大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                武汉大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="武汉大学">招生简章</a> <a href="#" rel="武汉大学">主考专业</a> <a href="#" rel="武汉大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                复旦大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="复旦大学">招生简章</a> <a href="#" rel="复旦大学">主考专业</a> <a href="#" rel="复旦大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
+
+
                                 </div>
 
 
 
-
-
-                                <div class="tab-pane fade" id="pills-place2" role="tabpanel" aria-labelledby="pills-profile-tab">
-
-                                    <div id="lk_hotschool" class="mt-3">
-
-                                        rrrrr
-                                    </div>
-                                </div>
-
-                            {{--  三级目录 其他栏目   对应学校--}}
-
+{{--                              三级目录 其他栏目   对应学校--}}
 
                             <!--内容-->
                                 @foreach($edu_address as $edu_key=>$edu_val)
+
+{{--                                    自考--}}
+                                    @if('1'== $edu_val->enducation_id )
+
+
+                                        @if('广东'== $edu_val->address )
+
+
+
+                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                                <div id="lk_hotschool" class="mt-3">
+
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            @foreach($data as $data_key=>$data_val)
+                                                                @if(($edu_val->add_type_name == $data_val->add_type_name) && $edu_val->address == $data_val->address  )
+
+{{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
+{{--                                                                                                                                @elseif()--}}
+                                                                    <div class="col-md-4 col-lg-4">
+                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                            <div class="media-left mr-2">
+                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                            </div>
+                                                                            <div class="media-body text-center">
+                                                                                <h6 class="media-heading mt-3 ">
+                                                                                    {{$data_val->name}}
+                                                                                </h6>
+                                                                                <p class="text-muted ">
+                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            @elseif('湖北'== $edu_val->address)
+
+
+
+                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                                <div id="lk_hotschool" class="mt-3">
+
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            @foreach($data as $data_key=>$data_val)
+                                                                @if(($edu_val->add_type_name == $data_val->add_type_name) && $edu_val->address == $data_val->address  )
+
+{{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
+{{--                                                                                                                                @elseif()--}}
+                                                                    <div class="col-md-4 col-lg-4">
+                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                            <div class="media-left mr-2">
+                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                            </div>
+                                                                            <div class="media-body text-center">
+                                                                                <h6 class="media-heading mt-3 ">
+                                                                                    {{$data_val->name}}
+                                                                                </h6>
+                                                                                <p class="text-muted ">
+                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        @endif
+
+
+{{--                                        成考--}}
+                                    @elseif('2'== $edu_val->enducation_id)
+
+
+
+
+
+
+{{--                                        网络教育--}}
+                                    @elseif('3'== $edu_val->enducation_id)
+
+{{--                                        3--}}
+
+                                        @endif
 
 
                                     @foreach($data as $data_key=>$data_val)
 
 
-                                        @if('pills-place1'==$edu_val->add_type_name && $edu_val->enducation_id == $data_val->enducation_id)
+                                        @if(('pills-place1'==$data_val->add_type_name) && ($edu_val->enducation_id == $data_val->enducation_id))
 
-                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-profile-tab">
+{{--                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-profile-tab">--}}
 
-                                                <div id="lk_hotschool" class="mt-3">
+{{--                                                <div id="lk_hotschool" class="mt-3">--}}
 
-                                                    <div class="container">
-                                                        <div class="row">
+{{--                                                    <div class="container">--}}
+{{--                                                        <div class="row">--}}
 
+{{--                                                            --}}
+{{--                                                            <div class="col-md-4 col-lg-4">--}}
+{{--                                                                <div class="media d-flex flex-column align-items-center  mb-3  ">--}}
 
+{{--                                                                    <div class="media-left mr-2">--}}
+{{--                                                                        <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">--}}
+{{--                                                                    </div>--}}
+{{--                                                                    <div class="media-body text-center">--}}
+{{--                                                                        <h6 class="media-heading mt-3">--}}
+{{--                                                                            {{$data_val->name}}--}}
+{{--                                                                        </h6>--}}
+{{--                                                                        <p class="text-muted">--}}
+{{--                                                                            <a href="#" rel="北京大学">招生简章</a> <a href="#" rel="北京大学">主考专业</a> <a href="#" rel="北京大学">专业选择</a>--}}
+{{--                                                                        </p>--}}
+{{--                                                                    </div>--}}
 
-                                                            <div class="col-md-4 col-lg-4">
-                                                                <div class="media d-flex flex-column align-items-center  mb-3  ">
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
 
-                                                                    <div class="media-left mr-2">
-                                                                        <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
-                                                                    </div>
-                                                                    <div class="media-body text-center">
-                                                                        <h6 class="media-heading mt-3">
-                                                                            {{$data_val->name}}
-                                                                        </h6>
-                                                                        <p class="text-muted">
-                                                                            <a href="#" rel="北京大学">招生简章</a> <a href="#" rel="北京大学">主考专业</a> <a href="#" rel="北京大学">专业选择</a>
-                                                                        </p>
-                                                                    </div>
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
 
-                                                                </div>
-                                                            </div>
+{{--                                                </div>--}}
+{{--                                            </div>--}}
 
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
+{{--                                          <div>地区 {{ $data_val->name }}</div>--}}
 
 
                                         @elseif('pills-place2'==$edu_val->add_type_name && $edu_val->enducation_id == $data_val->enducation_id)
@@ -250,15 +441,539 @@
 
                         <div class="tab-pane fade" id="pills-adult" role="tabpanel" aria-labelledby="pills-profile-tab">
 
-                            1111
+                            <!-- 第二栏 -->
+                            <div class="tab-pane fade show active" id="pills-zixue" role="tabpanel" aria-labelledby="pills-home-tab">
+                                <!-- 第二栏 地区2 -->
+                                <div class="container-fluid" style="background-color: #fff;padding:19px 0;box-shadow:0px 3px 6px rgba(0,0,0,0.16);">
+                                    <div class="container">
+                                        <ul class="nav  nav-pills " id="pills-tab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link staic disabled" id="pills-home-tab" data-toggle="pill" href="#" role="tab" aria-controls="pills-home"
+                                                   aria-selected="false">地区</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-hot2" role="tab" aria-controls="pills-home"
+                                                   aria-selected="true">热点</a>
+                                            </li>
+
+                                            @foreach($edu_address as $edu_key=>$edu_val)
+
+                                                @if($val->type_name == $edu_val->type_name)
+
+
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="{{"#".$edu_val->add_type_name}}" role="tab" aria-controls="pills-profile"
+                                                           aria-selected="false">{{$edu_val->address}}</a>
+                                                    </li>
+
+                                                @endif
+
+                                            @endforeach
+
+                                        </ul>
+                                    </div>
+                                </div>
 
                         </div>
 
-                    @elseif('pills-web'==$val->type_name)
+{{--                            第三栏--}}
+                            <div class=" nav-pills1 tab-content" id="pills-tabContent">
+{{--                                热点--}}
+                                <div class="tab-pane fade show active" id="pills-hot2" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <!-- 第三栏热点院校2 -->
+                                    <div id="lk_hotschool" class="mt-3">
+
+                                        <!--内容-->
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3 ">
+                                                                湖南大学
+                                                            </h6>
+                                                            <p class="text-muted ">
+                                                                <a href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                北京大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="北京大学">招生简章</a> <a href="#" rel="北京大学">主考专业</a> <a href="#" rel="北京大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column  align-items-center mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                清华大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="清华大学">招生简章</a> <a href="#" rel="清华大学">主考专业</a> <a href="#" rel="清华大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                天津大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="天津大学">招生简章</a> <a href="#" rel="天津大学">主考专业</a> <a href="#" rel="天津大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                武汉大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="武汉大学">招生简章</a> <a href="#" rel="武汉大学">主考专业</a> <a href="#" rel="武汉大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                复旦大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="复旦大学">招生简章</a> <a href="#" rel="复旦大学">主考专业</a> <a href="#" rel="复旦大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                @foreach($edu_address as $edu_key=>$edu_val)
+
+{{--                                    成人考试--}}
+                                    @if('2' == $edu_val->enducation_id)
+
+                                        @if('广东'==$edu_val->address)
+
+                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                                <div id="lk_hotschool" class="mt-3">
+
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            @foreach($data as $data_key=>$data_val)
+                                                                @if(($edu_val->add_type_name == $data_val->add_type_name) && $edu_val->address == $data_val->address  )
+
+                                                                    {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
+                                                                    {{--                                                                                                                                @elseif()--}}
+                                                                    <div class="col-md-4 col-lg-4">
+                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                            <div class="media-left mr-2">
+                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                            </div>
+                                                                            <div class="media-body text-center">
+                                                                                <h6 class="media-heading mt-3 ">
+                                                                                    {{$data_val->name}}
+                                                                                </h6>
+                                                                                <p class="text-muted ">
+                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        @elseif('湖北'==$edu_val->address)
+
+
+                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                                <div id="lk_hotschool" class="mt-3">
+
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            @foreach($data as $data_key=>$data_val)
+                                                                @if(($edu_val->add_type_name == $data_val->add_type_name) && $edu_val->address == $data_val->address  )
+
+                                                                    {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
+                                                                    {{--                                                                                                                                @elseif()--}}
+                                                                    <div class="col-md-4 col-lg-4">
+                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                            <div class="media-left mr-2">
+                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                            </div>
+                                                                            <div class="media-body text-center">
+                                                                                <h6 class="media-heading mt-3 ">
+                                                                                    {{$data_val->name}}
+                                                                                </h6>
+                                                                                <p class="text-muted ">
+                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        @elseif('重庆'==$edu_val->address)
+
+                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                                <div id="lk_hotschool" class="mt-3">
+
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            @foreach($data as $data_key=>$data_val)
+                                                                @if(($edu_val->add_type_name == $data_val->add_type_name) && $edu_val->address == $data_val->address  )
+
+                                                                    {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
+                                                                    {{--                                                                                                                                @elseif()--}}
+                                                                    <div class="col-md-4 col-lg-4">
+                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                            <div class="media-left mr-2">
+                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                            </div>
+                                                                            <div class="media-body text-center">
+                                                                                <h6 class="media-heading mt-3 ">
+                                                                                    {{$data_val->name}}
+                                                                                </h6>
+                                                                                <p class="text-muted ">
+                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
+{{--                                        @foreach()--}}
+{{--                                        @endforeach--}}
+
+
+                                    @endif
+
+                                @endforeach
+                                <div class="tab-pane fade" id="pills-place1_1" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    @elseif('pills-web'== $val->type_name)
+
 
                         <div class="tab-pane fade" id="pills-web" role="tabpanel" aria-labelledby="pills-contact-tab">
 
-                            222
+                            <!-- 第二栏 -->
+                            <div class="tab-pane fade show active" id="pills-zixue" role="tabpanel" aria-labelledby="pills-home-tab">
+                                <!-- 第二栏 地区2 -->
+                                <div class="container-fluid" style="background-color: #fff;padding:19px 0;box-shadow:0px 3px 6px rgba(0,0,0,0.16);">
+                                    <div class="container">
+                                        <ul class="nav  nav-pills " id="pills-tab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link staic disabled" id="pills-home-tab" data-toggle="pill" href="#" role="tab" aria-controls="pills-home"
+                                                   aria-selected="false">地区</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-hot2" role="tab" aria-controls="pills-home"
+                                                   aria-selected="true">热点</a>
+                                            </li>
+
+                                            @foreach($edu_address as $edu_key=>$edu_val)
+
+                                                @if($val->type_name == $edu_val->type_name)
+
+
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="{{"#".$edu_val->add_type_name}}" role="tab" aria-controls="pills-profile"
+                                                           aria-selected="false">{{$edu_val->address}}</a>
+                                                    </li>
+
+                                                @endif
+
+                                            @endforeach
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            {{--                            第三栏--}}
+                            <div class=" nav-pills1 tab-content" id="pills-tabContent">
+                                {{--                                热点--}}
+                                <div class="tab-pane fade show active" id="pills-hot2" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <!-- 第三栏热点院校2 -->
+                                    <div id="lk_hotschool" class="mt-3">
+
+                                        <!--内容-->
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3 ">
+                                                                湖南大学
+                                                            </h6>
+                                                            <p class="text-muted ">
+                                                                <a href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                北京大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="北京大学">招生简章</a> <a href="#" rel="北京大学">主考专业</a> <a href="#" rel="北京大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column  align-items-center mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                清华大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="清华大学">招生简章</a> <a href="#" rel="清华大学">主考专业</a> <a href="#" rel="清华大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                天津大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="天津大学">招生简章</a> <a href="#" rel="天津大学">主考专业</a> <a href="#" rel="天津大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                武汉大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="武汉大学">招生简章</a> <a href="#" rel="武汉大学">主考专业</a> <a href="#" rel="武汉大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
+                                                        <div class="media-left mr-2">
+                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                        </div>
+                                                        <div class="media-body text-center">
+                                                            <h6 class="media-heading mt-3">
+                                                                复旦大学
+                                                            </h6>
+                                                            <p class="text-muted">
+                                                                <a href="#" rel="复旦大学">招生简章</a> <a href="#" rel="复旦大学">主考专业</a> <a href="#" rel="复旦大学">专业选择</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                @foreach($edu_address as $edu_key=>$edu_val)
+
+                                    {{--                                    网络教育--}}
+                                    @if('3' == $edu_val->enducation_id)
+
+
+                                        @if('天津'== $edu_val->address)
+                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                                <div id="lk_hotschool" class="mt-3">
+
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            @foreach($data as $data_key=>$data_val)
+                                                                @if(($edu_val->add_type_name == $data_val->add_type_name) && $edu_val->address == $data_val->address  )
+
+                                                                    {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
+                                                                    {{--                                                                                                                                @elseif()--}}
+                                                                    <div class="col-md-4 col-lg-4">
+                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                            <div class="media-left mr-2">
+                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                            </div>
+                                                                            <div class="media-body text-center">
+                                                                                <h6 class="media-heading mt-3 ">
+                                                                                    {{$data_val->name}}
+                                                                                </h6>
+                                                                                <p class="text-muted ">
+                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        @elseif('江苏'== $edu_val->address)
+                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                                <div id="lk_hotschool" class="mt-3">
+
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            @foreach($data as $data_key=>$data_val)
+                                                                @if(($edu_val->add_type_name == $data_val->add_type_name) && $edu_val->address == $data_val->address  )
+
+                                                                    {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
+                                                                    {{--                                                                                                                                @elseif()--}}
+                                                                    <div class="col-md-4 col-lg-4">
+                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                            <div class="media-left mr-2">
+                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                            </div>
+                                                                            <div class="media-body text-center">
+                                                                                <h6 class="media-heading mt-3 ">
+                                                                                    {{$data_val->name}}
+                                                                                </h6>
+                                                                                <p class="text-muted ">
+                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        @elseif('四川'== $edu_val->address)
+                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                                <div id="lk_hotschool" class="mt-3">
+
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            @foreach($data as $data_key=>$data_val)
+                                                                @if(($edu_val->add_type_name == $data_val->add_type_name) && $edu_val->address == $data_val->address  )
+
+                                                                    {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
+                                                                    {{--                                                                                                                                @elseif()--}}
+                                                                    <div class="col-md-4 col-lg-4">
+                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                            <div class="media-left mr-2">
+                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                            </div>
+                                                                            <div class="media-body text-center">
+                                                                                <h6 class="media-heading mt-3 ">
+                                                                                    {{$data_val->name}}
+                                                                                </h6>
+                                                                                <p class="text-muted ">
+                                                                                    <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endif
+
+
+                                    @endif
+
+                                @endforeach
+                                <div class="tab-pane fade" id="pills-place1_1" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                                </div>
+
+                            </div>
 
                         </div>
 
@@ -274,35 +989,30 @@
 		</section>
 
 		<!-- 分页 -->
-		<div class="fenye container ">
-			<nav aria-label="Page navigation example">
-				<ul class="pagination justify-content-center">
-					<li class="page-item prev ">
-						<a class="page-link" href="#" aria-label="Previous">
-							<span aria-hidden="true">&laquo;</span>
-						</a>
-					</li>
-					<li class="page-item active"><a class="page-link" href="#">1</a></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item"><a class="page-link" href="#">4</a></li>
-					<li class="page-item"><a class="page-link" href="#">5</a></li>
-					<li class="page-item next">
-						<a class="page-link" href="#" aria-label="Next">
-							<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
+{{--		<div class="fenye container ">--}}
+{{--			<nav aria-label="Page navigation example">--}}
+{{--				<ul class="pagination justify-content-center">--}}
+{{--					<li class="page-item prev ">--}}
+{{--						<a class="page-link" href="#" aria-label="Previous">--}}
+{{--							<span aria-hidden="true">&laquo;</span>--}}
+{{--						</a>--}}
+{{--					</li>--}}
+{{--					<li class="page-item active"><a class="page-link" href="#">1</a></li>--}}
+{{--					<li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+{{--					<li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+{{--					<li class="page-item"><a class="page-link" href="#">4</a></li>--}}
+{{--					<li class="page-item"><a class="page-link" href="#">5</a></li>--}}
+{{--					<li class="page-item next">--}}
+{{--						<a class="page-link" href="#" aria-label="Next">--}}
+{{--							<span aria-hidden="true">&raquo;</span>--}}
+{{--						</a>--}}
+{{--					</li>--}}
+{{--				</ul>--}}
+{{--			</nav>--}}
+{{--		</div>--}}
 
 		<!--------------------尾部-begin------------------------------>
-		<footer id="lk_footer">
-			<div class="container ">
-				Copyright © 2017 研博教育集团 版权所有 桂ICP备17001896号-3
-				<!-- <h3>地址:湖北省武汉市洪山区珞瑜路889-1号30楼（整层）</h3> -->
-			</div>
-		</footer>
+        @include('home.layouts._footer')
 		<!--------------------尾部-end------------------------------>
 
 		<script src="lib/js/jquery-3.3.1.js"></script>

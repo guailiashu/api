@@ -111,8 +111,7 @@ class StaticController extends Controller
 
         $school_data = DB::table('home_schools')
             ->orderBy('id','desc')
-            ->limit(4)
-            ->get();
+            ->paginate(2);
 
         return View('home.ybSchool')->with('column',$mag)->with('schools',$school_data);
     }
@@ -132,21 +131,22 @@ class StaticController extends Controller
 
         //获取到"地区"和对应"学校"的leftJoin集合
         $education_adds_data = DB::table('home_education_adds')
-            ->leftJoin('home_education_details','home_education_adds.enducation_id','=','home_education_details.add_id')
+            ->leftJoin('home_education_details','home_education_adds.id','=','home_education_details.enducation_add_id')
             ->get();
 
         //获取类型数据
         $educations = DB::table('home_educations')->get();
 
-//        dd($education_adds_data);
+
 
         $mag = $this->getNavigation();//获取导航栏数据
 
-//        return View('home.education')
-//            ->with('edu_data',$educations)//一级学历分类数据集合
-//            ->with('edu_address',$education_data)//二级地区数据
-//            ->with('data',$education_adds_data)//对应三级联动的“高校”数据
-//            ->with('column',$mag);//导航栏
+
+        return View('home.education')
+            ->with('edu_data',$educations)//一级学历分类数据集合
+            ->with('edu_address',$education_data)//二级地区数据
+            ->with('data',$education_adds_data)//对应三级联动的“高校”数据
+            ->with('column',$mag);//导航栏
 
 
         /**
@@ -154,47 +154,47 @@ class StaticController extends Controller
          */
 
         //第一层 ： 类型层
-        foreach ($educations  as $e_key=>$e_val){
+//        foreach ($educations  as $e_key=>$e_val){
+//
+//
+//              //第二层 ： 类型对应的区域层 ，使用 "教育分类"和对应" 集合数据
+//            foreach ($education_data as $add_key=>$add_val){
+//
+//                //地区 enducation_id 与 分类id对应
+//                if($e_val->id == $add_val->enducation_id){
+//
+//                    //数据集合
+//                    $educations_mag[$e_key]['id'] = $add_val->id;
+//                    $educations_mag[$e_key]['name'] = $add_val->name;
+//                    $educations_mag[$e_key]['image'] =  $add_val->image;
+////                    $educations_mag[$e_key]['adds'][$add_key] = $add_val->address;
+//
+////                    $educations_mag[$e_key]['adds'][$add_key] = 1;
+//
+//                    //获取对应地区的学校
+//                    $add_schools = DB::table('home_education_details')
+//                        ->where([
+//                            ['add_id', '=', $e_val->id],
+//                            ['enducation_add_id', '=', $add_val->enducation_id],
+//                        ])
+////                        ->select('add_school_index')
+//                        ->get();
+//
+//
+//                            $adds_school_data = [];
+//                    if($add_schools->count()){
+//                        $adds_school_data['add'] = $add_val->address;
+//                        $adds_school_data['school'] = $add_schools;
+//                    }
+//
+//                    $educations_mag[$e_key]['adds'][$add_key] = $adds_school_data;
+//
+//                }
+//                $aggregate = $educations_mag;
+//            }
+//        }
 
-
-              //第二层 ： 类型对应的区域层 ，使用 "教育分类"和对应" 集合数据
-            foreach ($education_data as $add_key=>$add_val){
-
-                //地区 enducation_id 与 分类id对应
-                if($e_val->id == $add_val->enducation_id){
-
-                    //数据集合
-                    $educations_mag[$e_key]['id'] = $add_val->id;
-                    $educations_mag[$e_key]['name'] = $add_val->name;
-                    $educations_mag[$e_key]['image'] =  $add_val->image;
-//                    $educations_mag[$e_key]['adds'][$add_key] = $add_val->address;
-
-//                    $educations_mag[$e_key]['adds'][$add_key] = 1;
-
-                    //获取对应地区的学校
-                    $add_schools = DB::table('home_education_details')
-                        ->where([
-                            ['add_id', '=', $e_val->id],
-                            ['enducation_add_id', '=', $add_val->enducation_id],
-                        ])
-//                        ->select('add_school_index')
-                        ->get();
-
-
-                            $adds_school_data = [];
-                    if($add_schools->count()){
-                        $adds_school_data['add'] = $add_val->address;
-                        $adds_school_data['school'] = $add_schools;
-                    }
-
-                    $educations_mag[$e_key]['adds'][$add_key] = $adds_school_data;
-
-                }
-                $aggregate = $educations_mag;
-            }
-        }
-
-dd($aggregate);
+//dd($aggregate);
 
 
     }
@@ -215,6 +215,7 @@ dd($aggregate);
 //            ->orderBy('updated_at','desc')
             ->get();
 
+
         //分类数据
         $news_type = DB::table('home_news_types')
             ->get();
@@ -232,16 +233,39 @@ dd($aggregate);
     //公益
     public function active()
     {
+        /**
+         *    数据表：home_actives
+         */
+
+        //分页
+        $page_date = DB::table('home_actives')->paginate(5);
+
+//        dd($page_date);
+
         $mag = $this->getNavigation();//获取导航栏数据
-        return View('home.active')->with('column',$mag);
+        return View('home.active')
+            ->with('data',$page_date)
+            ->with('column',$mag);
 
     }
 
     //关于研博
     public function about()
     {
+        /**
+         * 数据表
+         * home_abouts 企业文化
+         * home_about_courses 发展历程
+         */
+
+        $about_data = DB::table('home_abouts')->get();
+        $about_courses_data = DB::table('home_about_courses')->get();
+
         $mag = $this->getNavigation();//获取导航栏数据
-        return View('home.about')->with('column',$mag);
+        return View('home.about')
+            ->with('about_data',$about_data)
+            ->with('courses_data',$about_courses_data)
+            ->with('column',$mag);
 
     }
 
@@ -276,6 +300,38 @@ dd($aggregate);
         return View('home.schoolDetail')->with('column',$Detail_route)->with('school_data',$school_db_data);
     }
 
+
+    //学历-学校详情页
+    public function eduDetail(Request $request)
+    {
+        //对应表 ：home_education_details
+
+          $school_data_eduId = $request->eduId;//对应 enducation_add_id
+          $school_data_name = $request->schoolName;//对应 name
+
+        $school_data = DB::table('home_education_details')
+            ->where([
+                [ 'enducation_add_id','=',$school_data_eduId],
+                [  'name','=',$school_data_name ]
+            ])
+            ->first();
+
+
+        $mag = $this->getNavigation();//获取导航栏数据
+
+        //因为路由带参数，导致页面渲染中路径变化，需要修改路由
+        foreach( $mag as $key=>$val)
+        {
+            $s_route=explode('/',$val->c_route);
+            $Detail_route[$key]['id'] = $val->id;
+            $Detail_route[$key]['c_route'] = $s_route[1];
+            $Detail_route[$key]['column'] = $val->column;
+        }
+//dd($school_data);
+        return View('home.eduDetail')
+            ->with('column',$Detail_route)//导航栏数据
+            ->with('data',$school_data);//学校详情
+    }
 
 
     //导航栏数据封装

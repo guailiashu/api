@@ -48,9 +48,13 @@
 
                         @foreach($column as $name)
 
-                            @if($name->c_route == 'index')
+                            @if($name->c_route == 'home/index')
                                 <li class="nav-item active">
-                                    <a class="nav-link nav-link1 color1" href={{route($name->c_route)}}>{{$name->column}}<span class="sr-only">(current)</span></a>
+                                    <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1" href={{route($name->c_route)}}>{{$name->column}}<span class="sr-only">(current)</span></a>
+                                </li>
+                            @elseif($name->c_route == 'home/about')
+                                <li class="nav-item">
+                                    <a style="color: #fff;" class="nav-link nav-link6" href={{route($name->c_route)}}>{{$name->column}}</a>
                                 </li>
                             @else
                                 <li class="nav-item">
@@ -76,28 +80,6 @@
 <div class="mobile_nav">
     <div class="content">
 
-
-{{--        <div class="index1">--}}
-{{--            <a href="index.html">首页</a>--}}
-{{--        </div>--}}
-{{--        <div class="index2">--}}
-{{--            <a href="ybSchool.html">分校</a>--}}
-{{--        </div>--}}
-{{--        <div class="index3">--}}
-{{--            <a href="education.html">学历</a>--}}
-{{--        </div>--}}
-{{--        <div class="index4">--}}
-{{--            <a href="news.html">新闻</a>--}}
-{{--        </div>--}}
-{{--        <div class="index5">--}}
-{{--            <a href="active.html">公益</a>--}}
-{{--        </div>--}}
-{{--        <div class="index6">--}}
-{{--            <a href="about.html">关于研博</a>--}}
-{{--        </div>--}}
-{{--        <div class="index">--}}
-{{--            <a href="http://shop.jd.com">研博商城</a>--}}
-{{--        </div>--}}
 
         @foreach($column as $name)
 
@@ -134,72 +116,76 @@
     <!-- 内容 -->
     <div class="container">
 
+
+
         <div class="row">
-            <div class="col-md-3 col-lg-3 Responsibility">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            责任
-                        </h3>
-                        <p class="text-muted">
-                            Responsibility
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/duty.png" alt="" class="media-object  img-fluid ">
-                    </div>
+            @foreach($about_data as $data_key=>$data_val)
+                <div class="col-md-3 col-lg-3 {{$data_val->e_title}}">
+                    <div class="media d-flex flex-column   mb-3  ">
+                        <div class="media-body ">
+                            <h3 class="media-heading mt-3">
+                                {{$data_val->title}}
+                            </h3>
+                            <p class="text-muted">
+                                {{$data_val->e_title}}
+                            </p>
+                        </div>
+                        <div class="media-left mr-2">
+                            <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                        </div>
 
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 col-lg-3 Efficient">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            高效
-                        </h3>
-                        <p class="text-muted">
-                            Efficient
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/effcience.png" alt="" class="media-object  img-fluid ">
-                    </div>
+            @endforeach
+{{--            <div class="col-md-3 col-lg-3 Efficient">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            高效--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            Efficient--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/effcience.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3 Aggressive">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            进取
-                        </h3>
-                        <p class="text-muted">
-                            Aggressive
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/progress.png" alt="" class="media-object  img-fluid ">
-                    </div>
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-3 col-lg-3 Aggressive">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            进取--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            Aggressive--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/progress.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="col-md-3 col-lg-3 Legneds">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            传承
-                        </h3>
-                        <p class="text-muted">
-                            Legneds
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/extend.png" alt="" class="media-object  img-fluid ">
-                    </div>
+{{--            <div class="col-md-3 col-lg-3 Legneds">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            传承--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            Legneds--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/extend.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
+{{--                </div>--}}
+{{--            </div>--}}
 
         </div>
 
@@ -225,203 +211,205 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-md-3 col-lg-3 Responsibility">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            萌芽
-                        </h3>
-                        <p class="text-muted">
-                            2010
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/duty.png" alt="" class="media-object  img-fluid ">
-                    </div>
+            @foreach($courses_data as $courses_key=>$courses_val)
+                <div class="col-md-3 col-lg-3 Responsibility">
+                    <div class="media d-flex flex-column   mb-3  ">
+                        <div class="media-body ">
+                            <h3 class="media-heading mt-3">
+                                {{$courses_val->title}}
+                            </h3>
+                            <p class="text-muted">
+                                {{$courses_val->time}}
+                            </p>
+                        </div>
+                        <div class="media-left mr-2">
+                            <img src={{$courses_val->image}} alt="" class="media-object  img-fluid ">
+                        </div>
 
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 col-lg-3 Efficient">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            生存
-                        </h3>
-                        <p class="text-muted">
-                            2011
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/effcience.png" alt="" class="media-object  img-fluid ">
-                    </div>
+            @endforeach
+{{--            <div class="col-md-3 col-lg-3 Efficient">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            生存--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            2011--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/effcience.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3 Aggressive">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            焦虑
-                        </h3>
-                        <p class="text-muted">
-                            2012
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/progress.png" alt="" class="media-object  img-fluid ">
-                    </div>
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-3 col-lg-3 Aggressive">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            焦虑--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            2012--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/progress.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="col-md-3 col-lg-3 Legneds">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            蓄势
-                        </h3>
-                        <p class="text-muted">
-                            2013
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/extend.png" alt="" class="media-object  img-fluid ">
-                    </div>
+{{--            <div class="col-md-3 col-lg-3 Legneds">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            蓄势--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            2013--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/extend.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="col-md-3 col-lg-3 Responsibility">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            沉淀
-                        </h3>
-                        <p class="text-muted">
-                            2014
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/duty.png" alt="" class="media-object  img-fluid ">
-                    </div>
+{{--            <div class="col-md-3 col-lg-3 Responsibility">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            沉淀--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            2014--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/duty.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3 Efficient">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            渐进
-                        </h3>
-                        <p class="text-muted">
-                            2015
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/effcience.png" alt="" class="media-object  img-fluid ">
-                    </div>
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-3 col-lg-3 Efficient">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            渐进--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            2015--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/effcience.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3 Aggressive">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            收获
-                        </h3>
-                        <p class="text-muted">
-                            2016
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/progress.png" alt="" class="media-object  img-fluid ">
-                    </div>
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-3 col-lg-3 Aggressive">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            收获--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            2016--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/progress.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="col-md-3 col-lg-3 Legneds">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            影响
-                        </h3>
-                        <p class="text-muted">
-                            2017
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/extend.png" alt="" class="media-object  img-fluid ">
-                    </div>
+{{--            <div class="col-md-3 col-lg-3 Legneds">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            影响--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            2017--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/extend.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="col-md-3 col-lg-3 Responsibility">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            责任
-                        </h3>
-                        <p class="text-muted">
-                            2018
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/duty.png" alt="" class="media-object  img-fluid ">
-                    </div>
+{{--            <div class="col-md-3 col-lg-3 Responsibility">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            责任--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            2018--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/duty.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3 Efficient">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            拼搏
-                        </h3>
-                        <p class="text-muted">
-                            2019
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/effcience.png" alt="" class="media-object  img-fluid ">
-                    </div>
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-3 col-lg-3 Efficient">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            拼搏--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            2019--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/effcience.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3 Aggressive">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            飞跃
-                        </h3>
-                        <p class="text-muted">
-                            2020
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/progress.png" alt="" class="media-object  img-fluid ">
-                    </div>
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-3 col-lg-3 Aggressive">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            飞跃--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            2020--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/progress.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="col-md-3 col-lg-3 Legneds">
-                <div class="media d-flex flex-column   mb-3  ">
-                    <div class="media-body ">
-                        <h3 class="media-heading mt-3">
-                            辉煌
-                        </h3>
-                        <p class="text-muted">
-                            2021~未来
-                        </p>
-                    </div>
-                    <div class="media-left mr-2">
-                        <img src="images/extend.png" alt="" class="media-object  img-fluid ">
-                    </div>
+{{--            <div class="col-md-3 col-lg-3 Legneds">--}}
+{{--                <div class="media d-flex flex-column   mb-3  ">--}}
+{{--                    <div class="media-body ">--}}
+{{--                        <h3 class="media-heading mt-3">--}}
+{{--                            辉煌--}}
+{{--                        </h3>--}}
+{{--                        <p class="text-muted">--}}
+{{--                            2021~未来--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="media-left mr-2">--}}
+{{--                        <img src="images/extend.png" alt="" class="media-object  img-fluid ">--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
+{{--                </div>--}}
+{{--            </div>--}}
 
         </div>
 
@@ -443,12 +431,7 @@
 </section>
 
 <!--------------------尾部-begin------------------------------>
-<footer id="lk_footer" >
-    <div class="container ">
-        Copyright © 2017 研博教育集团 版权所有 桂ICP备17001896号-3
-        <!-- <h3>地址:湖北省武汉市洪山区珞瑜路889-1号30楼（整层）</h3> -->
-    </div>
-</footer>
+@include('home.layouts._footer')
 <!--------------------尾部-end------------------------------>
 
 

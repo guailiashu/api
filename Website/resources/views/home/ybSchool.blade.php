@@ -122,7 +122,18 @@
 
 		        </div>
 		    </div>
+
+
+ {{--         分页--}}
+            <div class="fenye container ">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        {!! $schools->render() !!}
+                    </ul>
+                </nav>
+            </div>
 		</section>
+    {{--         分页--}}
 
 	<!--------------------尾部-begin------------------------------>
 @include('home.layouts._footer')

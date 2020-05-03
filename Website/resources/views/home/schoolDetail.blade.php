@@ -53,25 +53,25 @@
 
                         @foreach($column as $c_key=>$name)
 
-                            @if($name['c_route'] == 'index')
+                            @if('index' == $name['c_route'])
 
                                 <li class="nav-item active">
                                     <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1 " href={{url($name['c_route'])}}>{{ $name['column'] }}<span class="sr-only">(current)</span></a>
+                                </li>
+
+                            @elseif('school'== $name['c_route'])
+                                <li class="nav-item ">
+                                    <a style="color: #fff;" class="nav-link nav-link2 " href="#">{{ $name['column'] }}</a>
                                 </li>
                             @else
                                 <li class="nav-item">
                                     <a class="nav-link nav-link6 color6"  href={{url($name['c_route'])}}>{{ $name['column'] }}</a>
                                 </li>
 
-
                             @endif
 
                         @endforeach
 
-{{--       --}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link nav-link7 color7" target="_blank"  href={{url("")}}http://shop.jd.com">研博商城</a>--}}
-{{--                        </li>--}}
                     </ul>
                 </div>
             </div>

@@ -36,5 +36,8 @@ Route::namespace('Home')->group(function (){
     Route::get('schoolDetail/{schoolId}','StaticController@schoolDetail')->name('home/schoolDetail');//分校详情
     Route::get('schoolDetail','StaticController@schoolDetailA')->name('home/schoolDetailA');//分校详情 无参数
 
+    Route::get('eduDetail/{eduId}/{schoolName}','StaticController@eduDetail')->name('home/eduDetail');//学历-对应学校详情
+
+
 
 });
