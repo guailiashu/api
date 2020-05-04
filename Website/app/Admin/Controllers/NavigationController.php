@@ -26,10 +26,10 @@ class NavigationController extends AdminController
     {
         $grid = new Grid(new Navigation());
 
-        $grid->column('id', __('Id'));
-        $grid->column('c_route', __('C route'));
-        $grid->column('column', __('Column'));
-        $grid->column('anable', __('Anable'));
+        $grid->column('id', __('Id'))->sortable();
+        $grid->column('c_route', __('对应路由'));
+        $grid->column('column', __('栏目名'));
+//        $grid->column('anable', __('Anable'));
 
         return $grid;
     }

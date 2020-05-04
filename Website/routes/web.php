@@ -10,20 +10,24 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-
-    Route::get('index','Home/StaticController@index');//默认首页
+Route::get('test', function () {
+//    Route::get('/','Home/StaticController@index');//默认首页
+    $a = config('app.url');
+    dd($a);
 
 });
 
 
-Route::get('user/{id}', function ($id) {
-    return 'User '.$id;
-});
+//Route::get('user/{id}', function ($id) {
+//    return 'User '.$id;
+//});
 
 
 
 Route::namespace('Home')->group(function (){
+
+    Route::get('/','Home/StaticController@index');//默认首页
+
     //一级目录
     Route::get('index','StaticController@index')->name('home/index');//首页
     Route::get('about','StaticController@about')->name('home/about');//关于研博
