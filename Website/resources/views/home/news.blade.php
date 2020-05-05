@@ -57,7 +57,7 @@
 		<!-- 移动端导航自定义 -->
 		<div class="mobile_nav">
 			<div class="content">
-                
+
                 @foreach($column as $name)
 
                     <div class="index">
@@ -164,7 +164,7 @@
 {{--                                     </nav>--}}
 {{--                                 </div>--}}
 
-{{--                             </div>--}}
+                             </div>
 
                          @elseif('edu_news' == $type_val->type_name)
 
