@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="lib/css/bootstrap.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon"   href="images/Yanbo.ico" type="image/x-icon" />
 
     <meta name="renderer" content="webkit"/>
     <meta name="force-rendering" content="webkit"/>
