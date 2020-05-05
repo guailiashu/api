@@ -1,9 +1,4 @@
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="lib/css/bootstrap.css">
-		<link rel="stylesheet" href="css/index.css">
+@include('home.layouts._header')
 		<title>集团公益</title>
 	</head>
 	<body style="background-color:#F4F4F4">

@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href={{ url('lib/css/bootstrap.css') }}>
-        <link rel="stylesheet" href={{ url('css/index.css') }}>
+@include('home.layouts._headerTwo')
 		<title>学历教育</title>
 	</head>
 
@@ -29,7 +23,7 @@
                                     <li class="nav-item active">
                                         <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1 " href={{url($route_val['c_route'])}}>首页<span class="sr-only">(current)</span></a>
                                     </li>
-                                @elseif('school' == $route_val['c_route'])
+                                @elseif('education' == $route_val['c_route'])
                                     <li class="nav-item">
                                         <a style="color: #fff;" class="nav-link nav-link3 " href="#">{{$route_val['column']}}</a>
                                     </li>

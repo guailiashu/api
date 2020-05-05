@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href={{ url('lib/css/bootstrap.css') }}>
-    <link rel="stylesheet" href={{ url('css/index.css') }}>
+@include('home.layouts._headerTwo')
     <title>研博分校</title>
 </head>
 <style type="text/css">
