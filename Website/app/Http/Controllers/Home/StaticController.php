@@ -138,14 +138,19 @@ class StaticController extends Controller
         $educations = DB::table('home_educations')->get();
 
 
+        //热门学校（根据表中是否热门获取数据）
+        $popular_data = DB::table('home_education_details')
+            ->where('popular',1)
+            ->paginate(6);
 
         $mag = $this->getNavigation();//获取导航栏数据
 
-
+//dd($popular_data);
         return View('home.education')
             ->with('edu_data',$educations)//一级学历分类数据集合
             ->with('edu_address',$education_data)//二级地区数据
             ->with('data',$education_adds_data)//对应三级联动的“高校”数据
+            ->with('popular_data',$popular_data)
             ->with('column',$mag);//导航栏
 
 
@@ -222,7 +227,6 @@ class StaticController extends Controller
 
         $mag = $this->getNavigation();//获取导航栏数据
 
-
         return View('home.news')
             ->with('column',$mag) //导航栏
             ->with('data',$news_data) //新闻数据
@@ -273,7 +277,6 @@ class StaticController extends Controller
     /**
      * 详情模块
      */
-
 
     //分校详情页
     public function schoolDetail(Request $request)
@@ -327,7 +330,7 @@ class StaticController extends Controller
             $Detail_route[$key]['c_route'] = $s_route[1];
             $Detail_route[$key]['column'] = $val->column;
         }
-//dd($school_data);
+//dd($Detail_route);
         return View('home.eduDetail')
             ->with('column',$Detail_route)//导航栏数据
             ->with('data',$school_data);//学校详情

@@ -21,11 +21,12 @@
                             @foreach($column as $route_key=>$route_val)
                                 @if('index' == $route_val['c_route'])
                                     <li class="nav-item active">
-                                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1 " href={{url($route_val['c_route'])}}>首页<span class="sr-only">(current)</span></a>
+                                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1 " href={{url($route_val['c_route'])}}>{{$route_val['column']}}<span class="sr-only">(current)</span></a>
                                     </li>
                                 @elseif('education' == $route_val['c_route'])
                                     <li class="nav-item">
-                                        <a style="color: #fff;" class="nav-link nav-link3 " href="#">{{$route_val['column']}}</a>
+
+                                        <a style="color: #fff;" class="nav-link nav-link3 " href="{{url($route_val['c_route'])}}">{{$route_val['column']}}</a>
                                     </li>
                                 @else
 

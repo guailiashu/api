@@ -165,105 +165,43 @@
                                         <!--内容-->
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center   mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3 ">
-                                                                湖南大学
-                                                            </h6>
-                                                            <p class="text-muted ">
-                                                                <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                北京大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="北京大学">招生简章</a> <a href="#" rel="北京大学">主考专业</a> <a href="#" rel="北京大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column  align-items-center mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                清华大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="清华大学">招生简章</a> <a href="#" rel="清华大学">主考专业</a> <a href="#" rel="清华大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                天津大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="天津大学">招生简章</a> <a href="#" rel="天津大学">主考专业</a> <a href="#" rel="天津大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                @foreach($popular_data as $popular_key=>$popular_val)
 
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                    @if(1 == $popular_val->add_id)
+                                                        <div class="col-md-4 col-lg-4">
+                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                <div class="media-left mr-2">
+                                                                    <img src="{{$popular_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                </div>
+                                                                <div class="media-body text-center">
+                                                                    <h6 class="media-heading mt-3 ">
+                                                                        {{$popular_val->name}}
+                                                                    </h6>
+                                                                    <p class="text-muted ">
+                                                                        <a class="zs1" href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">专业选择</a>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                武汉大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="武汉大学">招生简章</a> <a href="#" rel="武汉大学">主考专业</a> <a href="#" rel="武汉大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                    @endif
 
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                复旦大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="复旦大学">招生简章</a> <a href="#" rel="复旦大学">主考专业</a> <a href="#" rel="复旦大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                @endforeach
+
+{{--                                                    <div class="fenye container ">--}}
+{{--                                                        <nav aria-label="Page navigation example">--}}
+{{--                                                            <ul class="pagination justify-content-center">--}}
+{{--                                                                {!! $popular_data->render() !!}--}}
+{{--                                                            </ul>--}}
+{{--                                                        </nav>--}}
+{{--                                                    </div>--}}
 
                                             </div>
                                         </div>
+
+
+
                                     </div>
-
-
                                 </div>
 
 
@@ -301,7 +239,7 @@
                                                                                     {{$data_val->name}}
                                                                                 </h6>
                                                                                 <p class="text-muted ">
-                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
+                                                                                    <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
                                                                                 </p>
                                                                             </div>
                                                                         </div>
@@ -337,7 +275,7 @@
                                                                                     {{$data_val->name}}
                                                                                 </h6>
                                                                                 <p class="text-muted ">
-                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
+                                                                                    <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
                                                                                 </p>
                                                                             </div>
                                                                         </div>
@@ -480,99 +418,38 @@
                                         <!--内容-->
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center   mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3 ">
-                                                                湖南大学
-                                                            </h6>
-                                                            <p class="text-muted ">
-                                                                <a href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                北京大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="北京大学">招生简章</a> <a href="#" rel="北京大学">主考专业</a> <a href="#" rel="北京大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column  align-items-center mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                清华大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="清华大学">招生简章</a> <a href="#" rel="清华大学">主考专业</a> <a href="#" rel="清华大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                天津大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="天津大学">招生简章</a> <a href="#" rel="天津大学">主考专业</a> <a href="#" rel="天津大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                @foreach($popular_data as $popular_key=>$popular_val)
 
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                    @if(2 == $popular_val->add_id)
+                                                        <div class="col-md-4 col-lg-4">
+                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                <div class="media-left mr-2">
+                                                                    <img src="{{$popular_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                </div>
+                                                                <div class="media-body text-center">
+                                                                    <h6 class="media-heading mt-3 ">
+                                                                        {{$popular_val->name}}
+                                                                    </h6>
+                                                                    <p class="text-muted ">
+                                                                        <a class="zs1" href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">专业选择</a>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                武汉大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="武汉大学">招生简章</a> <a href="#" rel="武汉大学">主考专业</a> <a href="#" rel="武汉大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                    @endif
 
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                复旦大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="复旦大学">招生简章</a> <a href="#" rel="复旦大学">主考专业</a> <a href="#" rel="复旦大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                @endforeach
+
+
+
+{{--                                                <div class="fenye container ">--}}
+{{--                                                    <nav aria-label="Page navigation example">--}}
+{{--                                                        <ul class="pagination justify-content-center">--}}
+{{--                                                            {!! $popular_data->render() !!}--}}
+{{--                                                        </ul>--}}
+{{--                                                    </nav>--}}
+{{--                                                </div>--}}
 
                                             </div>
                                         </div>
@@ -753,99 +630,28 @@
                                         <!--内容-->
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center   mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3 ">
-                                                                湖南大学
-                                                            </h6>
-                                                            <p class="text-muted ">
-                                                                <a href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                北京大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="北京大学">招生简章</a> <a href="#" rel="北京大学">主考专业</a> <a href="#" rel="北京大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column  align-items-center mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                清华大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="清华大学">招生简章</a> <a href="#" rel="清华大学">主考专业</a> <a href="#" rel="清华大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                天津大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="天津大学">招生简章</a> <a href="#" rel="天津大学">主考专业</a> <a href="#" rel="天津大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                @foreach($popular_data as $popular_key=>$popular_val)
 
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                                    @if(3 == $popular_val->add_id)
+                                                        <div class="col-md-4 col-lg-4">
+                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                <div class="media-left mr-2">
+                                                                    <img src="{{$popular_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                </div>
+                                                                <div class="media-body text-center">
+                                                                    <h6 class="media-heading mt-3 ">
+                                                                        {{$popular_val->name}}
+                                                                    </h6>
+                                                                    <p class="text-muted ">
+                                                                        <a class="zs1" href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">专业选择</a>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                武汉大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="武汉大学">招生简章</a> <a href="#" rel="武汉大学">主考专业</a> <a href="#" rel="武汉大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                    @endif
 
-                                                <div class="col-md-4 col-lg-4">
-                                                    <div class="media d-flex flex-column align-items-center  mb-3  ">
-                                                        <div class="media-left mr-2">
-                                                            <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
-                                                        </div>
-                                                        <div class="media-body text-center">
-                                                            <h6 class="media-heading mt-3">
-                                                                复旦大学
-                                                            </h6>
-                                                            <p class="text-muted">
-                                                                <a href="#" rel="复旦大学">招生简章</a> <a href="#" rel="复旦大学">主考专业</a> <a href="#" rel="复旦大学">专业选择</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                @endforeach
 
                                             </div>
                                         </div>
