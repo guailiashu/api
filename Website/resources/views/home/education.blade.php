@@ -289,21 +289,7 @@
 
                                         @endif
 
-
-{{--                                        成考--}}
-                                    @elseif('2'== $edu_val->enducation_id)
-
-
-
-
-
-
-{{--                                        网络教育--}}
-                                    @elseif('3'== $edu_val->enducation_id)
-
-{{--                                        3--}}
-
-                                        @endif
+                                    @endif
 
 
                                     @foreach($data as $data_key=>$data_val)

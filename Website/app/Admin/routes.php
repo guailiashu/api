@@ -12,7 +12,11 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('admin.home');
 
+    /**
+     * 一级栏目
+     */
     $router->resource('home/navigations',NavigationController::class);//导航栏
+    $router->resource('home/about', AboutController::class);//关于研博
 
 });
 
