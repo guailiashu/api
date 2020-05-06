@@ -16,11 +16,15 @@
 //    dd($a);
 //
 //});
+use Illuminate\Support\Facades\Storage;
+
+Route::get('test', function () {
 
 
-//Route::get('user/{id}', function ($id) {
-//    return 'User '.$id;
-//});
+    $src = Storage::disk(config('admin.upload.disk'));
+
+    dd($src);
+});
 
 
 

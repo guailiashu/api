@@ -15,7 +15,7 @@ class AboutController extends AdminController
      *
      * @var string
      */
-    protected $title = 'App\Models\About';
+    protected $title = '关于研博';
 
     /**
      * Make a grid builder.
@@ -27,8 +27,8 @@ class AboutController extends AdminController
         $grid = new Grid(new About());
 
         $grid->column('id', __('Id'))->sortable()->badge('blue');
-        $grid->column('image', __('图片'));
-//        $grid->column('image', __('图片'))->image('','70','50');
+//        $grid->image('图片地址')->image('','70','50');
+        $grid->column('image', __('图片'))->image('','70','50');
         $grid->column('title', __('标题'));
         $grid->column('e_title', __('注释'));
 
@@ -62,9 +62,9 @@ class AboutController extends AdminController
     {
         $form = new Form(new About());
 
-        $form->image('image', __('Image'));
-        $form->text('title', __('Title'));
-        $form->text('e_title', __('E title'));
+        $form->image('image', __('图片上传'))->uniqueName();
+        $form->text('title', __('标题'));
+        $form->text('e_title', __('注释'));
 
         return $form;
     }

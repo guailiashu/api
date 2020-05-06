@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class About extends Model
 {
     //
-    public $table='home_abouts';
+    public $table='home_abouts_copy';
 }
