@@ -16,14 +16,19 @@
 //    dd($a);
 //
 //});
-use Illuminate\Support\Facades\Storage;
-
+//use Illuminate\Support\Facades\Storage;
+//
+use Illuminate\Support\Facades\DB;
 Route::get('test', function () {
 
 
-    $src = Storage::disk(config('admin.upload.disk'));
+    $name=DB::table('home_news_types')
+        ->where('id','1')
+        ->select('name')
+        ->value('name');
+//        ->first();
 
-    dd($src);
+    dd($name);
 });
 
 

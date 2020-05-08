@@ -70,8 +70,14 @@ return [
             'driver' => 'local',
             'root' => storage_path('app/public'),
             'visibility' => 'public',
-            'url' => env('APP_URL').'/storage',
+//            'url' => env('APP_URL').'/storage',
         ],
+//        'admin' => [
+//            'driver' => 'local',
+//            'root' => public_path('uploads'),
+//            'visibility' => 'public',
+//            'url' => env('APP_URL').'/uploads',
+//        ],
 
     ],
 

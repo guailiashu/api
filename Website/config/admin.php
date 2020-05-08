@@ -161,6 +161,10 @@ return [
             'image' => 'images',
             'file'  => 'files',
         ],
+//        'directory'  => [
+//            'image'  => 'images',
+//            'file'   => 'files',
+//        ]
     ],
 
     /*
