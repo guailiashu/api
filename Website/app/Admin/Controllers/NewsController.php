@@ -74,10 +74,12 @@ class NewsController extends AdminController
     {
         $form = new Form(new News());
 
-        $form->image('image', __('图片标识'));
+        $form->image('image', __('图片标识'))->uniqueName();
         $form->text('title', __('标题'));
         $form->select('type_id', __('新闻类型'))->options(News::getSelect());
-        $form->textarea('details', __('详情'));
+        $form->editor('details','详情');
+//        $form->
+//        $form->textarea('details', __('详情'));
 
         return $form;
     }

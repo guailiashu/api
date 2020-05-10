@@ -18,4 +18,14 @@
  *
  */
 
-Encore\Admin\Form::forget(['map', 'editor']);
+//Encore\Admin\Form::forget(['map', 'editor']);
+
+
+use Encore\Admin\Form;
+use App\Admin\Extensions\WangEditor;
+
+//富文本组件
+Form::extend('editor', WangEditor::class);//可以使用
+//Form::extend('editor', WangEditor::class);
+
+

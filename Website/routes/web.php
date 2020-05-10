@@ -18,20 +18,22 @@
 //});
 //use Illuminate\Support\Facades\Storage;
 //
-use Illuminate\Support\Facades\DB;
-Route::get('test', function () {
+//use Illuminate\Support\Facades\DB;
+//Route::get('test', function () {
+//
+//
+//    $name=DB::table('home_news_types')
+//        ->where('id','1')
+//        ->select('name')
+//        ->value('name');
+////        ->first();
+//
+//    dd($name);
+//});
 
 
-    $name=DB::table('home_news_types')
-        ->where('id','1')
-        ->select('name')
-        ->value('name');
-//        ->first();
-
-    dd($name);
-});
-
-
+//Route::post('/uploadFile', 'UploadsController@uploadImg');//图片上传
+Route::post('/uploadFile', 'UploadsController@uploadImg');
 
 Route::namespace('Home')->group(function (){
 
