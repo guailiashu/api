@@ -172,7 +172,7 @@
                                                         <div class="col-md-4 col-lg-4">
                                                             <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                 <div class="media-left mr-2">
-                                                                    <img src="{{$popular_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                    <img src="{{'storage/'. $popular_val->image}}" alt="" class="media-object  img-fluid ">
                                                                 </div>
                                                                 <div class="media-body text-center">
                                                                     <h6 class="media-heading mt-3 ">
@@ -232,7 +232,7 @@
                                                                     <div class="col-md-4 col-lg-4">
                                                                         <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                             <div class="media-left mr-2">
-                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
                                                                             </div>
                                                                             <div class="media-body text-center">
                                                                                 <h6 class="media-heading mt-3 ">
@@ -268,7 +268,7 @@
                                                                     <div class="col-md-4 col-lg-4">
                                                                         <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                             <div class="media-left mr-2">
-                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
                                                                             </div>
                                                                             <div class="media-body text-center">
                                                                                 <h6 class="media-heading mt-3 ">
@@ -411,7 +411,7 @@
                                                         <div class="col-md-4 col-lg-4">
                                                             <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                 <div class="media-left mr-2">
-                                                                    <img src="{{$popular_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                    <img src="{{'storage/'. $popular_val->image}}" alt="" class="media-object  img-fluid ">
                                                                 </div>
                                                                 <div class="media-body text-center">
                                                                     <h6 class="media-heading mt-3 ">
@@ -463,7 +463,7 @@
                                                                     <div class="col-md-4 col-lg-4">
                                                                         <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                             <div class="media-left mr-2">
-                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
                                                                             </div>
                                                                             <div class="media-body text-center">
                                                                                 <h6 class="media-heading mt-3 ">
@@ -498,7 +498,7 @@
                                                                     <div class="col-md-4 col-lg-4">
                                                                         <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                             <div class="media-left mr-2">
-                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
                                                                             </div>
                                                                             <div class="media-body text-center">
                                                                                 <h6 class="media-heading mt-3 ">
@@ -525,6 +525,7 @@
                                                     <div class="container">
                                                         <div class="row">
                                                             @foreach($data as $data_key=>$data_val)
+
                                                                 @if(($edu_val->add_type_name == $data_val->add_type_name) && $edu_val->address == $data_val->address  )
 
                                                                     {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
@@ -532,7 +533,7 @@
                                                                     <div class="col-md-4 col-lg-4">
                                                                         <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                             <div class="media-left mr-2">
-                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
                                                                             </div>
                                                                             <div class="media-body text-center">
                                                                                 <h6 class="media-heading mt-3 ">
@@ -623,7 +624,7 @@
                                                         <div class="col-md-4 col-lg-4">
                                                             <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                 <div class="media-left mr-2">
-                                                                    <img src="{{$popular_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                    <img src="{{'storage/'. $popular_val->image}}" alt="" class="media-object  img-fluid ">
                                                                 </div>
                                                                 <div class="media-body text-center">
                                                                     <h6 class="media-heading mt-3 ">
@@ -665,7 +666,7 @@
                                                                     <div class="col-md-4 col-lg-4">
                                                                         <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                             <div class="media-left mr-2">
-                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
                                                                             </div>
                                                                             <div class="media-body text-center">
                                                                                 <h6 class="media-heading mt-3 ">
@@ -698,7 +699,7 @@
                                                                     <div class="col-md-4 col-lg-4">
                                                                         <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                             <div class="media-left mr-2">
-                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
                                                                             </div>
                                                                             <div class="media-body text-center">
                                                                                 <h6 class="media-heading mt-3 ">
@@ -731,7 +732,7 @@
                                                                     <div class="col-md-4 col-lg-4">
                                                                         <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                             <div class="media-left mr-2">
-                                                                                <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
                                                                             </div>
                                                                             <div class="media-body text-center">
                                                                                 <h6 class="media-heading mt-3 ">

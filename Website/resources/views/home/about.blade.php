@@ -125,7 +125,7 @@
                             </p>
                         </div>
                         <div class="media-left mr-2">
-                            <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">
+                            <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
                         </div>
 
                     </div>
@@ -217,7 +217,7 @@
                             </p>
                         </div>
                         <div class="media-left mr-2">
-                            <img src={{$courses_val->image}} alt="" class="media-object  img-fluid ">
+                            <img src={{'storage/'. $courses_val->image}} alt="" class="media-object  img-fluid ">
                         </div>
 
                     </div>

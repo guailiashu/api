@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Models\Education;
+namespace App\Models\School;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\School\School;
 use Illuminate\Support\Facades\DB;
 
-class Detail extends Model
+class Image extends Model
 {
     //
-    public $table='home_education_details';
+    public $table = 'home_school_images';
 
 
-    //获取报考类型
+    //获取对应新闻类型
     public static function getSelect() //form 表单的select多选项参数
     {
-        $options = DB::table('home_educations')->select('id','name')->get();
+        $options = DB::table('home_schoolS')->select('id','name')->get();
         $selectOption = [];
         foreach ($options as $option){
             $selectOption[$option->id] = $option->name;

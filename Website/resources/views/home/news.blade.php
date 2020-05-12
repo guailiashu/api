@@ -112,8 +112,7 @@
 
                                                      <div class="media d-flex flex-column   mb-3  ">
                                                          <div class="media-left mr-2">
-                                                             <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid "
-                                                             >
+                                                             <img src="{{'storage/'.$data_val->image}}" alt="" class="media-object  img-fluid ">
                                                          </div>
                                                          <div class="media-body ">
                                                              <h6 class="media-heading mt-3">
@@ -135,29 +134,6 @@
                                      </div>
                                  </div>
 
-{{--                                 <!-- 分页1：研博新闻 -->--}}
-{{--                                 <div class="fenye yb_fenye container ">--}}
-{{--                                     <nav aria-label="Page navigation example">--}}
-{{--                                         <ul class="pagination pagination1 justify-content-center">--}}
-{{--                                             <li class="page-item prev1 ">--}}
-{{--                                                 <a class="page-link" href="#"  aria-label="Previous">--}}
-{{--                                                     <span aria-hidden="true">&laquo;</span>--}}
-{{--                                                 </a>--}}
-{{--                                             </li>--}}
-{{--                                             <li class="page-item active"><a class="page-link" href="#">1</a></li>--}}
-{{--                                             <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
-{{--                                             <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
-{{--                                             <li class="page-item"><a class="page-link" href="#">4</a></li>--}}
-{{--                                             <li class="page-item"><a class="page-link" href="#">5</a></li>--}}
-{{--                                             <li class="page-item next1">--}}
-{{--                                                 <a class="page-link" href="#" aria-label="Next">--}}
-{{--                                                     <span aria-hidden="true">&raquo;</span>--}}
-{{--                                                 </a>--}}
-{{--                                             </li>--}}
-{{--                                         </ul>--}}
-{{--                                     </nav>--}}
-{{--                                 </div>--}}
-
                              </div>
 
                          @elseif('edu_news' == $type_val->type_name)
@@ -175,8 +151,7 @@
 
                                                      <div class="media d-flex flex-column   mb-3  ">
                                                          <div class="media-left mr-2">
-                                                             <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid "
-                                                             >
+                                                             <img src="{{'storage/'.$data_val->image}}" alt="" class="media-object  img-fluid ">
                                                          </div>
                                                          <div class="media-body ">
                                                              <h6 class="media-heading mt-3">
@@ -198,28 +173,6 @@
                                      </div>
                                  </div>
 
-                                 <!-- 分页2：教育新闻 -->
-{{--                                 <div class="fenye edu_fenye container ">--}}
-{{--                                     <nav aria-label="Page navigation example">--}}
-{{--                                         <ul class="pagination pagination2 justify-content-center">--}}
-{{--                                             <li class="page-item prev2 ">--}}
-{{--                                                 <a class="page-link" href="#"  aria-label="Previous">--}}
-{{--                                                     <span aria-hidden="true">&laquo;</span>--}}
-{{--                                                 </a>--}}
-{{--                                             </li>--}}
-{{--                                             <li class="page-item active"><a class="page-link" href="#">1</a></li>--}}
-{{--                                             <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
-{{--                                             <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
-{{--                                             <li class="page-item"><a class="page-link" href="#">4</a></li>--}}
-{{--                                             <li class="page-item"><a class="page-link" href="#">5</a></li>--}}
-{{--                                             <li class="page-item next2">--}}
-{{--                                                 <a class="page-link" href="#" aria-label="Next">--}}
-{{--                                                     <span aria-hidden="true">&raquo;</span>--}}
-{{--                                                 </a>--}}
-{{--                                             </li>--}}
-{{--                                         </ul>--}}
-{{--                                     </nav>--}}
-{{--                                 </div>--}}
 
                              </div>
 

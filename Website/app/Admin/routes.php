@@ -16,13 +16,21 @@ Route::group([
      * 一级栏目
      */
     $router->resource('home/navigations',NavigationController::class);//导航栏
-    $router->resource('home/about', AboutController::class);//关于研博
-    $router->resource('home/active', ActiveController::class);//关于研博
-    $router->resource('home/news', NewsController::class);//关于研博
+    $router->resource('home/active', ActiveController::class);//研博公益
+    $router->resource('home/news', NewsController::class);//研博新闻
+
+    //关于研博
+    $router->resource('home/about/about', About\AboutController::class);//企业文化
+    $router->resource('home/about/course', About\CourseController::class);//发展历程
 
     //学历
-    $router->resource('home/eduction/add', Eduction\AddController::class);//地区
-    $router->resource('home/eduction/detail', Eduction\DetailController::class);//高校
+    $router->resource('home/education/add', Education\AddController::class);//地区
+    $router->resource('home/education/detail', Education\DetailController::class);//高校
+    $router->resource('home/education/education', Education\EducationController::class);//高校
+
+    //分校
+    $router->resource('home/school/info',School\SchoolController::class);//分校
+    $router->resource('home/school/image',School\ImageController::class);//分校图片
 
 });
 

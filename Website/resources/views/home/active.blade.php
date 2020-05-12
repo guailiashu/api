@@ -119,7 +119,7 @@
 				        <div class="col-md-4 col-lg-4">
 				            <div class="media d-flex flex-column   mb-3  ">
 				                <div class="media-left mr-2">
-				                    <img src="{{$page_val->image}}" alt="" class="media-object  img-fluid "
+				                    <img src="{{'storage/'. $page_val->image}}" alt="" class="media-object  img-fluid "
 				                       >
 				                </div>
 				                <div class="media-body ">

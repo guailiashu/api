@@ -30,7 +30,7 @@
     <header id="lk_header">
         <nav class="navbar  navbar-expand-lg navbar-light navbar-lk">
             <div class="container">
-                <a class="navbar-brand d-flex justify-content-center align-items-center" href={{url("")}}>
+                <a class="navbar-brand d-flex justify-content-center align-items-center" href="#">
                     <img src={{url("images/Yanbo.png")}} alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#lk_nav"
@@ -81,11 +81,13 @@
             <div class="row">
 
                 @foreach($school_data as $school_key=>$school_val)
+
+{{--{{  $school_val->image_route}}--}}
                     <div class="col-md-4 col-lg-3">
                         <div class="media d-flex flex-column align-items-center  mb-3  ">
                             <div class="media-left mr-2">
-                                <img src={{ url($school_val->image_route) }} alt="" class="media-object pic01 img-fluid ">
-
+                                <img src={{ url('storage/'.$school_val->image_route) }} alt="" class="media-object pic01 img-fluid ">
+{{--                                <img src={{ url("images/ad.jpg") }} alt="" class="media-object pic01 img-fluid ">--}}
 
                             </div>
                         </div>
@@ -122,7 +124,7 @@
 </div>
 
 <div class="pic02">
-    <img src={{url("")}}#" alt="">
+    <img src="#" alt="">
 </div>
 
 

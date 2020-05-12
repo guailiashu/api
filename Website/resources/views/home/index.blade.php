@@ -198,13 +198,13 @@
                                         {{--                                    {{ $val['two']->image }}--}}
 
                                         <div class="schoolList">
-                                            <img class="img-fluid"   src={{ $val['one']->image }} >
+                                            <img class="img-fluid"   src={{'storage/'. $val['one']->image }} >
                                             <div class="schoolName">{{$val['one']->name}}</div>
                                             <div class="intro">{{$val['one']->title}}</div>
                                         </div>
 
                                         <div class="schoolList">
-                                            <img class="img-fluid"   src={{ $val['two']->image }} >
+                                            <img class="img-fluid"   src={{'storage/'. $val['two']->image }} >
                                             <div class="schoolName">{{$val['two']->name}}</div>
                                             <div class="intro">{{$val['two']->title}}</div>
                                         </div>
@@ -223,13 +223,13 @@
                                     <div class="school" >
 
                                         <div class="schoolList">
-                                            <img class="img-fluid"   src={{ $val['one']->image }} >
+                                            <img class="img-fluid"   src={{'storage/'. $val['one']->image }} >
                                             <div class="schoolName">{{$val['one']->name}}</div>
                                             <div class="intro">{{$val['one']->title}}</div>
                                         </div>
 
                                         <div class="schoolList">
-                                            <img class="img-fluid"   src={{ $val['two']->image }} >
+                                            <img class="img-fluid"   src={{'storage/'. $val['two']->image }} >
                                             <div class="schoolName">{{$val['two']->name}}</div>
                                             <div class="intro">{{$val['two']->title}}</div>
                                         </div>
@@ -289,7 +289,7 @@
                         <div class="col-md-6 col-lg-6">
                             <div class="media d-flex flex-column mb-3 xuelijiaoyu">
                                 <div class="media-left mr-2">
-                                    <img src={{ $education_val->image }} alt="" class="media-object  img-fluid ">
+                                    <img src={{'storage/'. $education_val->image }} alt="" class="media-object  img-fluid ">
                                 </div>
                                 <div class="media-body ">
                                     <h6 class="media-heading mt-3">
@@ -330,7 +330,7 @@
                         <div class="col-md-4 col-lg-4">
                             <div class="media d-flex flex-column   mb-3  news">
                                 <div class="media-left mr-2">
-                                    <img src={{$news_val->image}} alt="" class="media-object  img-fluid "
+                                    <img src={{'storage/'.$news_val->image}} alt="" class="media-object  img-fluid "
                                     >
                                 </div>
                                 <div class="media-body ">
@@ -367,7 +367,7 @@
                         <div class="col-md-6 col-lg-6 d-none d-sm-none d-md-none d-lg-block">
                             <div class="media d-flex   mb-3  active">
                                 <div class="media-left mr-2">
-                                    <img src="images/ad.jpg" alt="" class="media-object  img-fluid ">
+                                    <img src="{{'storage/'.$active_val->image  }}" alt="" class="media-object  img-fluid ">
                                 </div>
                                 <div class="d-none d-sm-none d-md-block media-body ">
                                     <h6 class="media-heading ">

@@ -113,7 +113,9 @@ class StaticController extends Controller
             ->orderBy('id','desc')
             ->paginate(2);
 
-        return View('home.ybSchool')->with('column',$mag)->with('schools',$school_data);
+        return View('home.ybSchool')
+            ->with('column',$mag)
+            ->with('schools',$school_data);
     }
 
     //学历
@@ -145,62 +147,13 @@ class StaticController extends Controller
 
         $mag = $this->getNavigation();//获取导航栏数据
 
-//dd($popular_data);
+//dd($education_adds_data);
         return View('home.education')
             ->with('edu_data',$educations)//一级学历分类数据集合
             ->with('edu_address',$education_data)//二级地区数据
             ->with('data',$education_adds_data)//对应三级联动的“高校”数据
             ->with('popular_data',$popular_data)
             ->with('column',$mag);//导航栏
-
-
-        /**
-         * 编辑三级分类目录   暂时不用多级树方式
-         */
-
-        //第一层 ： 类型层
-//        foreach ($educations  as $e_key=>$e_val){
-//
-//
-//              //第二层 ： 类型对应的区域层 ，使用 "教育分类"和对应" 集合数据
-//            foreach ($education_data as $add_key=>$add_val){
-//
-//                //地区 enducation_id 与 分类id对应
-//                if($e_val->id == $add_val->enducation_id){
-//
-//                    //数据集合
-//                    $educations_mag[$e_key]['id'] = $add_val->id;
-//                    $educations_mag[$e_key]['name'] = $add_val->name;
-//                    $educations_mag[$e_key]['image'] =  $add_val->image;
-////                    $educations_mag[$e_key]['adds'][$add_key] = $add_val->address;
-//
-////                    $educations_mag[$e_key]['adds'][$add_key] = 1;
-//
-//                    //获取对应地区的学校
-//                    $add_schools = DB::table('home_education_details')
-//                        ->where([
-//                            ['add_id', '=', $e_val->id],
-//                            ['enducation_add_id', '=', $add_val->enducation_id],
-//                        ])
-////                        ->select('add_school_index')
-//                        ->get();
-//
-//
-//                            $adds_school_data = [];
-//                    if($add_schools->count()){
-//                        $adds_school_data['add'] = $add_val->address;
-//                        $adds_school_data['school'] = $add_schools;
-//                    }
-//
-//                    $educations_mag[$e_key]['adds'][$add_key] = $adds_school_data;
-//
-//                }
-//                $aggregate = $educations_mag;
-//            }
-//        }
-
-//dd($aggregate);
-
 
     }
 
@@ -227,6 +180,8 @@ class StaticController extends Controller
 
         $mag = $this->getNavigation();//获取导航栏数据
 
+//        dd($news_data);
+
         return View('home.news')
             ->with('column',$mag) //导航栏
             ->with('data',$news_data) //新闻数据
@@ -242,7 +197,7 @@ class StaticController extends Controller
          */
 
         //分页
-        $page_date = DB::table('home_actives')->paginate(5);
+        $page_date = DB::table('home_actives')->paginate(6);
 
 //        dd($page_date);
 
@@ -265,10 +220,12 @@ class StaticController extends Controller
         $about_data = DB::table('home_abouts')->get();
         $about_courses_data = DB::table('home_about_courses')->get();
 
+//        dd($about_data);
+
         $mag = $this->getNavigation();//获取导航栏数据
         return View('home.about')
-            ->with('about_data',$about_data)
-            ->with('courses_data',$about_courses_data)
+            ->with('about_data',$about_data)//企业文化
+            ->with('courses_data',$about_courses_data)//发展历程
             ->with('column',$mag);
 
     }
@@ -300,7 +257,11 @@ class StaticController extends Controller
             $Detail_route[$key]['column'] = $val->column;
         }
 
-        return View('home.schoolDetail')->with('column',$Detail_route)->with('school_data',$school_db_data);
+//        dd($school_db_data);
+
+        return View('home.schoolDetail')
+            ->with('column',$Detail_route)
+            ->with('school_data',$school_db_data);
     }
 
 

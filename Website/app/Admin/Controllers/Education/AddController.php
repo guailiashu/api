@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Controllers\Eduction;
+namespace App\Admin\Controllers\Education;
 
 use App\Models\Education\Add;
 use Encore\Admin\Controllers\AdminController;
@@ -32,15 +32,11 @@ class AddController extends AdminController
         $grid->column('address', __('地区名称'));
         $grid->column('add_type_name', __('页面的编号'));
         $grid->column('enducation_id', __('对应分类'))->display(function ($type_id){
-
-            $options = Add::where('enducation_id' , 1)
-                ->select('id','address')
-                ->get();
-//            $name=DB::table('home_educations')
-//                ->where('id',$type_id)
-//                ->select('name')
-//                ->value('name');
-            return $options;
+            $name=DB::table('home_educations')
+                ->where('id',$type_id)
+                ->select('name')
+                ->value('name');
+            return $name;
         });
         $grid->column('created_at', __('创建时间'));
         $grid->column('updated_at', __('更新时间'));

@@ -21,38 +21,14 @@
 //use Illuminate\Support\Facades\DB;
 use App\Models\Education\Add;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 Route::get('test', function () {
 
 
-//    //$options = DB::table('home_education_adds')
-//    $options = Add::where('enducation_id' , 1)
-//        ->select('id','address')
-//        ->get();
-//    $selectOption = [];
-//    foreach ($options as $option){
-//        $selectOption[$option->id] = $option->address;
-//    }
-
-    $provinceId = Add::where('enducation_id', 1)->get(['id', DB::raw('address as text')]);
-    dd($provinceId);
-    return $selectOption;
-
-
-//    $data = Add::where('enducation_id' , 1)
-////                ->pluck('address' , 'id');
-//        ->pluck('address' , 'id');
-//
-//    dd($data);
-
-
-//    $name=DB::table('home_news_types')
-//        ->where('id','1')
-//        ->select('name')
-//        ->value('name');
-////        ->first();
-//
-//    dd($name);
+    $a = storage_path('images/a342879382f75e1420dd8d025d767905.png');
+    $B = Storage::disk(config('admin.upload.disk'));
+    dd($a);
 });
 
 

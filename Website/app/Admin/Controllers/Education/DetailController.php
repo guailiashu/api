@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Controllers\Eduction;
+namespace App\Admin\Controllers\Education;
 
 use App\Models\Education\Detail;
 use Encore\Admin\Controllers\AdminController;
@@ -97,35 +97,15 @@ class DetailController extends AdminController
         $form->select('enducation_add_id', __('报考类型'))
             ->options(Detail::getSelect())
             ->load('add_id','/api/eduction/adds');
+
         $form->select('add_id', __('地区'))->options(function ($id){
             $data = Add::where('enducation_id' ,$id)
                 ->pluck('address' , 'id');
-//                ->pluck('id' , 'address');
             return $data;
-
-//            $hezuoList = array(
-//                "1" => '测试1',
-//                "2" => '测试2',
-//                "3" => '测试3',
-//            );
-//
-//            return $hezuoList;
-
-//            $options = Add::where('enducation_id' , 1)
-//                ->select('id','address')
-//                ->get();
-//            $selectOption = [];
-//            foreach ($options as $option){
-//                $selectOption[$option->id] = $option->address;
-//            }
-////            dd($selectOption);
-//            return $selectOption;
-
         });
         $form->text('name', __('学校名称'));
         $form->image('image', __('学校图片'))->uniqueName();
-//        $form->select('add_id', __('地区'))->options(Detail::getAdds());
-        $form->text('school_badge', __('校徽'));
+        $form->image    ('school_badge', __('校徽'))->uniqueName();
         $form->textarea('add_school_index', __('学校主页'));
         $form->textarea('specialty', __('招生专业'));
         $form->textarea('forms', __('招生简章'));
@@ -135,8 +115,6 @@ class DetailController extends AdminController
             'off' => ['value' => 2, 'text' => '非热门', 'color' => 'danger'],
         ];
         $form->switch('popular',__('是否热门'))->states($states)->default(1);
-//        $form->number('popular', __('是否热门'))->default(1);
-
         return $form;
     }
 }

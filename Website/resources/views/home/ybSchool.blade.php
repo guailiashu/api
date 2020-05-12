@@ -47,13 +47,17 @@
 
                             @foreach($column as $name)
 
-                                @if($name->c_route == 'index')
+                                @if($name->c_route == 'home/index')
                                     <li class="nav-item active">
-                                        <a class="nav-link nav-link1 color1" href={{route($name->c_route)}}>{{$name->column}}<span class="sr-only">(current)</span></a>
+                                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1 " href={{route($name->c_route)}}>{{$name->column}}<span class="sr-only">(current)</span></a>
+                                    </li>
+                                @elseif($name->c_route == 'home/school')
+                                    <li class="nav-item ">
+                                        <a style="color: #fff;" class="nav-link nav-link2 " href="#">{{$name->column}}</a>
                                     </li>
                                 @else
                                     <li class="nav-item">
-                                        <a class="nav-link nav-link6 color6"  href={{route($name->c_route)}}>{{$name->column}}</a>
+                                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link6 "  href={{route($name->c_route)}}>{{$name->column}}</a>
                                     </li>
                                 @endif
 
@@ -98,7 +102,7 @@
                         <div class="col-md-6 col-lg-6">
                             <div class="media d-flex flex-column   mb-3 ">
                                 <div class="media-left mr-2 img-fluid">
-                                    <img src={{ $school_value->image  }} alt="{{ $school_value->id  }}" class="media-object   ">
+                                    <img src={{'storage/'.$school_value->image  }} alt="{{ $school_value->id  }}" class="media-object   ">
 
                                 </div>
                                 <div class="media-body ">
