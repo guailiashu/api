@@ -27,7 +27,7 @@ class NewsController extends AdminController
     {
         $grid = new Grid(new News());
 
-        $grid->column('id', __('Id'));
+        $grid->column('id', __('Id'))->sortable()->badge('blue');
         $grid->column('image', __('图片'))->image('','70','50');
         $grid->column('title', __('标题'));
         $grid->column('type_id', __('新闻类型'))->display(function ($type_id){

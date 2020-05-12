@@ -19,9 +19,33 @@
 //use Illuminate\Support\Facades\Storage;
 //
 //use Illuminate\Support\Facades\DB;
-//Route::get('test', function () {
+use App\Models\Education\Add;
+use Illuminate\Support\Facades\DB;
+
+Route::get('test', function () {
+
+
+//    //$options = DB::table('home_education_adds')
+//    $options = Add::where('enducation_id' , 1)
+//        ->select('id','address')
+//        ->get();
+//    $selectOption = [];
+//    foreach ($options as $option){
+//        $selectOption[$option->id] = $option->address;
+//    }
+
+    $provinceId = Add::where('enducation_id', 1)->get(['id', DB::raw('address as text')]);
+    dd($provinceId);
+    return $selectOption;
+
+
+//    $data = Add::where('enducation_id' , 1)
+////                ->pluck('address' , 'id');
+//        ->pluck('address' , 'id');
 //
-//
+//    dd($data);
+
+
 //    $name=DB::table('home_news_types')
 //        ->where('id','1')
 //        ->select('name')
@@ -29,7 +53,7 @@
 ////        ->first();
 //
 //    dd($name);
-//});
+});
 
 
 //Route::post('/uploadFile', 'UploadsController@uploadImg');//图片上传

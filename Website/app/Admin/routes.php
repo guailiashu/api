@@ -19,7 +19,10 @@ Route::group([
     $router->resource('home/about', AboutController::class);//关于研博
     $router->resource('home/active', ActiveController::class);//关于研博
     $router->resource('home/news', NewsController::class);//关于研博
-    
+
+    //学历
+    $router->resource('home/eduction/add', Eduction\AddController::class);//地区
+    $router->resource('home/eduction/detail', Eduction\DetailController::class);//高校
 
 });
 
