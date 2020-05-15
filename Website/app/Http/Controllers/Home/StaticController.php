@@ -291,7 +291,7 @@ class StaticController extends Controller
             $Detail_route[$key]['c_route'] = $s_route[1];
             $Detail_route[$key]['column'] = $val->column;
         }
-//dd($Detail_route);
+//dd($school_data);
         return View('home.eduDetail')
             ->with('column',$Detail_route)//导航栏数据
             ->with('data',$school_data);//学校详情

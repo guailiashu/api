@@ -146,9 +146,6 @@
 
                                         @endforeach
 
-                                        {{--								<li class="nav-item">--}}
-                                        {{--									<a class="nav-link" href="https://www.eol.cn/" target="_blank" role="tab">更多</a>--}}
-                                        {{--								</li>--}}
                                     </ul>
                                 </div>
                             </div>
@@ -168,7 +165,7 @@
 
                                                 @foreach($popular_data as $popular_key=>$popular_val)
 
-                                                    @if(1 == $popular_val->add_id)
+                                                    @if(1 == $popular_val->enducation_id)
                                                         <div class="col-md-4 col-lg-4">
                                                             <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                 <div class="media-left mr-2">
@@ -188,13 +185,6 @@
 
                                                 @endforeach
 
-{{--                                                    <div class="fenye container ">--}}
-{{--                                                        <nav aria-label="Page navigation example">--}}
-{{--                                                            <ul class="pagination justify-content-center">--}}
-{{--                                                                {!! $popular_data->render() !!}--}}
-{{--                                                            </ul>--}}
-{{--                                                        </nav>--}}
-{{--                                                    </div>--}}
 
                                             </div>
                                         </div>
@@ -229,21 +219,37 @@
 
 {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
 {{--                                                                                                                                @elseif()--}}
-                                                                    <div class="col-md-4 col-lg-4">
-                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
-                                                                            <div class="media-left mr-2">
-                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
-                                                                            </div>
-                                                                            <div class="media-body text-center">
-                                                                                <h6 class="media-heading mt-3 ">
-                                                                                    {{$data_val->name}}
-                                                                                </h6>
-                                                                                <p class="text-muted ">
-                                                                                    <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
-                                                                                </p>
+                                                                    @if(empty($data_val->name))
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        该校区暂无分校
+                                                                                    </h6>
+
+                                                                                </div>
+
                                                                             </div>
                                                                         </div>
-                                                                    </div>
+
+                                                                    @else
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                                <div class="media-left mr-2">
+                                                                                    <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                </div>
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        {{$data_val->name}}
+                                                                                    </h6>
+                                                                                    <p class="text-muted ">
+                                                                                        <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endif
                                                                 @endif
                                                             @endforeach
                                                         </div>
@@ -265,21 +271,39 @@
 
 {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
 {{--                                                                                                                                @elseif()--}}
-                                                                    <div class="col-md-4 col-lg-4">
-                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
-                                                                            <div class="media-left mr-2">
-                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
-                                                                            </div>
-                                                                            <div class="media-body text-center">
-                                                                                <h6 class="media-heading mt-3 ">
-                                                                                    {{$data_val->name}}
-                                                                                </h6>
-                                                                                <p class="text-muted ">
-                                                                                    <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
-                                                                                </p>
+                                                                
+                                                                    @if(empty($data_val->name))
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        该校区暂无分校
+                                                                                    </h6>
+
+                                                                                </div>
+
                                                                             </div>
                                                                         </div>
-                                                                    </div>
+
+                                                                    @else
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                                <div class="media-left mr-2">
+                                                                                    <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                </div>
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        {{$data_val->name}}
+                                                                                    </h6>
+                                                                                    <p class="text-muted ">
+                                                                                        <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endif
+
                                                                 @endif
                                                             @endforeach
                                                         </div>
@@ -290,62 +314,6 @@
                                         @endif
 
                                     @endif
-
-
-                                    @foreach($data as $data_key=>$data_val)
-
-
-                                        @if(('pills-place1'==$data_val->add_type_name) && ($edu_val->enducation_id == $data_val->enducation_id))
-
-{{--                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-profile-tab">--}}
-
-{{--                                                <div id="lk_hotschool" class="mt-3">--}}
-
-{{--                                                    <div class="container">--}}
-{{--                                                        <div class="row">--}}
-
-{{--                                                            --}}
-{{--                                                            <div class="col-md-4 col-lg-4">--}}
-{{--                                                                <div class="media d-flex flex-column align-items-center  mb-3  ">--}}
-
-{{--                                                                    <div class="media-left mr-2">--}}
-{{--                                                                        <img src="{{$data_val->image}}" alt="" class="media-object  img-fluid ">--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="media-body text-center">--}}
-{{--                                                                        <h6 class="media-heading mt-3">--}}
-{{--                                                                            {{$data_val->name}}--}}
-{{--                                                                        </h6>--}}
-{{--                                                                        <p class="text-muted">--}}
-{{--                                                                            <a href="#" rel="北京大学">招生简章</a> <a href="#" rel="北京大学">主考专业</a> <a href="#" rel="北京大学">专业选择</a>--}}
-{{--                                                                        </p>--}}
-{{--                                                                    </div>--}}
-
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
-
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-
-{{--                                          <div>地区 {{ $data_val->name }}</div>--}}
-
-
-                                        @elseif('pills-place2'==$edu_val->add_type_name && $edu_val->enducation_id == $data_val->enducation_id)
-
-
-                                            <div class="tab-pane fade" id="{{$edu_val->add_type_name}}" role="tabpanel" aria-labelledby="pills-profile-tab">
-
-                                                <div id="lk_hotschool" class="mt-3">
-
-                                                    222
-                                                </div>
-                                            </div>
-
-                                        @endif
-
-                                    @endforeach
 
 
                                 @endforeach
@@ -407,7 +375,7 @@
 
                                                 @foreach($popular_data as $popular_key=>$popular_val)
 
-                                                    @if(2 == $popular_val->add_id)
+                                                    @if(2 == $popular_val->enducation_id)
                                                         <div class="col-md-4 col-lg-4">
                                                             <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                 <div class="media-left mr-2">
@@ -418,7 +386,7 @@
                                                                         {{$popular_val->name}}
                                                                     </h6>
                                                                     <p class="text-muted ">
-                                                                        <a class="zs1" href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">专业选择</a>
+                                                                        <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -428,14 +396,6 @@
                                                 @endforeach
 
 
-
-{{--                                                <div class="fenye container ">--}}
-{{--                                                    <nav aria-label="Page navigation example">--}}
-{{--                                                        <ul class="pagination justify-content-center">--}}
-{{--                                                            {!! $popular_data->render() !!}--}}
-{{--                                                        </ul>--}}
-{{--                                                    </nav>--}}
-{{--                                                </div>--}}
 
                                             </div>
                                         </div>
@@ -460,21 +420,37 @@
 
                                                                     {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
                                                                     {{--                                                                                                                                @elseif()--}}
-                                                                    <div class="col-md-4 col-lg-4">
-                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
-                                                                            <div class="media-left mr-2">
-                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
-                                                                            </div>
-                                                                            <div class="media-body text-center">
-                                                                                <h6 class="media-heading mt-3 ">
-                                                                                    {{$data_val->name}}
-                                                                                </h6>
-                                                                                <p class="text-muted ">
-                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
-                                                                                </p>
+                                                                    @if(empty($data_val->name))
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        该校区暂无分校
+                                                                                    </h6>
+
+                                                                                </div>
+
                                                                             </div>
                                                                         </div>
-                                                                    </div>
+
+                                                                    @else
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                                <div class="media-left mr-2">
+                                                                                    <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                </div>
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        {{$data_val->name}}
+                                                                                    </h6>
+                                                                                    <p class="text-muted ">
+                                                                                        <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endif
                                                                 @endif
                                                             @endforeach
                                                         </div>
@@ -493,8 +469,24 @@
                                                             @foreach($data as $data_key=>$data_val)
                                                                 @if(($edu_val->add_type_name == $data_val->add_type_name) && $edu_val->address == $data_val->address  )
 
-                                                                    {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
-                                                                    {{--                                                                                                                                @elseif()--}}
+{{--                                                                    当此地区下没有对应学校时（$data_val->name为空）--}}
+                                                                    @if(empty($data_val->name))
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+{{--                                                                                <div class="media-left mr-2">--}}
+{{--                                                                                    <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">--}}
+{{--                                                                                </div>--}}
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        该校区暂无分校
+                                                                                    </h6>
+
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+
+                                                                    @else
                                                                     <div class="col-md-4 col-lg-4">
                                                                         <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                             <div class="media-left mr-2">
@@ -505,11 +497,14 @@
                                                                                     {{$data_val->name}}
                                                                                 </h6>
                                                                                 <p class="text-muted ">
-                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
+                                                                                    <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
                                                                                 </p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    @endif
+
+
                                                                 @endif
                                                             @endforeach
                                                         </div>
@@ -530,21 +525,38 @@
 
                                                                     {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
                                                                     {{--                                                                                                                                @elseif()--}}
-                                                                    <div class="col-md-4 col-lg-4">
-                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
-                                                                            <div class="media-left mr-2">
-                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
-                                                                            </div>
-                                                                            <div class="media-body text-center">
-                                                                                <h6 class="media-heading mt-3 ">
-                                                                                    {{$data_val->name}}
-                                                                                </h6>
-                                                                                <p class="text-muted ">
-                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
-                                                                                </p>
+                                                                    {{--当此地区下没有对应学校时（$data_val->name为空）--}}
+                                                                    @if(empty($data_val->name))
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        该校区暂无分校
+                                                                                    </h6>
+
+                                                                                </div>
+
                                                                             </div>
                                                                         </div>
-                                                                    </div>
+
+                                                                    @else
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                                <div class="media-left mr-2">
+                                                                                    <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                </div>
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        {{$data_val->name}}
+                                                                                    </h6>
+                                                                                    <p class="text-muted ">
+                                                                                        <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endif
                                                                 @endif
                                                             @endforeach
                                                         </div>
@@ -593,8 +605,7 @@
 
 
                                                     <li class="nav-item">
-                                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="{{"#".$edu_val->add_type_name}}" role="tab" aria-controls="pills-profile"
-                                                           aria-selected="false">{{$edu_val->address}}</a>
+                                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="{{"#".$edu_val->add_type_name}}" role="tab" aria-controls="pills-profile" aria-selected="false">{{$edu_val->address}}</a>
                                                     </li>
 
                                                 @endif
@@ -620,7 +631,7 @@
 
                                                 @foreach($popular_data as $popular_key=>$popular_val)
 
-                                                    @if(3 == $popular_val->add_id)
+                                                    @if(3 == $popular_val->enducation_id)
                                                         <div class="col-md-4 col-lg-4">
                                                             <div class="media d-flex flex-column align-items-center   mb-3  ">
                                                                 <div class="media-left mr-2">
@@ -631,7 +642,7 @@
                                                                         {{$popular_val->name}}
                                                                     </h6>
                                                                     <p class="text-muted ">
-                                                                        <a class="zs1" href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$popular_val->enducation_add_id."/".$popular_val->name) }}" rel="">专业选择</a>
+                                                                        <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -663,21 +674,37 @@
 
                                                                     {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
                                                                     {{--                                                                                                                                @elseif()--}}
-                                                                    <div class="col-md-4 col-lg-4">
-                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
-                                                                            <div class="media-left mr-2">
-                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
-                                                                            </div>
-                                                                            <div class="media-body text-center">
-                                                                                <h6 class="media-heading mt-3 ">
-                                                                                    {{$data_val->name}}
-                                                                                </h6>
-                                                                                <p class="text-muted ">
-                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
-                                                                                </p>
+                                                                    @if(empty($data_val->name))
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        该校区暂无分校
+                                                                                    </h6>
+
+                                                                                </div>
+
                                                                             </div>
                                                                         </div>
-                                                                    </div>
+
+                                                                    @else
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                                <div class="media-left mr-2">
+                                                                                    <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                </div>
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        {{$data_val->name}}
+                                                                                    </h6>
+                                                                                    <p class="text-muted ">
+                                                                                        <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endif
                                                                 @endif
                                                             @endforeach
                                                         </div>
@@ -696,21 +723,37 @@
 
                                                                     {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
                                                                     {{--                                                                                                                                @elseif()--}}
-                                                                    <div class="col-md-4 col-lg-4">
-                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
-                                                                            <div class="media-left mr-2">
-                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
-                                                                            </div>
-                                                                            <div class="media-body text-center">
-                                                                                <h6 class="media-heading mt-3 ">
-                                                                                    {{$data_val->name}}
-                                                                                </h6>
-                                                                                <p class="text-muted ">
-                                                                                    <a class="zs1" href="#" rel="湖南大学">招生简章</a> <a href="#" rel="湖南大学">主考专业</a> <a href="#" rel="湖南大学">专业选择</a>
-                                                                                </p>
+                                                                    @if(empty($data_val->name))
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        该校区暂无分校
+                                                                                    </h6>
+
+                                                                                </div>
+
                                                                             </div>
                                                                         </div>
-                                                                    </div>
+
+                                                                    @else
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                                <div class="media-left mr-2">
+                                                                                    <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                </div>
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        {{$data_val->name}}
+                                                                                    </h6>
+                                                                                    <p class="text-muted ">
+                                                                                        <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endif
                                                                 @endif
                                                             @endforeach
                                                         </div>
@@ -729,21 +772,37 @@
 
                                                                     {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
                                                                     {{--                                                                                                                                @elseif()--}}
-                                                                    <div class="col-md-4 col-lg-4">
-                                                                        <div class="media d-flex flex-column align-items-center   mb-3  ">
-                                                                            <div class="media-left mr-2">
-                                                                                <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
-                                                                            </div>
-                                                                            <div class="media-body text-center">
-                                                                                <h6 class="media-heading mt-3 ">
-                                                                                    {{$data_val->name}}
-                                                                                </h6>
-                                                                                <p class="text-muted ">
-                                                                                    <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
-                                                                                </p>
+                                                                    @if(empty($data_val->name))
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        该校区暂无分校
+                                                                                    </h6>
+
+                                                                                </div>
+
                                                                             </div>
                                                                         </div>
-                                                                    </div>
+
+                                                                    @else
+                                                                        <div class="col-md-4 col-lg-4">
+                                                                            <div class="media d-flex flex-column align-items-center   mb-3  ">
+                                                                                <div class="media-left mr-2">
+                                                                                    <img src="{{'storage/'. $data_val->image}}" alt="" class="media-object  img-fluid ">
+                                                                                </div>
+                                                                                <div class="media-body text-center">
+                                                                                    <h6 class="media-heading mt-3 ">
+                                                                                        {{$data_val->name}}
+                                                                                    </h6>
+                                                                                    <p class="text-muted ">
+                                                                                        <a class="zs1" href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">招生简章</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">主考专业</a> <a href="{{ url("eduDetail/".$data_val->enducation_add_id."/".$data_val->name) }}" rel="">专业选择</a>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endif
                                                                 @endif
                                                             @endforeach
                                                         </div>

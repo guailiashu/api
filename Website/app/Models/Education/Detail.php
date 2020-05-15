@@ -22,4 +22,15 @@ class Detail extends Model
         return $selectOption;
     }
 
+    //获取地区
+    public static function getAdds($id)
+    {
+        $options = DB::table('home_education_adds')->select('id','name')->get();
+        $selectOption = [];
+        foreach ($options as $option){
+            $selectOption[$option->id] = $option->name;
+        }
+        return $selectOption;
+    }
+
 }
