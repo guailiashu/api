@@ -29,22 +29,22 @@ class DetailController extends AdminController
         $grid = new Grid(new Detail());
 
         $grid->column('id', __('Id'))->sortable()->badge('blue');
-        $grid->column('enducation_add_id', __('类型'))->display(function ($type_id){
+        $grid->column('add_id', __('类型'))->display(function ($type_id){
             $name=DB::table('home_educations')
                 ->where('id',$type_id)
                 ->select('name')
                 ->value('name');
             return $name;
         });
-        $grid->column('name', __('学校名称'));
-        $grid->column('image', __('学校图片'))->image('','70','50');
-        $grid->column('add_id', __('地区'))->display(function ($type_id){
+        $grid->column('enducation_add_id', __('地区'))->display(function ($type_id){
             $name=DB::table('home_education_adds')
                 ->where('id',$type_id)
                 ->select('address')
                 ->value('address');
             return $name;
         });
+        $grid->column('name', __('学校名称'));
+        $grid->column('image', __('学校图片'))->image('','70','50');        
         $grid->column('school_badge', __('校徽'))->image('','70','50');
 //        $grid->column('add_school_index', __('学校主页'));
 //        $grid->column('specialty', __('招生专业'));
