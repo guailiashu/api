@@ -113,7 +113,7 @@ class DetailController extends AdminController
 //        });
         $form->text('name', __('学校名称'));
         $form->image('image', __('学校图片'))->uniqueName();
-        $form->image    ('school_badge', __('校徽'))->uniqueName();
+        $form->image('school_badge', __('校徽'))->uniqueName();
         $form->editor('add_school_index', __('学校主页'));
         $form->editor('specialty', __('招生专业'));
         $form->editor('forms', __('招生简章'));

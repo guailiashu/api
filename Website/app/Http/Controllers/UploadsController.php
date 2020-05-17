@@ -28,7 +28,7 @@ class UploadsController extends Controller
                         $picname = $file[$i]->getClientOriginalName();//获取上传原文件名
                         $ext = $file[$i]->getClientOriginalExtension();//获取上传文件的后缀名
                         // 重命名
-                        $filename = time() . str_random(6) . "." . $ext;
+                        $filename = time() . (bin2hex(random_bytes(3)))  . "." . $ext;
                         if ($file[$i]->move("uploads/images", $filename)) {
                             $newFileName = '/' . "uploads/images" . '/' . $filename;
                             $m = $m + 1;
