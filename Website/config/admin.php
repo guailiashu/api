@@ -161,10 +161,6 @@ return [
             'image' => 'images',
             'file'  => 'files',
         ],
-//        'directory'  => [
-//            'image'  => 'images',
-//            'file'   => 'files',
-//        ]
     ],
 
     /*
@@ -400,16 +396,21 @@ return [
     | https://github.com/laravel-admin-extensions.
     |
     */
-//    'extensions' => [
-//        'wang-editor' => [
-//
-//            // 如果要关掉这个扩展，设置为false
-//            'enable' => true,
-//
-//            // 编辑器的配置
-//            'config' => [
-//
-//            ]
-//        ]
-//    ],
+    'extensions' => [
+        'wang-editor' => [
+
+            // 如果要关掉这个扩展，设置为false
+            'enable' => true,
+
+            // 编辑器的配置
+            'config' => [
+                'uploadImgServer' => '/uploadFile',
+                'uploadFileName' => 'mypic'
+            ]
+        ],
+        'login-captcha' => [
+            // set to false if you want to disable this extension
+            'enable' => true,
+        ]
+    ],
 ];
