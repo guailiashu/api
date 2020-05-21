@@ -12,21 +12,28 @@ ul,ol{
     list-style: none;
 }
 
-/*设置字体*/
+/*设置字体 */
 @font-face {
     font-family: lk;
     src: url('../fonts/lk.eot') format('embedded-opentype'),
     url('../fonts/lk.svg') format('svg'),
-    url('../fonts/lk.ttf') format('truetype'),
+	url('../fonts/lk.ttf') format('truetype'),
     url('../fonts/lk.woff') format('woff');
 }
 
+/* @font-face {
+    font-family: PingFang;
+    src: url('../fonts/PingFang Regular.ttf'),
+} */
+@font-face {
+    font-family: MSYHBD;
+    src: url('../fonts/MSYHBD.TTC'),
+}
 [class^="icon-"],
 [class*=" icon-"]{
     font-family: lk;
     font-style: normal;
 }
-
 /*按钮的自定义*/
 .btn-lk {
     color: #ffffff;
@@ -77,9 +84,40 @@ fieldset[disabled] .btn-lk.active {
 /*************************通用样式-end***************************/
 
 /* 导航字体样式 */
+#lk_header{
+	background: #9318F2;
+	width:100%;
+	height: auto;
+}
 #lk_header .nav-link {
 	color:rgba(255,255,255,0.5);
 	
+}
+#lk_header .navbar-fixed{
+	position: fixed !important;
+	top:0px !important;
+	/* left:-10% !important; */
+	background-color:rgba(249, 249,249, 1) !important;
+	z-index:100000;
+	display: flex;
+	justify-content: start;
+	padding: 40px 30px;
+	box-shadow: 0 1px 3px rgba(153,153,153,.4);
+	/* width:110% !important; */
+	/* padding-right: 10% !important; */
+	
+}
+.navbar-fixed .container-fixed{
+	position: fixed !important;
+	padding: 30px;
+	display: flex;
+	justify-content: start;
+}
+#lk_header .nav-link.nav-link-fixed{
+	color: #000 !important;
+}
+#lk_header .nav-link1.navbar-fixed-active{
+	color: #000 !important;
 }
 #lk_header .nav-link1{
 	color: #fff;
@@ -89,7 +127,22 @@ fieldset[disabled] .btn-lk.active {
 .shouye{
 	position: relative;
 }
-
+.index-text-word{
+	max-width: 888px;
+}
+#lk_nav{
+	font-family: '微软雅黑';
+}
+#lk_school .content .school .schoolList .index-school-name{
+	font-size: 40px !important;
+	line-height:56px !important;
+	color:rgba(51,51,51,1);
+	margin-bottom: 0 !important;
+}
+.index-right-arrow{
+	width:86px;
+	height:30px;
+}
 #lk_header .navbar-lk{
    /* border-bottom: 1px solid #e0e0e0; */
 	position:absolute ;
@@ -97,10 +150,12 @@ fieldset[disabled] .btn-lk.active {
 	z-index: 9999;
 	/* background-color: lightblue; */
 	width:100% ;
+	font-family: PingFang;
+	font-size: 20px;
 }
 
 #lk_header .navbar-lk .navbar-brand{
-    height: 90px;
+    height: 70px;
     /*background-color: red;*/
     margin-left: 15px;
     margin-right: 30px;
@@ -114,22 +169,30 @@ fieldset[disabled] .btn-lk.active {
 
 #lk_header .navbar-lk .navbar-nav>li>a{
     height: 70px;
-    /*background-color: red;*/
+	font-family: MSYHBD;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right:37px;
-	/* color: #fff; */
-	
+	margin-right:18px;
+	font-size: 18px;
 }
 
 #lk_header .navbar-lk .navbar-nav>li>a:hover{
-   /* border-bottom: 2px solid purple; */
+   /* border-bottom: 2px solid #1677FF; */
+   color:#1677FF !important;
+}
+.nav-link-fixed:hover{
+	border-bottom: 2px solid #1677FF;
+}
+.navbar-fixed-active:hover{
+	border-bottom: 2px solid #1677FF;
+}
+#lk_header .navbar-lk .navbar-toggler{
+	position: fixed;
+	right:10px;
+	top:20px;
 }
 
-#lk_header .navbar-lk .navbar-toggler{
-    margin-top: 5px;
-}
 /*************************头部-end***************************/
 
 
@@ -145,9 +208,9 @@ fieldset[disabled] .btn-lk.active {
 .carousel-indicators li{
 	margin-right: 10px;
 } */
-.carousel-indicators .active{
+/* .carousel-indicators .active{
 	background-color: #1677FF;
-}
+} */
 
 /*  */
 #lk_carousel .carousel-item{
@@ -157,7 +220,8 @@ fieldset[disabled] .btn-lk.active {
 }
 
 #lk_carousel .carousel-item img{
-    width: 100%;
+	width: 100%;
+	height:810px !important;
 }
 
 
@@ -172,55 +236,86 @@ fieldset[disabled] .btn-lk.active {
 #lk_introduction {
 	background-color:#F9F9F9; 
 	padding: 62px 0 50px 0;
-	
+	box-shadow: 0 1px 3px rgba(153,153,153,.4);
 }
 #lk_introduction .introduction{
 	
 }
 #lk_introduction .introduction .textword{
 	font-size:20px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-family:PingFang;
 	font-weight:400;
-   color:rgba(153,153,153,1);
-	
-
+	line-height: 28px;
+	color:rgba(153,153,153,1);
+	margin-top:20px ;
 }
-
+#lk_introduction .container h2{
+	font-size:60px;
+	font-family:PingFang;
+}
+.mobile-school-name{
+	margin-top: 10px;
+}
 /* 分校 */
 
 #lk_school{
 	/* border-top: 1px solid #ddd; */
 	margin-top: 52px;
-
 }
 #lk_school .line{
 	width:80%;
 	height:1px;
 	background:rgba(153,153,153,1);
-	
 }
 #lk_school .more a{
 	font-size:15px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-family:PingFang;
 	font-weight:400;
 	color:#999;
 	
 }
 #lk_school .content{
 	width: 100%;
-	height: 350px;
+	height: 400px;
 /* 	background-color: #0056B3; */
 
-	
 }
 #lk_school .content .school{
-	/* width: 100%; */
-	overflow-x:scroll;
+	width: 100%;
+	/* overflow-x:scroll; */
 	display: flex;	
-	align-items: center;
+	align-items: center; 
     justify-content: space-between;
 	
 }
+.carousel-inner-item{
+	/* width: 100%; */
+	/* display: flex;
+	width:100%;
+	display: flex;
+	justify-content: space-between; */
+}
+.carousel-item{
+	width:100%;
+	
+}
+/* .carousel-item img:first-child,
+.carousel-item img:last-child {
+  display: none;
+} */
+.carousel-item.active .school .pc:last-child{
+    /* overflow: hidden;
+    margin-right:  -200px !important; */
+  }
+/* .carousel-item.active{
+	margin: 0 -30px;
+} */
+/* .carousel-item-left{
+	margin-left: -10%;
+} */
+/* .carousel-inner .carousel-item-left{
+	left: -10%;
+} */
 #lk_school .content .school .schoolList{
 	display: flex;
 	flex-direction: column;
@@ -230,36 +325,116 @@ fieldset[disabled] .btn-lk.active {
 		
 }
 #lk_school .content .school .schoolList img{
-	width: 500px;
+	width: 430px;
 	height: 260px;
 	margin-bottom: 10px;
 }
 #lk_school .content .school .schoolList .schoolName{
 	font-size:20px;
-	font-family:PingFangSC-Medium,PingFang SC;
+	font-family:PingFang;
 	font-weight:500;
 	color:rgba(51,51,51,1);
 	margin-bottom: 10px;
 	
 }
 #lk_school .content .school .schoolList .intro{
-	font-size:15px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-size:20px;
+	font-family:PingFang;
 	font-weight:400;
 	color:rgba(51,51,51,1);
-
+	line-height: 28px;
+	margin-bottom: 10px;
 }
-
+.index-school-mark{
+	height:4px;
+	background:rgba(153,153,153,1);
+	margin-bottom: 30px;
+	/* padding-left:300px; */
+	position: relative;
+}
+.index-school-select-mark{
+	position: absolute;
+	height:4px;
+	width:430px;
+	max-width: 100%;
+	background:rgba(22,119,255,1);
+	left:0;
+}
+.index-news-date-parent{
+	width:100%;
+	align-items: center;
+}
+.index-news-content-img {
+	/* width: 338px; */
+	height: 160px;
+	overflow: hidden;
+  }
+.index-news-content-img img{
+	cursor: pointer;
+}
+.index-news-content-img img:hover{
+	transform: scale(1.03);
+}
+.index-scan-more{
+	margin-top: 24px;
+	cursor: pointer;
+	font-size:20px;
+	/* font-family:PingFang; */
+	font-weight:400;
+	text-align: center;
+	width:200px;
+	padding: 5px 0;
+	border:1px solid #999999;
+	border-radius: 3px;
+	color:rgb(71, 70, 70);
+	user-select: none;
+}
+.index-scan-more:visited{
+	color:#999;
+}
+.index-scan-more:hover{
+	transition: all 2s ease 0s;
+	background: #1677FF;
+	color:#fff !important
+}
+.index-news-date{
+	font-weight: bold;
+	margin: 5px;
+}
+.index-right-brackets{
+	display: none;
+	width:20px !important;
+	height:15px !important;
+}
+.index-news-line{
+	width:100%;
+	height:1px;
+	background-color: #8b8888;
+	margin-top: 10px;
+}
+.container-clear-padding{
+	padding: 0 !important;
+}
 /* 移动端样式/pc端去掉横向滚动条*/
 #lk_school .content1 .school1::-webkit-scrollbar {
 	display:none
-	}
+}
 #lk_school .content .school::-webkit-scrollbar {
 	display:none
-	}
+}
 	/* ::-webkit-scrollbar {
 		display:none
 		} */
+		
+/* ie隐藏滚动条样式代码： */
+ html {
+        /*隐藏滚动条，当IE下溢出，仍然可以滚动*/
+        -ms-overflow-style:none;
+        /*火狐下隐藏滚动条*/
+        overflow:-moz-scrollbars-none;
+}		
+		
+
 #lk_school .content1{
 	width: 100%;
 	height: 200px;
@@ -268,8 +443,9 @@ fieldset[disabled] .btn-lk.active {
 }
 #lk_school .content1 .school1{
 	width: 100%;
-	overflow-x:scroll;
+	overflow-y:scroll;
 	display: flex;	
+	/* flex-direction: column; */
 	align-items: center;
 	justify-content: space-between;
 	
@@ -278,34 +454,33 @@ fieldset[disabled] .btn-lk.active {
 	display: flex;
 	flex-direction: column;
 	/* align-items: center; */
-	width: 50%;
+	/* width: 50%; */
 	/* margin: 10px 20px; */
-	margin-right: 40px;
+	/* margin-right: 40px; */
 }
 #lk_school .content1 .school1 .schoolList1 img{
-	width: 200px;
+	width: 100%;
 	height: 150px;
 }
 #lk_school .content1 .school1 .schoolList1 .schoolName1{
 	font-size:20px;
-	font-family:PingFangSC-Medium,PingFang SC;
+	font-family:PingFang;
 	font-weight:500;
 	color:rgba(51,51,51,1);
 	
 }
 #lk_school .content1 .school1 .schoolList1 .intro1{
 	font-size:10px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-family:PingFang;
 	font-weight:400;
 	color:rgba(51,51,51,1);
 
 }
-
 /*************************学历教育-begin***************************/
 #lk_hot{
 	/* border-top: 1px solid #999; */
     /*background-color: purple;*/
-	margin-top: 62px;
+	margin-top: 110px;
 }
 #lk_hot .line{
 	width:80%;
@@ -315,7 +490,7 @@ fieldset[disabled] .btn-lk.active {
 }
 #lk_hot .more a{
 	font-size:15px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-family:PingFang;
 	font-weight:400;
 	color:#999;
 	
@@ -325,58 +500,102 @@ fieldset[disabled] .btn-lk.active {
 }
 #lk_hot .container img{
 	width: 560px;
-	height: 280px;
-	}
+	height: 200px;
+}
 #lk_hot .container h6{
-	font-size:20px;
-	font-family:PingFangSC-Medium,PingFang SC;
+	font-size:30px;
+	font-family:PingFang;
 	font-weight:500;
 	color:rgba(51,51,51,1);
-	
 }
 #lk_hot .container p{
-	font-size:15px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-size:16px;
+	font-family:PingFang;
 	font-weight:400;
 	color:rgba(153,153,153,1);
 	line-height:22px;
+}
+.education-tab-list-text{
+	font-size:20px;
+	font-weight:normal;
+	/* line-height:28px; */
+	color:rgba(51,51,51,1);
+	opacity:1;
+}
+.education-addr-text{
+	color:#999999;
+}
+.education-nav-pills .nav-item .nav-link.active, .nav-pills .show > .nav-link {
+	background-color:rgba(242,242,242,1) !important;
+	color:#1677FF;
+	
+}
+.academic-education{
+	width:100%;
+	background-color: #FFFFFF;
+	padding: 10px;
+	cursor: pointer;
+	box-shadow: 0 2px 3px #999999;
+	border-radius: 5px;
+}
+.academic-education:hover{
+	box-shadow: 0 5px 5px #999999;
+}
+.academic-education-intro{
+	width:100%;
+	border:1px solid #CCCCCC;
+	border-radius:4px;
+	padding: 10px 0px 0px 0px;
+}
+.index-box-shadow{
+	box-shadow: 0 2px 3px #999999;
+}
+.index-school-title{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.index-school-name{
+	margin-top: 20px;
+	
 }
 /*************************学历教育-end***************************/
 
 
 
 /*************************研博新闻-begin***************************/
-
+#lk_ybnews{
+	margin-top: 60px;
+}
 #lk_ybnews .line{
 	width:80%;
 	height:1px;
 	background:rgba(153,153,153,1);
-	
 }
 #lk_ybnews .more a{
 	font-size:15px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-family:PingFang;
 	font-weight:400;
 	color:#999;
-	
 }
 #lk_ybnews .container{
 	width: 100%;
 }
 #lk_ybnews .container img{
-	width: 381px;
-	height: 212px;
-	}
+	/* display: inline-block; */
+	/* width: 100%; */
+	height: 160px;
+}
 #lk_ybnews .container h6{
 	font-size:20px;
-	font-family:PingFangSC-Medium,PingFang SC;
-	font-weight:500;
+	font-family:PingFang;
 	color:rgba(51,51,51,1);
-	
+	font-weight:400;
+	line-height:42px;
 }
 #lk_ybnews .container p{
-	font-size:15px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-size:16px;
+	font-family:PingFang;
 	font-weight:400;
 	color:rgba(153,153,153,1);
 	line-height:22px;
@@ -386,36 +605,37 @@ fieldset[disabled] .btn-lk.active {
 
 
 /*************************教育新闻-begin***************************/
+#lk_edu_news{
+	margin-top: 50px;
+}
 #lk_edu_news .line{
 	width:80%;
 	height:1px;
 	background:rgba(153,153,153,1);
-	
 }
 #lk_edu_news .more a{
 	font-size:15px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-family:PingFang;
 	font-weight:400;
 	color:#999;
-	
 }
 #lk_edu_news .container{
 	width: 100%;
 }
 #lk_edu_news .container img{
-	width: 381px;
-	height: 212px;
-	}
+	width: 338px;
+	/* height: 212px; */
+}
 #lk_edu_news .container h6{
 	font-size:20px;
-	font-family:PingFangSC-Medium,PingFang SC;
-	font-weight:500;
+	font-family:PingFang;
+	font-weight:400;
 	color:rgba(51,51,51,1);
-	
+	line-height:42px;
 }
 #lk_edu_news .container p{
 	font-size:15px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-family:PingFang;
 	font-weight:400;
 	color:rgba(153,153,153,1);
 	line-height:22px;
@@ -426,20 +646,19 @@ fieldset[disabled] .btn-lk.active {
 
 /*************************公益活动-begin***************************/
 #lk_active{
-    /*background-color: red;*/
+	/*background-color: red;*/
+	margin-top: 40px;
 }
 #lk_active .line{
 	width:80%;
 	height:1px;
 	background:rgba(153,153,153,1);
-	
 }
 #lk_active .more a{
 	font-size:15px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-family:PingFang;
 	font-weight:400;
 	color:#999;
-	
 }
 #lk_active .container{
 	width: 100%;
@@ -447,17 +666,15 @@ fieldset[disabled] .btn-lk.active {
 #lk_active .container img{
 	width: 300px;
 	height: 212px;
-	}
+}
 #lk_active .container h6{
 	font-size:20px;
-	font-family:PingFangSC-Medium,PingFang SC;
-	font-weight:500;
+	font-family:PingFang;
 	color:rgba(51,51,51,1);
-	
 }
 #lk_active .container p{
 	font-size:10px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-family:PingFang;
 	font-weight:400;
 	color:rgba(153,153,153,1);
 	line-height:22px;
@@ -466,7 +683,13 @@ fieldset[disabled] .btn-lk.active {
 #lk_active .container .visible-xs-block img{
 	width: 381px;
 	height: 212px;
-	}
+}
+.index-public-welfare{
+	cursor: pointer;
+}
+/* .index-public-welfare:hover{
+	color:#1677FF !important;
+} */
 /*************************公益活动-end***************************/
 
 
@@ -475,20 +698,47 @@ fieldset[disabled] .btn-lk.active {
 #lk_footer{
     width: 100%;
 	height: 80px;
- 
 }
 
 #lk_footer .container {
 	padding-top: 20px;
 	border-top: 1px solid #979797;
-   font-size:20px;
-   font-family:PingFangSC-Regular,PingFang SC;
-   font-weight:400;
-   color:rgba(153,153,153,1);
-
+	font-size:20px;
+	font-family:PingFang;
+	font-weight:400;
+	color:rgba(153,153,153,1);
 }
 
-
+#lk_introduction .container .about-us-title{
+	font-size:48px;
+}
+#lk_introduction .container .about-us-text-word{
+	margin-top: 40px;
+	font-size:24px;
+	line-height:33px;
+}
+#yb_culture .culture-title{
+	font-size:48px;
+}
+#yb_culture .container .about-us-subtitle{
+	font-size:22px;
+	color:rgba(51,51,51,1);
+}
+.about-us-contact{
+	margin-top: 60px;
+}
+.about-us-addr{
+	font-size:20px;
+	line-height:28px;
+	font-size:20px;
+	opacity:1;
+}
+.about-us-tel-mark{
+	color:rgba(51,51,51,0.50);
+}
+.about-us-tel-num{
+	color:rgba(51,51,51,1);
+}
 /*************************关于我们-end***************************/
 
 
@@ -503,53 +753,47 @@ fieldset[disabled] .btn-lk.active {
 	width:493px;
 	height: 260px;
 	overflow: hidden;
-	margin-top: 30px;
-	
 }
 #yb_school2 .container img{
 	/* width:493px;
 	height: 260px; */
 	height:100%;
 	width: 100%;	
-	
 	transition: all 1s;
-	
-	}
+}
 #yb_school2 .container img:hover{
 	cursor: pointer;
-	 -webkit-transform: scale(1.5);
-	  transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
 }
 #yb_school2 .container h6{
 	font-size:30px;
 	font-family:Microsoft YaHei;
 	font-weight:400;
-	
 	color:rgba(51,51,51,1);
-	
-	
 }
 #yb_school2 .container p .Tel{
 	font-size:20px;
 	font-family:Microsoft YaHei;
 	font-weight:400;
-	color:blue;
+	color:rgba(51,51,51,0.50);
 }
 #yb_school2 .container p .Add{
 	font-size:20px;
 	font-family:Microsoft YaHei;
 	font-weight:400;
-	color:blue;
+	color:rgba(51,51,51,0.50);
 }
 #yb_school2 .container p .number{
 	font-size:20px;
 	font-family:Microsoft YaHei;
 	font-weight:400;	
 	color:rgba(51,51,51,1);
-	
 }
-#yb_school2 .container p.text-muted{
-	margin: 0 0 10px;
+#yb_school2 .container .text-muted{
+	/* margin: 0 0 10px; */
+	padding: 0;
+	margin: 0 !important;
 } 
 #yb_school2 .container p .number{
 	margin-bottom: 60px;
@@ -567,26 +811,23 @@ fieldset[disabled] .btn-lk.active {
 	/* color: #1677FF; */
 	font-size: 15px;
 	/* border-radius:4px; */
-	
 }
 #yb_education2 .nav-pills .nav-link{
 	/* color: #333333; */
 	font-size: 15px;
 	padding: 8px 10px;
-
 }
 #yb_education2 .nav-pills .staic{
 	font-size:20px;
 	font-weight:normal;
-	color:blue;
+	color:#CCCCCC;
 	opacity:1;
+	line-height: 28px;
 	padding-right: 20px;
 }
 #yb_education2 .nav-pills1{
 	/* border-top: 1px solid #999999;
 	width: 100%; */
-	
-	
 }
 /* #yb_education2 .nav-pills1 .tab-pane{
 	background-color: #F4F4F4;
@@ -594,8 +835,6 @@ fieldset[disabled] .btn-lk.active {
 
 #yb_education2 #lk_hotschool .container{
 	width: 100%;
-	
-	
 }
 #yb_education2 #lk_hotschool .container img{
 	width: 381px;
@@ -603,27 +842,24 @@ fieldset[disabled] .btn-lk.active {
 	}
 #yb_education2 #lk_hotschool .container h6{
 	font-size:20px;
-	font-family:PingFangSC-Medium,PingFang SC;
+	font-family:PingFang;
 	font-weight:500;
 	color:rgba(51,51,51,1);
-	
 }
 #yb_education2 #lk_hotschool .container p a{
 	font-size:16px;
 	font-weight:normal;
 	color:rgba(22,119,255,1);
 	text-decoration:underline;
-	margin:0 10px;
-	
 }
-
+#yb_education2 #lk_hotschool .container p a:nth-child(2){
+	margin:0 16px;
+}
 
 
 .fenye{
 	margin-top: 40px;
 	margin-bottom: 40px;
-	
-
 }
 /* 学历教育2级页面 */
 
@@ -635,7 +871,7 @@ fieldset[disabled] .btn-lk.active {
 	margin-top: 60px;
 } */
 #yb_news2 .nav-pills .nav-link{
-margin: 0 30px;
+	margin: 0 30px;
 }
 /* #yb_news2 .tab-content{
 	border-top: 1px solid #999999;
@@ -644,19 +880,18 @@ margin: 0 30px;
 	padding-top: 50px;
 }
 #yb_news2  .container img{
-	width: 381px;
-	height: 212px;
-	}
+	width: 390px;
+	height: 220px;
+}
 #yb_news2 .container h6{
-	font-size:20px;
-	font-family:PingFangSC-Medium,PingFang SC;
+	font-size:30px;
+	font-family:PingFang;
 	font-weight:500;
 	color:rgba(51,51,51,1);
-	
 }
 #yb_news2 .container p{
-	font-size:15px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-size:16px;
+	font-family:PingFang;
 	font-weight:400;
 	color:rgba(153,153,153,1);
 	line-height:22px;
@@ -674,17 +909,16 @@ margin: 0 30px;
 #yb_active2  .container img{
 	width: 381px;
 	height: 212px;
-	}
+}
 #yb_active2 .container h6{
-	font-size:20px;
-	font-family:PingFangSC-Medium,PingFang SC;
+	font-size:30px;
+	font-family:PingFang;
 	font-weight:500;
 	color:rgba(51,51,51,1);
-	
 }
 #yb_active2 .container p{
 	font-size:15px;
-	font-family:PingFangSC-Regular,PingFang SC;
+	font-family:PingFang;
 	font-weight:400;
 	color:rgba(153,153,153,1);
 	line-height:22px;
@@ -702,14 +936,10 @@ margin: 0 30px;
 	margin-bottom:40px;
 }
 #yb_culture .container p{
-	font-size:15px;
-	font-family:PingFang SC;
+	font-size:16px;
+	font-family:PingFang;
 	font-weight:400;
 	color:rgba(51,51,51,1);
-	
-}
-#yb_culture .container .row img{
-		
 }
 #yb_culture .container .row .Efficient,.Legneds{
 	margin-top: 56px;
@@ -724,13 +954,9 @@ margin: 0 30px;
 }
 #yb_develope .container p{
 	font-size:15px;
-	font-family:PingFang SC;
+	font-family:PingFang;
 	font-weight:400;
 	color:rgba(51,51,51,1);
-	
-}
-#yb_develope .container .row img{
-		
 }
 #yb_develope .container .row .Efficient,.Legneds{
 	margin-top: 56px;
@@ -747,10 +973,8 @@ margin: 0 30px;
 
 /* 分校xiangq--3级页面 */
 #schoolDetail {
-
-position: absolute;
-top: 107px;
-width: 100%;
+	margin-top: 60px;
+	width: 100%;
 }
 
 #schoolDetail .container{
@@ -758,11 +982,48 @@ width: 100%;
 	
 	
 }
-#schoolDetail .container img{
-	width: 250px;
-	height: 150px;
+#schoolDetail .container .single-left-img{
+	width: 100%;
+	height: 251px;
 	cursor: pointer;
-	}
+}
+#schoolDetail .container .single-right-img{
+	width: 100%;
+	height: 251px;
+	cursor: pointer;
+}
+#schoolDetail .container .double-left-img{
+	width: 100%;
+	height: 251px;
+	cursor: pointer;
+}
+#schoolDetail .container .double-right-img{
+	width: 100%;
+	height: 251px;
+	cursor: pointer;
+}
+#schoolDetail .container .new-schooll-detail{
+	width:100%;
+	display: flex;
+	justify-content: space-around;
+}
+.new-school-chinese-name{
+	font-size:59px;
+	font-family:PingFang;
+	font-weight:600;
+	line-height:84px;
+	color:rgba(112,112,112,1);
+	letter-spacing:10px;
+	opacity:1;
+}
+.new-school-english-name{
+	font-size:33px;
+	font-family:Arial;
+	font-weight:400;
+	line-height:38px;
+	color:rgba(121,118,118,1);
+	opacity:1;
+}
 /* 分校xiangq--3级页面 */
 
 
@@ -784,13 +1045,11 @@ width: 100%;
 /* 移动端导航栏自定义 */
 .mobile_nav{
 	width: 100%;
-	background: #000000;
-	position: absolute;
-	top: 107px;
+	background: rgba(22,119,255,.8);
+	position: fixed;
+	bottom: 0px;
 	display: none;
 	z-index: 999999;
-	
-	
 }
 .mobile_nav .content{
 	display: flex;
@@ -805,4 +1064,32 @@ width: 100%;
 .mobile_nav div a{
 	color: #FFFFFF;
 	font-size: 20px;
+}
+.carousel-indicators .active{
+	background-color:#1677FF;
+}
+.carousel-indicators li{
+	width:50px;
+	height:4px;
+}
+.page-item .page-link, .page-item a{
+	width:40px;
+	height:40px;
+	/* background:rgba(22,119,255,1); */
+	line-height: 26px;
+	text-align: center;
+	opacity:1;
+	border-radius:6px;
+	margin-right: 6px;
+}
+.page-item.active .page-link{
+	border-color:none !important;
+}
+.page-link{
+	color:#999999
+}
+.box-sizing{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
 }
