@@ -44,11 +44,11 @@
 
                                 @if($name->c_route == 'home/index')
                                     <li class="nav-item active">
-                                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1" href="index.html">首页<span class="sr-only">(current)</span></a>
+                                        <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link1" href={{route($name->c_route)}}>{{$name->column}}<span class="sr-only">(current)</span></a>
                                     </li>
                                 @elseif($name->c_route == 'home/active')
                                     <li class="nav-item">
-                                        <a style="color: #fff;" class="nav-link nav-link5"  href="active.html">公益</a>
+                                        <a style="color: #fff;" class="nav-link nav-link5"  href={{route($name->c_route)}}>{{$name->column}}</a>
                                     </li>
                                 @else
                                     <li class="nav-item">

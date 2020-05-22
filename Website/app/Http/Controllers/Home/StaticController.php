@@ -20,6 +20,7 @@ class StaticController extends Controller
 
         $mag = $this->getNavigation();//获取导航栏数据
 
+
         //获取页面展示数据
         foreach ($mag as $key=>$val){
 
@@ -45,43 +46,43 @@ class StaticController extends Controller
                         ->get();
 
 
-                    foreach ($data as $school_key=>$school_val){
+//                    foreach ($data as $school_key=>$school_val){
+//
+//                         //获取分校对应数据下标
+//                        $sub_key = $school_key + 1;
+//
+//                        //数据的总数
+//                        $data_count = $data->count();
+//
+//                        //对应余数分组 余数为1 2 的为一组
+//                        $remainder = $sub_key%($data_count/2);
+//
+//                        //暂时因为分两组  除数小于1的为一组
+//                        $divide = $sub_key/2;
+//
+//                        if($divide<=1){
+//                            //第一组
+//                            if($remainder == 1)
+//                            {
+//                                $title[1]['one'] = $school_val;
+//                            }else{
+//                                $title[1]['two'] = $school_val;
+//                            }
+//
+//                        }else{
+//                         //第二组
+//
+//                            if($remainder == 1)
+//                            {
+//                                $title[2]['one'] = $school_val;
+//                            }else{
+//                                $title[2]['two'] = $school_val;
+//                            }
+//                        }
+//                        $data_num = $title;
+//                    }
 
-                         //获取分校对应数据下标
-                        $sub_key = $school_key + 1;
-
-                        //数据的总数
-                        $data_count = $data->count();
-
-                        //对应余数分组 余数为1 2 的为一组
-                        $remainder = $sub_key%($data_count/2);
-
-                        //暂时因为分两组  除数小于1的为一组
-                        $divide = $sub_key/2;
-
-                        if($divide<=1){
-                            //第一组
-                            if($remainder == 1)
-                            {
-                                $title[1]['one'] = $school_val;
-                            }else{
-                                $title[1]['two'] = $school_val;
-                            }
-
-                        }else{
-                         //第二组
-
-                            if($remainder == 1)
-                            {
-                                $title[2]['one'] = $school_val;
-                            }else{
-                                $title[2]['two'] = $school_val;
-                            }
-                        }
-                        $data_num = $title;
-                    }
-
-                    $get_mag[$s_route[1]]['title'] = $data_num;
+                    $get_mag[$s_route[1]]['title'] = $data;
                     $get_mag[$s_route[1]]['routes'] = $val;
 
                 }elseif($s_route[1] == 'active'){//公益
@@ -100,8 +101,10 @@ class StaticController extends Controller
             }
         }
 
-//        dd($home_mage);
-      return View('home.index')->with('column',$mag)->with('home',$home_mage);
+//            dd($home_mage);
+      return View('home.index')
+          ->with('column',$mag)
+          ->with('home',$home_mage);
     }
 
     //分校
@@ -241,10 +244,16 @@ class StaticController extends Controller
         //获取返回的具体分校对应id编号
         $school_id = $request->schoolId;
 
+        $school_data = DB::table('home_schools')
+            ->where('id',$school_id)
+            ->value('name');
+
         //获取分校的图片数据
         $school_db_data = DB::table('home_school_images')
-            ->where('school_id',$school_id)
-            ->get();
+                ->where('school_id',$school_id)
+              //  ->leftJoin('home_schools','home_school_images.school_id','home_schools.id')
+                ->get();
+
 
         $mag = $this->getNavigation();//获取导航栏数据
 
@@ -257,10 +266,11 @@ class StaticController extends Controller
             $Detail_route[$key]['column'] = $val->column;
         }
 
-//        dd($school_db_data);
+//dd($school_db_data);
 
         return View('home.schoolDetail')
             ->with('column',$Detail_route)
+            ->with('school',$school_data)
             ->with('school_data',$school_db_data);
     }
 

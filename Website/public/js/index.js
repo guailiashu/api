@@ -1,4 +1,36 @@
 $(function () {
+        $(document).on('scroll',function(e){
+            if($(document).scrollTop() >= 120){
+                $('#lk_header .navbar-lk').addClass('navbar-fixed')
+                $('#lk_header .navbar-lk .container').addClass('container-fixed').removeClass('container')
+                // $('#lk_header .navbar-lk .container').removeClass('container')
+                $('#lk_header .nav-link').not('.nav-link1').addClass('nav-link-fixed')
+                $('#lk_header .nav-link1').addClass('navbar-fixed-active')
+            }else{
+                $('#lk_header .navbar-lk .container-fixed').addClass('container').removeClass('container-fixed')
+                // $('#lk_header .navbar-lk .container-fixed').removeClass('container-fixed')
+                $('#lk_header .navbar-fixed').removeClass('navbar-fixed')
+                $('#lk_header .nav-link').removeClass('nav-link-fixed')
+                $('#lk_header .nav-link1').removeClass('navbar-fixed-active')
+            }
+        })
+        // $('.navbar-lk').on().mouseover(function(){
+        //     console.log(9999999)
+        // })
+        $('.nav-link-fixed').on('click',function(){
+            console.log('999999999')
+            $(this).css({
+                'border-bottom':'2px solid #1677FF'
+            })
+        })
+        // $('.nav-link').bind('mouseleave',function(){
+        //     $(this).css({
+        //         'border-bottom':'none'
+        //     })
+        // })
+        // $('.nav-link-fixed').css({
+        //     'border-bottom':'2px solid #1677FF'
+        // })
     // 1. 轮播图
     // $(window).on('resize', () => {
     //     // 1.窗口的宽度

@@ -55,7 +55,7 @@
 
                             @elseif('school'== $name['c_route'])
                                 <li class="nav-item ">
-                                    <a style="color: #fff;" class="nav-link nav-link2 " href="#">{{ $name['column'] }}</a>
+                                    <a style="color: #fff;" class="nav-link nav-link2 " href={{url($name['c_route'])}}>{{ $name['column'] }}</a>
                                 </li>
                             @else
                                 <li class="nav-item">
@@ -66,6 +66,10 @@
 
                         @endforeach
 
+                        <li class="nav-item">
+                            <a class="nav-link nav-link7 color7" target="_blank"  href="http://shop.jd.com" rel="nofollow">研博商城</a>
+                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -73,8 +77,44 @@
     </header>
 
 
+    <section id="lk_carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#lk_carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#lk_carousel" data-slide-to="1"></li>
+            <li data-target="#lk_carousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <img src="{{url('/images/slide_01_900x410.jpg')}}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{url('/images/slide_02_900x410.jpg')}}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item ">
+                <img src="{{url('/images/slide_03_900x410.jpg')}}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+
+
+        <a class="carousel-control-prev" href="#lk_carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#lk_carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </section>
+
+</div>
     <!-- 图片内容 -->
     <!-- 页面传参。哪个分校就展示哪个分校的所有图片，点击小图，全图展示 -->
+<div class="container d-flex flex-column align-items-center mt-3">
+    <h2 class='new-school-chinese-name'>{{$school}}</h2>
+{{--    <h2  class='new-school-english-name'>GuiZhou Branch</h2>--}}
+</div>
+
     <section id="schoolDetail">
         <!--内容-->
         <div class="container">
@@ -82,28 +122,34 @@
 
                 @foreach($school_data as $school_key=>$school_val)
 
-{{--{{  $school_val->image_route}}--}}
-                    <div class="col-md-4 col-lg-3">
-                        <div class="media d-flex flex-column align-items-center  mb-3  ">
-                            <div class="media-left mr-2">
+                    <div class="col-md-4 col-lg-4">
+                        <div class=" mb-3  ">
+                            <div class="">
                                 <img src={{ url('storage/'.$school_val->image_route) }} alt="" class="media-object pic01 img-fluid ">
-{{--                                <img src={{ url("images/ad.jpg") }} alt="" class="media-object pic01 img-fluid ">--}}
-
                             </div>
                         </div>
                     </div>
                 @endforeach
 
-
-
-
             </div>
         </div>
+
+        {{--         分页--}}
+{{--        <div class="fenye container ">--}}
+{{--            <nav aria-label="Page navigation example">--}}
+{{--                <ul class="pagination justify-content-center">--}}
+{{--                    {!! $school_data->render() !!}--}}
+{{--                </ul>--}}
+{{--            </nav>--}}
+{{--        </div>--}}
+        {{--         分页--}}
+
     </section>
 
 
 
-</div>
+
+
 
 <!-- 移动端导航自定义 -->
 <div class="mobile_nav">
@@ -117,18 +163,19 @@
                     </div>
         @endforeach
 
-{{--        <div class="index">--}}
-{{--            <a href={{url("")}}>研博商城</a>--}}
-{{--        </div>--}}
+            <div class="index">
+                <a href="http://shop.jd.com" rel="nofollow">研博商城</a>
+            </div>
     </div>
 </div>
+
+<!--------------------尾部-begin------------------------------>
+@include('home.layouts._footer')
+<!--------------------尾部-end------------------------------>
 
 <div class="pic02">
     <img src="#" alt="">
 </div>
-
-
-
 
 <script src={{url("lib/js/jquery-3.3.1.js")}}></script>
 <script src={{url("lib/js/popper.js")}}></script>
@@ -136,89 +183,106 @@
 <script src={{url("js/index.js")}}></script>
 <script type="text/javascript">
     $(function () {
-
-        var _height = $(window).height(); //获取当前窗口的高度,赋值给轮播图
+        let _height = $(window).height(); //获取当前窗口的高度,赋值给轮播图
+        let urlinfo = window.location.href;//获取url
         $('.mobile_nav').css('height', _height-107)
 
-
-
-        // var urlinfo = window.location.href,//获取url
-        //     value = urlinfo.split("?")[1].split("=")[1]; //拆分url得到”=”后面的参数
-        // console.log(decodeURI(value))
-        // alert("点击了"+decodeURI(value))
+        //  value = urlinfo.split("?")[1].split("=")[1]; //拆分url得到”=”后面的参数
+        //alert("点击了"+decodeURI(value))
 
         // 点击放大
         $('.pic01').on('click',function(){
-            var picSrc =  $(this).attr('src')
+            let picSrc =  $(this).attr('src')
             $('.pic02 img').attr('src',picSrc)
             $('.pic02').show()
             $('.pic01').hide()
+            $('#lk_footer').hide()
+            $('#lk_carousel').hide()
+            $('#lk_header').hide()
+            $('.fenye').hide()
         })
         $('.pic02').on('click',function(){
             $('.pic02').hide()
             $('.pic01').show()
+            $('#lk_footer').show()
+            $('#lk_carousel').show()
+            $('#lk_header').show()
+            $('.fenye').show()
         })
-
-
         // 导航跳转
-        // $('.nav-link1').click(function () {
-        //  $(location).attr('href', 'index.html');
-        // })
         $('.nav-link2').click(function () {
-
             // 刷新
             location.reload()
         })
-        // $('.nav-link3').click(function () {
-        // 	 $(location).attr('href', 'education.html');
-        // })
-        // $('.nav-link4').click(function () {
-        // 	 $(location).attr('href', 'news.html');
-        // })
-        // $('.nav-link5').click(function () {
-        // 	 $(location).attr('href', 'active.html');
-        // })
-        // $('.nav-link6').click(function () {
-        // 	 $(location).attr('href', 'about.html');
-        // })
-
-
-
 
     })
 </script>
 <script type="text/javascript">
+    let body = document.querySelector('body');
+    let pageItem = $(".pagination li").not(".prev,.next");
+    $(document).on('click', '.prev', function() {
+        //1- get first element to check if it has class 'active',
+        // to prevent class 'active' from moving to prev button on click,
+        // if explanation isn't clear try removing if(){} to see it.
+        const first = $(this).siblings().first();
+        if (!first.hasClass('active')) {
+            $(".prev").removeClass('disabled')
+            //2- search <li>'s to get the one that has 'active' class.
+            const active = $(this).siblings('.active');
+            //3- get the previous item of the <li class"active"> to move to.
+            const prevItem = active.prev();
+            //4- get href of the item to redirect to.
+            const link = prevItem.children('a').prop('href');
+            //5- remove 'active' class from the current <li> and give it to prev <li>.
+            active.removeClass('active');
+            prevItem.addClass('active');
+            //6- redirect to href of the new <li>.
+            window.location.href = link;
+        } else {
+            // $(".prev").addClass('disabled')
+        }
+    });
+    $(document).on('click', '.next', function() {
+        const last = $(this).siblings().last();
+        if (!last.hasClass('active')) {
+            const active = $(this).siblings('.active');
+            const nextItem = active.next();
+            const link = nextItem.children('a').prop('href');
+            active.removeClass('active');
+            nextItem.addClass('active');
+            window.location.href = link;
+        }
+    });
+
+    pageItem.click(function() {
+        pageItem.removeClass("active");
+        $(this).not(".prev,.next").addClass("active");
+    });
+    $('.jump-education-detail').click(function () {
+        let url='eduDetail.html'
+        let picAlt =  $(this).find('a').attr('rel')
+        window.location.href = encodeURI(url + "?value=" + picAlt);
+    })
     if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
         $(function(){
-
             //$('#lk_header .collapse').css("background-color", "black")
-
             $('#lk_header .collapse').hide()
             $('.navbar-toggler').click(function(){
                 $('.mobile_nav').toggle()
             })
-
         })
-
     }else{
         // $('#lk_header .collapse').css("background-color", "none")
         $('.mobile_nav').hide()
     }
 
     // 判断触摸滑动事件
-    var body = document.querySelector('body');
+
     /*绑定touchmove*/
     body.addEventListener('touchmove',function(e){
-        // console.log('touchmove');
-        // console.log(e.isTrusted);
-
         // $('.collapse').collapse('hide')
         $('.mobile_nav').fadeOut("slow");
     })
-
-
-
-
 </script>
 </body>
 </html>

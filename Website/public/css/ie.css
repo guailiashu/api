@@ -1,0 +1,912 @@
+/*************************通用样式-begin***************************/
+body{
+    color: #000;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+/*设置字体*/
+@font-face {
+    font-family: lk;
+    src: url('../fonts/lk.eot') format('embedded-opentype'),
+    url('../fonts/lk.svg') format('svg'),
+    url('../fonts/lk.ttf') format('truetype'),
+    url('../fonts/lk.woff') format('woff');
+}
+
+[class^="icon-"],
+[class*=" icon-"]{
+    font-family: lk;
+    font-style: normal;
+}
+/*按钮的自定义*/
+.btn-lk {
+    color: #ffffff;
+    background-color: #8330F0;
+    border-color: #9318F2;
+}
+
+.btn-lk:hover,
+.btn-lk:focus,
+.btn-lk:active,
+.btn-lk.active,
+.open .dropdown-toggle.btn-lk {
+    color: #ffffff;
+    background-color: #9146F2;
+    border-color: #9318F2;
+}
+
+.btn-lk:active,
+.btn-lk.active,
+.open .dropdown-toggle.btn-lk {
+    background-image: none;
+}
+
+.btn-lk.disabled,
+.btn-lk[disabled],
+fieldset[disabled] .btn-lk,
+.btn-lk.disabled:hover,
+.btn-lk[disabled]:hover,
+fieldset[disabled] .btn-lk:hover,
+.btn-lk.disabled:focus,
+.btn-lk[disabled]:focus,
+fieldset[disabled] .btn-lk:focus,
+.btn-lk.disabled:active,
+.btn-lk[disabled]:active,
+fieldset[disabled] .btn-lk:active,
+.btn-lk.disabled.active,
+.btn-lk[disabled].active,
+fieldset[disabled] .btn-lk.active {
+    background-color: #8330F0;
+    border-color: #9318F2;
+}
+
+.btn-lk .badge {
+    color: #8330F0;
+    background-color: #ffffff;
+}
+
+/*************************通用样式-end***************************/
+
+/* 导航字体样式 */
+#lk_header .nav-link {
+	color:rgba(255,255,255,0.5);
+	
+}
+#lk_header .nav-link1{
+	color: #fff;
+}
+
+/* 首页 */
+.shouye{
+	position: relative;
+}
+.index-text-word{
+	max-width: 888px;
+}
+#lk_school .content .school .schoolList .index-school-name{
+	font-size: 40px !important;
+	line-height:56px !important;
+	color:rgba(51,51,51,1);
+	margin-bottom: 0 !important;
+}
+.index-right-arrow{
+	width:86px;
+	height:30px;
+}
+#lk_header .navbar-lk{
+   /* border-bottom: 1px solid #e0e0e0; */
+	position:absolute ;
+	top: 0;
+	z-index: 9999;
+	/* background-color: lightblue; */
+	width:100% ;
+}
+
+#lk_header .navbar-lk .navbar-brand{
+    height: 90px;
+    /*background-color: red;*/
+    margin-left: 15px;
+    margin-right: 30px;
+}
+
+#lk_header .navbar-lk .navbar-brand img{
+   width: 166px;
+   height: 40px;
+   margin-right: 40px;
+}
+
+#lk_header .navbar-lk .navbar-nav>li>a{
+    height: 70px;
+    /*background-color: red;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right:37px;
+	/* color: #fff; */
+}
+
+#lk_header .navbar-lk .navbar-nav>li>a:hover{
+   /* border-bottom: 2px solid purple; */
+}
+
+#lk_header .navbar-lk .navbar-toggler{
+	position: fixed;
+	right:10px;
+	top:20px;
+}
+/*************************头部-end***************************/
+
+
+
+/*************************轮播图-begin***************************/
+#lk_carousel{
+
+}
+/* 轮播样式 */
+/* .carousel-indicators{
+	margin-left: -40%;
+}
+.carousel-indicators li{
+	margin-right: 10px;
+} */
+/* .carousel-indicators .active{
+	background-color: #1677FF;
+} */
+
+/*  */
+#lk_carousel .carousel-item{
+   /* background: no-repeat center center;
+    -webkit-background-size: cover;
+    background-size: cover; */
+}
+
+#lk_carousel .carousel-item img{
+	width: 100%;
+	height:810px !important;
+}
+
+
+/* @media screen and (max-width: 576px){
+    #lk_carousel .carousel-item1{
+       height: 400px ;
+    }
+} */
+/*************************轮播图-end***************************/
+
+/* 服务介绍 */
+#lk_introduction {
+	background-color:#F9F9F9; 
+	padding: 62px 0 50px 0;
+	
+}
+#lk_introduction .introduction{
+	
+}
+#lk_introduction .introduction .textword{
+	font-size:20px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	line-height: 28px;
+	color:rgba(153,153,153,1);
+	margin-top:20px ;
+}
+#lk_introduction .container h2{
+	font-size:60px;
+	font-family:PingFang SC;
+}
+.mobile-school-name{
+	margin-top: 10px;
+}
+/* 分校 */
+
+#lk_school{
+	/* border-top: 1px solid #ddd; */
+	margin-top: 52px;
+}
+#lk_school .line{
+	width:80%;
+	height:1px;
+	background:rgba(153,153,153,1);
+}
+#lk_school .more a{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:#999;
+	
+}
+#lk_school .content{
+	width: 100%;
+	height: 350px;
+/* 	background-color: #0056B3; */
+
+}
+#lk_school .content .school{
+	width: 100%;
+	/* overflow-x:scroll; */
+	display: flex;	
+	align-items: center; 
+    justify-content: space-between;
+	
+}
+.carousel-inner-item{
+	/* width: 100%; */
+	/* display: flex;
+	width:100%;
+	display: flex;
+	justify-content: space-between; */
+}
+.carousel-item{
+	width:100%;
+	
+}
+/* .carousel-item img:first-child,
+.carousel-item img:last-child {
+  display: none;
+} */
+.carousel-item.active .school .pc:last-child{
+    /* overflow: hidden;
+    margin-right:  -200px !important; */
+  }
+/* .carousel-item.active{
+	margin: 0 -30px;
+} */
+/* .carousel-item-left{
+	margin-left: -10%;
+} */
+/* .carousel-inner .carousel-item-left{
+	left: -10%;
+} */
+#lk_school .content .school .schoolList{
+	display: flex;
+	flex-direction: column;
+	
+	/* align-items: center; */
+	margin-right: 40px;
+		
+}
+#lk_school .content .school .schoolList img{
+	width: 430px;
+	height: 260px;
+	margin-bottom: 10px;
+}
+#lk_school .content .school .schoolList .schoolName{
+	font-size:20px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+	margin-bottom: 10px;
+	
+}
+#lk_school .content .school .schoolList .intro{
+	font-size:20px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(51,51,51,1);
+	line-height: 28px;
+	margin-bottom: 10px;
+}
+.index-school-mark{
+	height:4px;
+	background:rgba(153,153,153,1);
+	margin-bottom: 30px;
+	/* padding-left:300px; */
+	position: relative;
+}
+.index-school-select-mark{
+	position: absolute;
+	height:4px;
+	width:430px;
+	max-width: 100%;
+	background:rgba(22,119,255,1);
+	left:0;
+}
+.container-clear-padding{
+	padding: 0 !important;
+}
+/* 移动端样式/pc端去掉横向滚动条*/
+#lk_school .content1 .school1::-webkit-scrollbar {
+	display:none
+}
+#lk_school .content .school::-webkit-scrollbar {
+	display:none
+}
+	/* ::-webkit-scrollbar {
+		display:none
+		} */
+		
+/* ie隐藏滚动条样式代码： */
+ html {
+        /*隐藏滚动条，当IE下溢出，仍然可以滚动*/
+        -ms-overflow-style:none;
+        /*火狐下隐藏滚动条*/
+        overflow:-moz-scrollbars-none;
+}		
+		
+
+#lk_school .content1{
+	width: 100%;
+	height: 200px;
+/* 	background-color: #0056B3; */
+	
+}
+#lk_school .content1 .school1{
+	width: 100%;
+	overflow-y:scroll;
+	display: flex;	
+	/* flex-direction: column; */
+	align-items: center;
+	justify-content: space-between;
+	
+}
+#lk_school .content1 .school1 .schoolList1{
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+	/* width: 50%; */
+	/* margin: 10px 20px; */
+	/* margin-right: 40px; */
+}
+#lk_school .content1 .school1 .schoolList1 img{
+	width: 100%;
+	height: 150px;
+}
+#lk_school .content1 .school1 .schoolList1 .schoolName1{
+	font-size:20px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+	
+}
+#lk_school .content1 .school1 .schoolList1 .intro1{
+	font-size:10px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(51,51,51,1);
+
+}
+/*************************学历教育-begin***************************/
+#lk_hot{
+	/* border-top: 1px solid #999; */
+    /*background-color: purple;*/
+	margin-top: 62px;
+}
+#lk_hot .line{
+	width:80%;
+	height:1px;
+	background:rgba(153,153,153,1);
+	
+}
+#lk_hot .more a{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:#999;
+	
+}
+#lk_hot .container{
+	width: 100%;
+}
+#lk_hot .container img{
+	width: 560px;
+	height: 280px;
+}
+#lk_hot .container h6{
+	font-size:30px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+}
+#lk_hot .container p{
+	font-size:16px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	line-height:22px;
+}
+.education-tab-list-text{
+	font-size:20px;
+	font-weight:normal;
+	/* line-height:28px; */
+	color:rgba(51,51,51,1);
+	opacity:1;
+}
+.education-addr-text{
+	color:#999999;
+}
+.education-nav-pills .nav-item .nav-link.active, .nav-pills .show > .nav-link {
+	background-color:rgba(242,242,242,1) !important;
+	color:#1677FF;
+	border-radius:4px;
+}
+/*************************学历教育-end***************************/
+
+
+
+/*************************研博新闻-begin***************************/
+
+#lk_ybnews .line{
+	width:80%;
+	height:1px;
+	background:rgba(153,153,153,1);
+}
+#lk_ybnews .more a{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:#999;
+}
+#lk_ybnews .container{
+	width: 100%;
+}
+#lk_ybnews .container img{
+	width: 390px;
+	height: 220px;
+}
+#lk_ybnews .container h6{
+	font-size:26px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	color:rgba(51,51,51,1);
+	font-weight:400;
+	line-height:42px;
+}
+#lk_ybnews .container p{
+	font-size:16px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	line-height:22px;
+}
+/*************************研博新闻-end***************************/
+
+
+
+/*************************教育新闻-begin***************************/
+#lk_edu_news .line{
+	width:80%;
+	height:1px;
+	background:rgba(153,153,153,1);
+}
+#lk_edu_news .more a{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:#999;
+}
+#lk_edu_news .container{
+	width: 100%;
+}
+#lk_edu_news .container img{
+	width: 381px;
+	height: 212px;
+}
+#lk_edu_news .container h6{
+	font-size:26px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:400;
+	color:rgba(51,51,51,1);
+	line-height:42px;
+}
+#lk_edu_news .container p{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	line-height:22px;
+}
+/*************************教育新闻-end***************************/
+
+
+
+/*************************公益活动-begin***************************/
+#lk_active{
+    /*background-color: red;*/
+}
+#lk_active .line{
+	width:80%;
+	height:1px;
+	background:rgba(153,153,153,1);
+}
+#lk_active .more a{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:#999;
+}
+#lk_active .container{
+	width: 100%;
+}
+#lk_active .container img{
+	width: 300px;
+	height: 212px;
+}
+#lk_active .container h6{
+	font-size:20px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	color:rgba(51,51,51,1);
+}
+#lk_active .container p{
+	font-size:10px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	line-height:22px;
+}
+/* 小屏幕 */
+#lk_active .container .visible-xs-block img{
+	width: 381px;
+	height: 212px;
+}
+/*************************公益活动-end***************************/
+
+
+
+/*************************关于我们-begin***************************/
+#lk_footer{
+    width: 100%;
+	height: 80px;
+}
+
+#lk_footer .container {
+	padding-top: 20px;
+	border-top: 1px solid #979797;
+	font-size:20px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+}
+
+#lk_introduction .container .about-us-title{
+	font-size:48px;
+}
+#lk_introduction .container .about-us-text-word{
+	margin-top: 40px;
+	font-size:24px;
+	line-height:33px;
+}
+#yb_culture .culture-title{
+	font-size:48px;
+}
+#yb_culture .container .about-us-subtitle{
+	font-size:22px;
+	color:rgba(51,51,51,1);
+}
+.about-us-contact{
+	margin-top: 60px;
+}
+.about-us-addr{
+	font-size:20px;
+	line-height:28px;
+	font-size:20px;
+	opacity:1;
+}
+.about-us-tel-mark{
+	color:rgba(51,51,51,0.50);
+}
+.about-us-tel-num{
+	color:rgba(51,51,51,1);
+}
+/*************************关于我们-end***************************/
+
+
+/* 研博分校2级页面 */
+#yb_school2{
+	margin-top: 60px;
+}
+#yb_school2 .container{
+	width: 100%;
+}
+#yb_school2 .container .media-left{
+	width:493px;
+	height: 260px;
+	overflow: hidden;
+}
+#yb_school2 .container img{
+	/* width:493px;
+	height: 260px; */
+	height:100%;
+	width: 100%;	
+	transition: all 1s;
+}
+#yb_school2 .container img:hover{
+	cursor: pointer;
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+}
+#yb_school2 .container h6{
+	font-size:30px;
+	font-family:Microsoft YaHei;
+	font-weight:400;
+	color:rgba(51,51,51,1);
+}
+#yb_school2 .container p .Tel{
+	font-size:20px;
+	font-family:Microsoft YaHei;
+	font-weight:400;
+	color:rgba(51,51,51,0.50);
+}
+#yb_school2 .container p .Add{
+	font-size:20px;
+	font-family:Microsoft YaHei;
+	font-weight:400;
+	color:rgba(51,51,51,0.50);
+}
+#yb_school2 .container p .number{
+	font-size:20px;
+	font-family:Microsoft YaHei;
+	font-weight:400;	
+	color:rgba(51,51,51,1);
+}
+#yb_school2 .container p.text-muted{
+	margin: 0 0 10px;
+} 
+#yb_school2 .container p .number{
+	margin-bottom: 60px;
+}
+/* 研博分校2级页面 */
+
+
+
+/* 学历教育2级页面 */
+#yb_education2{
+	/* margin-top: 60px; */
+}
+#yb_education2 .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+	/* background:rgba(242,242,242,1); */
+	/* color: #1677FF; */
+	font-size: 15px;
+	/* border-radius:4px; */
+}
+#yb_education2 .nav-pills .nav-link{
+	/* color: #333333; */
+	font-size: 15px;
+	padding: 8px 10px;
+}
+#yb_education2 .nav-pills .staic{
+	font-size:20px;
+	font-weight:normal;
+	color:#CCCCCC;
+	opacity:1;
+	line-height: 28px;
+	padding-right: 20px;
+}
+#yb_education2 .nav-pills1{
+	/* border-top: 1px solid #999999;
+	width: 100%; */
+}
+/* #yb_education2 .nav-pills1 .tab-pane{
+	background-color: #F4F4F4;
+} */
+
+#yb_education2 #lk_hotschool .container{
+	width: 100%;
+}
+#yb_education2 #lk_hotschool .container img{
+	width: 381px;
+	height: 212px;
+	}
+#yb_education2 #lk_hotschool .container h6{
+	font-size:20px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+}
+#yb_education2 #lk_hotschool .container p a{
+	font-size:16px;
+	font-weight:normal;
+	color:rgba(22,119,255,1);
+	text-decoration:underline;
+}
+#yb_education2 #lk_hotschool .container p a:nth-child(2){
+	margin:0 16px;
+}
+
+
+.fenye{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+/* 学历教育2级页面 */
+
+
+
+
+/* 新闻2级页面------ */
+/* #yb_news2{
+	margin-top: 60px;
+} */
+#yb_news2 .nav-pills .nav-link{
+	margin: 0 30px;
+}
+/* #yb_news2 .tab-content{
+	border-top: 1px solid #999999;
+} */
+#yb_news2 .tab-content .tab-pane{
+	padding-top: 50px;
+}
+#yb_news2  .container img{
+	width: 390px;
+	height: 220px;
+}
+#yb_news2 .container h6{
+	font-size:30px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+}
+#yb_news2 .container p{
+	font-size:16px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	line-height:22px;
+}
+
+/* 新闻2级页面---- */
+
+
+
+
+/* 公益2级页面------ */
+#yb_active2{
+	margin-top: 80px;
+}
+#yb_active2  .container img{
+	width: 381px;
+	height: 212px;
+}
+#yb_active2 .container h6{
+	font-size:30px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+}
+#yb_active2 .container p{
+	font-size:15px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	line-height:22px;
+}
+
+
+/* 公益2级页面---- */
+
+
+/* 研博关于二级页面------ */
+#yb_culture{
+	margin: 60px 0;
+}
+#yb_culture .title{
+	margin-bottom:40px;
+}
+#yb_culture .container p{
+	font-size:16px;
+	font-family:PingFang SC;
+	font-weight:400;
+	color:rgba(51,51,51,1);
+}
+#yb_culture .container .row .Efficient,.Legneds{
+	margin-top: 56px;
+}
+
+/* 发展历程 */
+#yb_develope{
+	/* padding-top: 60px; */
+}
+#yb_develope .title{
+	margin-bottom:40px;
+}
+#yb_develope .container p{
+	font-size:15px;
+	font-family:PingFang SC;
+	font-weight:400;
+	color:rgba(51,51,51,1);
+}
+#yb_develope .container .row .Efficient,.Legneds{
+	margin-top: 56px;
+}
+/* 联系我们 */
+#yb_contact{
+	margin: 60px 0;
+}
+
+
+/* 研博关于二级页面------ */
+
+
+
+/* 分校xiangq--3级页面 */
+#schoolDetail {
+	position: absolute;
+	top: 107px;
+	width: 100%;
+}
+
+#schoolDetail .container{
+/* 	width: 100%; */
+	
+	
+}
+#schoolDetail .container img{
+	width: 250px;
+	height: 150px;
+	cursor: pointer;
+}
+/* 分校xiangq--3级页面 */
+
+
+
+/* 学历教育招生简章3级页面 */
+#eduDetail{
+	/* margin-top: 60px; */
+	
+}
+
+
+/* 学历教育招生简章3级页面 */
+
+
+
+
+
+
+/* 移动端导航栏自定义 */
+.mobile_nav{
+	width: 100%;
+	background: rgba(22,119,255,.8);
+	position: fixed;
+	bottom: 0px;
+	display: none;
+	z-index: 999999;
+}
+.mobile_nav .content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.mobile_nav div{
+	text-align: center;
+	height: 80px;
+	line-height: 80px;
+}
+.mobile_nav div a{
+	color: #FFFFFF;
+	font-size: 20px;
+}
+.carousel-indicators .active{
+	background-color:#1677FF;
+}
+.carousel-indicators li{
+	width:50px;
+	height:4px;
+}
+.page-item .page-link, .page-item a{
+	width:40px;
+	height:40px;
+	/* background:rgba(22,119,255,1); */
+	line-height: 26px;
+	text-align: center;
+	opacity:1;
+	border-radius:6px;
+	margin-right: 6px;
+}
+.page-item.active .page-link{
+	border-color:none !important;
+}
+.page-link{
+	color:#999999
+}
+.box-sizing{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}

@@ -183,9 +183,6 @@
 					{{--var url= "{{route('home/schoolDetail')}}"--}}
                     var url= "{{url('schoolDetail')}}"
 				    var picAlt =  $(this).attr('alt')
-				  // $(location).attr('href', url+"?value="+picAlt);
-				    // window.open("http://www.jb51.net");
-                   // window.location.href = encodeURI(url + "?value=" + picAlt);
                     window.location.href = encodeURI(url +'/'+ picAlt);
 				})
 				})
