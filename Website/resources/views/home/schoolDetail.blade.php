@@ -5,23 +5,39 @@
 
     .pic02{
         display: none;
-        position: absolute;
+        position: fixed;
         top: 0;
         width: 100%;
         height: 100%;
-        background:rgba(255, 255, 255, 0.678);
+        background:rgba(0, 0, 0, .7);
+        z-index:10001;
     }
-    .pic02 img{
+    .pic02 .enlarged-pic{
+        width: 100%;
+        height:100%;
+    }
+    .pic02 div{
         z-index: 99;
         /* width: 500px;
-         height: 500px;
-         position: absolute;
-         top: 50%;
-         margin-left: -250px;
-         margin-top: -250px;
-         left: 50%; */
-        width: 100%;
-        height: 100%;
+        height: 500px;
+        position: absolute;
+        top: 50%;
+        margin-left: -250px;
+        margin-top: -250px;
+        left: 50%; */
+        width: 50%;
+        height: 50%;
+        cursor: pointer;
+        position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%);    /* 50%为自身尺寸的一半 */
+    }
+    .pic02 .close-enlarge-pic{
+        /* position: absolute; */
+        z-index: 100;
+        position: absolute;
+        left: 75%;
+        top:25%;
+        transform: translate(-50%, -50%);    /* 50%为自身尺寸的一半 */
         cursor: pointer;
     }
 </style>
@@ -125,7 +141,10 @@
                     <div class="col-md-4 col-lg-4">
                         <div class=" mb-3  ">
                             <div class="">
-                                <img src={{ url('storage/'.$school_val->image_route) }} alt="" class="media-object pic01 img-fluid ">
+                                <img src={{ url('storage/'.$school_val->image_route) }} alt="" class="media-object pic01 img-fluid single-left-img">
+                            </div>
+                            <div class='image-parent d-flex justify-content-center align-items-center'>
+                                <img src={{ url('images/enlarge-pic.png') }} alt="" class='enlarge-pic'>
                             </div>
                         </div>
                     </div>
@@ -174,7 +193,11 @@
 <!--------------------尾部-end------------------------------>
 
 <div class="pic02">
-    <img src="#" alt="">
+    <img src="{{url('images/colse.png')}}" alt="" class='close-enlarge-pic'>
+    <div>
+        <img src="#" alt="" class="enlarged-pic">
+    </div>
+
 </div>
 
 <script src={{url("lib/js/jquery-3.3.1.js")}}></script>
@@ -283,7 +306,31 @@
         // $('.collapse').collapse('hide')
         $('.mobile_nav').fadeOut("slow");
     })
+    $('.image-parent').bind('mouseenter',function(){
+        $(this).css({
+            'opacity':1
+        })
+    })
+    $('.image-parent').bind('mouseleave',function(){
+        $(this).css({
+            'opacity':0
+        })
+    })
+    $('.enlarge-pic').on('click',function(){
+        let picSrc = $(this).parent().siblings().find('.pic01').attr('src')
+        $('.pic02').css({
+            'display':'block'
+        })
+        $('.pic02 .enlarged-pic').attr('src',picSrc)
+    })
+    $('.close-enlarge-pic').on('click',function(){
+        $('.pic02').css({
+            'display':'none'
+        })
+        $('.pic02 .enlarged-pic').attr('src','')
+    })
 </script>
 </body>
 </html>
+
 
