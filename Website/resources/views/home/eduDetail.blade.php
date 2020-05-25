@@ -37,9 +37,9 @@
                             @endforeach
 
 
-{{--							<li class="nav-item ">--}}
-{{--							    <a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link2 " href="ybSchool.html">分校</a>--}}
-{{--							</li>--}}
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link7 color7" target="_blank"  href="https://mall.jd.com/index-10212411.html" rel="nofollow">研博商城</a>
+                                </li>
 
 		                </ul>
 		            </div>

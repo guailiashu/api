@@ -37,6 +37,11 @@
                                     @endif
 
                                 @endforeach
+
+                                    <li class="nav-item">
+                                        <a class="nav-link nav-link7 color7" target="_blank"  href="https://mall.jd.com/index-10212411.html" rel="nofollow">研博商城</a>
+                                    </li>
+
 							</ul>
 						</div>
 					</div>
@@ -271,7 +276,7 @@
 
 {{--                                                                                                                                    {{  $edu_val->enducation_id}}--}}
 {{--                                                                                                                                @elseif()--}}
-                                                                
+
                                                                     @if(empty($data_val->name))
                                                                         <div class="col-md-4 col-lg-4">
                                                                             <div class="media d-flex flex-column align-items-center   mb-3  ">
