@@ -309,7 +309,7 @@
                                 </h6>
                                 <p class="index-news-line"></p>
                                 <div class="index-news-date-parent d-flex justify-content-between">
-                                    <div class="index-news-date" > {{$news_val->created_at}} {{ $news_val->id }}</div>
+                                    <div class="index-news-date" > {{$news_val->created_at}} </div>
                                     <img class="index-right-brackets" src="images/right-brackets-selected.png" alt="">
                                 </div>
                             </div>

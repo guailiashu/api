@@ -282,6 +282,8 @@ class StaticController extends Controller
         $data = News::where('id',$newId)->first();//新闻数据
 
         $mag = $this->getNavigation();//获取导航栏数据
+
+//        dd($data);
         return view('home.newsDetail')
             ->with('data',$data)   //新闻
             ->with('column',$mag); //导航栏

@@ -163,17 +163,15 @@
                 <div class='news-detail-content'>
                     <div class='d-flex align-items-center flex-column news-detail-content-parent'>
                         <h4 class='news-detail-content-title text-center'>
-                            研博新闻研博新闻研博新闻研博新闻
+                            {{$data->title}}
                         </h4>
-                        <div class='news-detail-date text-center'>2020-05-27</div>
-                        <div class='news-detail-subtitle'>
-                            研博新闻研博新闻研博新闻研博新闻.....
-                        </div>
+                        <div class='news-detail-date text-center'>{{$data->created_at }}</div>
+{{--                        <div class='news-detail-subtitle'>--}}
+{{--                            研博新闻研博新闻研博新闻研博新闻.....--}}
+{{--                        </div>--}}
                     </div>
                     <div class="news-detail-content-text">
-                        虽然将所有的状态放到 Vuex 会使状态变化更显式和易调试，但也会使代码变得冗长和不直观。如果有些状态严格属于单个组件，最好还是作为组件的局部状态。你应该根据你的应用开发需要进行权衡和确定。
-                        虽然将所有的状态放到 Vuex 会使状态变化更显式和易调试，但也会使代码变得冗长和不直观。如果有些状态严格属于单个组件，最好还是作为组件的局部状态。你应该根据你的应用开发需要进行权衡和确定。
-                        虽然将所有的状态放到 Vuex 会使状态变化更显式和易调试，但也会使代码变得冗长和不直观。如果有些状态严格属于单个组件，最好还是作为组件的局部状态。你应该根据你的应用开发需要进行权衡和确定。
+                        {!! $data->details  !!}
                     </div>
                 </div>
 			</div>

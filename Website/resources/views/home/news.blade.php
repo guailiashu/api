@@ -36,6 +36,10 @@
                             @endif
 
                         @endforeach
+
+                            <li class="nav-item">
+                                <a class="nav-link nav-link7 color7" target="_blank"  href="http://shop.jd.com" rel="nofollow">研博商城</a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -115,7 +119,7 @@
                                                     <img src="{{'storage/'.$data_val->image}}" alt="" class="media-object  img-fluid ">
                                                 </div>
                                                 <div class="media-body ">
-                                                    <h6 class="media-heading mt-3">
+                                                    <h6 class="media-heading mt-3" alt="{{ $data_val->id }}">
                                                         {{$data_val->title}}
                                                     </h6>
                                                     <p class="text-muted">
@@ -154,7 +158,7 @@
                                                     <img src="{{'storage/'.$data_val->image}}" alt="" class="media-object  img-fluid ">
                                                 </div>
                                                 <div class="media-body ">
-                                                    <h6 class="media-heading mt-3">
+                                                    <h6 class="media-heading mt-3" alt="{{ $data_val->id }}">
                                                         {{$data_val->title}}
                                                     </h6>
                                                     <p class="text-muted">
@@ -334,6 +338,22 @@
         // $('.collapse').collapse('hide')
         $('.mobile_nav').fadeOut("slow");
     })
+
+
+
+    $('.media').click(function(){
+        // window.location.href = 'newsDetail.html'
+        let url= "{{url('newDetail')}}"
+        let picAlt =  $(this).find('.media-heading').attr('alt')
+        window.location.href = encodeURI(url +'/'+ picAlt);
+    })
+
+    /*绑定touchmove*/
+    body.addEventListener('touchmove',function(e){
+        // $('.collapse').collapse('hide')
+        $('.mobile_nav').fadeOut("slow");
+    })
+
 </script>
 </body>
 </html>
