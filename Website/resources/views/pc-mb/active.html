@@ -18,7 +18,7 @@
 								aria-controls="lk_nav" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
-			
+
 						<div class="collapse navbar-collapse" id="lk_nav">
 							<ul class="navbar-nav mr-auto">
 								<li class="nav-item active">
@@ -42,7 +42,7 @@
 								<li class="nav-item">
 									<a style="color: rgba(255,255,255,0.5);" class="nav-link nav-link6"  href="about.html">关于研博</a>
 								</li>
-								
+
 							</ul>
 						</div>
 					</div>
@@ -57,13 +57,8 @@
 					<li data-target="#lk_carousel" data-slide-to="1"></li>
 					<li data-target="#lk_carousel" data-slide-to="2"></li>
 				</ol>
-			
-				<!-- <div class="carousel-item active" data-sm-img="images/slide_01_900x410.jpg"
-					data-lg-img="images/slide_01_2000x410.jpg"></div>
-				<div class="carousel-item" data-sm-img="images/slide_02_900x410.jpg"
-					data-lg-img="images/slide_02_2000x410.jpg"></div>
-				<div class="carousel-item" data-sm-img="images/slide_03_900x410.jpg"
-					data-lg-img="images/slide_03_2000x410.jpg"></div> -->
+
+
 				<div class="carousel-inner ">
 					<div class="carousel-item active">
 						<img src="images/slide_01_900x410.jpg" class="d-block w-100" alt="...">
@@ -75,20 +70,7 @@
 						<img src="images/slide_03_900x410.jpg" class="d-block w-100" alt="...">
 					</div>
 				</div>
-						
-				<!-- 超小屏幕 -->
-				<!-- <div class="carousel-inner  d-none d-xs-block d-sm-none ">
-					<div class="carousel-item sm active">
-						<img src="images/slide_01_900x410.jpg" class="d-block w-100" alt="...">
-					</div>
-					<div class="carousel-item sm">
-						<img src="images/slide_02_900x410.jpg" class="d-block w-100" alt="...">
-					</div>
-					<div class="carousel-item sm">
-						<img src="images/slide_03_900x410.jpg" class="d-block w-100" alt="...">
-					</div>
-				</div> -->
-				
+
 				<a class="carousel-control-prev" href="#lk_carousel" role="button" data-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="sr-only">Previous</span>
@@ -101,7 +83,7 @@
 		</div>
 		<!-- 研博公益内容 -->
 		<!-- <div style="position: absolute;top:540px;"></div> -->
-		
+
 		<!-- 移动端导航自定义 -->
 		<div class="mobile_nav">
 			<div class="content">
@@ -128,7 +110,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<section id="yb_active2">
 			<!--  研博新闻内容 -->
 			<!--内容-->
@@ -165,7 +147,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="col-md-4 col-lg-4">
 						<div class="media d-flex flex-column   mb-3  ">
 							<div class="media-left mr-2">
@@ -181,7 +163,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="col-md-4 col-lg-4">
 						<div class="media d-flex flex-column   mb-3  ">
 							<div class="media-left mr-2">
@@ -198,7 +180,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="col-md-4 col-lg-4">
 						<div class="media d-flex flex-column   mb-3  ">
 							<div class="media-left mr-2">
@@ -214,7 +196,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="col-md-4 col-lg-4">
 						<div class="media d-flex flex-column   mb-3  ">
 							<div class="media-left mr-2">
@@ -230,13 +212,13 @@
 							</div>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</section>
-		
+
 		<!-- 分页 -->
-	
+
 		<div class="fenye container ">
 			<nav aria-label="Page navigation example">
 			  <ul class="pagination justify-content-center">
@@ -268,8 +250,8 @@
 			  </ul>
 			</nav>
 		</div>
-		
-		
+
+
 		<!--------------------尾部-begin------------------------------>
 		<footer id="lk_footer">
 		    <div class="container ">
@@ -278,7 +260,7 @@
 		    </div>
 		</footer>
 		<!--------------------尾部-end------------------------------>
-		
+
 		<script src="lib/js/jquery-3.3.1.js"></script>
 		<script src="lib/js/popper.js"></script>
 		<script src="lib/js/bootstrap.js"></script>
@@ -288,11 +270,11 @@
 				let _height = $(window).height(); //获取当前窗口的高度,赋值给轮播图
 				let pageItem = $(".pagination li").not(".prev,.next");
 				$('.mobile_nav').css('height', _height-107)
-				
+
 				// 分页切换
 				// 3.
 				$(document).on('click', '.prev', function () {
-					//1- get first element to check if it has class 'active', 
+					//1- get first element to check if it has class 'active',
 					// to prevent class 'active' from moving to prev button on click,
 					// if explanation isn't clear try removing if(){} to see it.
 					const first = $(this).siblings().first();
@@ -324,15 +306,15 @@
 						window.location.href = link;
 					}
 				});
-		
+
 				pageItem.click(function() {
 					pageItem.removeClass("active");
 					$(this).not(".prev,.next").addClass("active");
 				});
-				
+
 				$('.nav-link5').click(function () {
 					// 刷新
-					location.reload() 
+					location.reload()
 				})
 			})
 		</script>
@@ -340,19 +322,19 @@
 			let body = document.querySelector('body');
 			if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
 			   $(function(){
-					// $('#lk_header .collapse').css("background-color", "black")  
+					// $('#lk_header .collapse').css("background-color", "black")
 					$('#lk_header .collapse').hide()
 					$('.navbar-toggler').click(function(){
 						$('.mobile_nav').toggle()
-					}) 
+					})
 			   	})
-				
+
 			}else{
-				// $('#lk_header .collapse').css("background-color", "none") 
+				// $('#lk_header .collapse').css("background-color", "none")
 				$('.mobile_nav').hide()
 			}
 			// 判断触摸滑动事件
-			
+
 			/*绑定touchmove*/
 			body.addEventListener('touchmove',function(e){
 				// console.log('touchmove');
