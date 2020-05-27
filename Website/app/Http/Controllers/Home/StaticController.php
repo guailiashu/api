@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use mysql_xdevapi\Exception;
+use App\Models\News;
+
 
 
 class StaticController extends Controller
@@ -45,42 +47,6 @@ class StaticController extends Controller
                         ->limit(4)
                         ->get();
 
-
-//                    foreach ($data as $school_key=>$school_val){
-//
-//                         //获取分校对应数据下标
-//                        $sub_key = $school_key + 1;
-//
-//                        //数据的总数
-//                        $data_count = $data->count();
-//
-//                        //对应余数分组 余数为1 2 的为一组
-//                        $remainder = $sub_key%($data_count/2);
-//
-//                        //暂时因为分两组  除数小于1的为一组
-//                        $divide = $sub_key/2;
-//
-//                        if($divide<=1){
-//                            //第一组
-//                            if($remainder == 1)
-//                            {
-//                                $title[1]['one'] = $school_val;
-//                            }else{
-//                                $title[1]['two'] = $school_val;
-//                            }
-//
-//                        }else{
-//                         //第二组
-//
-//                            if($remainder == 1)
-//                            {
-//                                $title[2]['one'] = $school_val;
-//                            }else{
-//                                $title[2]['two'] = $school_val;
-//                            }
-//                        }
-//                        $data_num = $title;
-//                    }
 
                     $get_mag[$s_route[1]]['title'] = $data;
                     $get_mag[$s_route[1]]['routes'] = $val;
@@ -305,6 +271,20 @@ class StaticController extends Controller
         return View('home.eduDetail')
             ->with('column',$Detail_route)//导航栏数据
             ->with('data',$school_data);//学校详情
+    }
+
+
+
+    //新闻详情
+    public function newDetail(Request $request,$newId)
+    {
+        $id = $newId;
+        $data = News::where('id',$newId)->first();//新闻数据
+
+        $mag = $this->getNavigation();//获取导航栏数据
+        return view('home.newsDetail')
+            ->with('data',$data)   //新闻
+            ->with('column',$mag); //导航栏
     }
 
 

@@ -299,17 +299,17 @@
 
                         @foreach($value['title'] as $news_key=>$news_val)
                         <div class="col-md-4 col-lg-4">
-                            <div class="media d-flex flex-column     news">
+                            <div class="media d-flex flex-column   news">
                                 <div class="media-left index-news-content-img">
                                     <img src="{{'storage/'.$news_val->image}} " alt="" class="media-object  img-fluid "
                                     >
                                 </div>
-                                <h6 class="media-heading mt-3">
+                                <h6 class="media-heading mt-3"  alt="{{ $news_val->id }}">
                                     {{$news_val->title}}
                                 </h6>
                                 <p class="index-news-line"></p>
                                 <div class="index-news-date-parent d-flex justify-content-between">
-                                    <div class="index-news-date"> {{$news_val->created_at}}</div>
+                                    <div class="index-news-date" > {{$news_val->created_at}} {{ $news_val->id }}</div>
                                     <img class="index-right-brackets" src="images/right-brackets-selected.png" alt="">
                                 </div>
                             </div>
@@ -468,7 +468,10 @@
             })
 
             $('.news').click(function () {
-                window.location.href="{{route('home/news')}}";
+                {{--window.location.href="{{route('home/news')}}";--}}
+                let url= "{{url('newDetail')}}"
+                let picAlt =  $(this).find('.media-heading').attr('alt')
+                window.location.href = encodeURI(url +'/'+ picAlt);
             })
 
             $('.active').click(function () {
