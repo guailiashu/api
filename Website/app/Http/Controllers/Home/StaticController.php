@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use mysql_xdevapi\Exception;
 use App\Models\News;
 use App\Models\Banner;
+
 
 
 
@@ -304,7 +306,6 @@ class StaticController extends Controller
 
         $mag = $this->getNavigation();//获取导航栏数据
         $banner = $this->getBanner();//轮播图
-
 
 //        dd($data);
         return view('home.newsDetail')
