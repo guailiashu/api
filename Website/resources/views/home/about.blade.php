@@ -66,9 +66,9 @@
             </div>
         </nav>
     </header>
-    <!-- 背景图  pc端540px，移动端375px -->
-    <img class="d-none d-sm-block" src="images/about.png" style="width: 100%;height: 540px;">
-    <img class="visible-xs-block d-sm-none" src="images/about.png" style="width: 100%;height: 375px;">
+    <!--------------------轮播图-begin------------------------------>
+@include('home.layouts._banner')
+<!--------------------轮播图-end------------------------------>
 </div>
 
 <!-- 关于研博内容 -->

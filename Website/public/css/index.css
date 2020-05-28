@@ -176,7 +176,11 @@ fieldset[disabled] .btn-lk.active {
 	margin-right:18px;
 	font-size: 18px;
 }
-
+.img-responsive{
+    display: block;
+    height: auto !important;
+    max-width: 100% !important;
+}
 #lk_header .navbar-lk .navbar-nav>li>a:hover{
    /* border-bottom: 2px solid #1677FF; */
    color:#1677FF !important;
@@ -221,7 +225,7 @@ fieldset[disabled] .btn-lk.active {
 
 #lk_carousel .carousel-item img{
 	width: 100%;
-	height:810px !important;
+	/* height:810px !important; */
 }
 
 
@@ -845,8 +849,8 @@ fieldset[disabled] .btn-lk.active {
 }
 #yb_education2 #lk_hotschool .container img{
 	width: 381px;
-	height: 212px;
-	}
+	height: 180px;
+}
 #yb_education2 #lk_hotschool .container h6{
 	font-size:20px;
 	font-family:PingFang;
@@ -888,7 +892,7 @@ fieldset[disabled] .btn-lk.active {
 }
 #yb_news2  .container img{
 	width: 390px;
-	height: 220px;
+	height: 190px;
 }
 #yb_news2 .container h6{
 	font-size:30px;

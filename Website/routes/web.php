@@ -39,6 +39,8 @@ Route::namespace('Home')->group(function (){
 
     Route::get('/','StaticController@index');//默认首页
 
+    Route::get('banner','StaticController@getBanner')->name('home/banner');//banner
+
     //一级目录
     Route::get('index','StaticController@index')->name('home/index');//首页
     Route::get('about','StaticController@about')->name('home/about');//关于研博
@@ -52,6 +54,7 @@ Route::namespace('Home')->group(function (){
     Route::get('newDetail/{newId}','StaticController@newDetail')->name('home/newDetail');//新闻详情
 
     Route::get('eduDetail/{eduId}/{schoolName}','StaticController@eduDetail')->name('home/eduDetail');//学历-对应学校详情
+
 
 
 

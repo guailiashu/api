@@ -18,6 +18,7 @@ Route::group([
     $router->resource('home/navigations',NavigationController::class);//导航栏
     $router->resource('home/active', ActiveController::class);//研博公益
     $router->resource('home/news', NewsController::class);//研博新闻
+    $router->resource('home/banner',BannerController::class);//banner图
 
     //关于研博
     $router->resource('home/about/about', About\AboutController::class);//企业文化
