@@ -276,7 +276,7 @@
                                     >
                                 </div>
                                 <h6 class="media-heading mt-3"  alt="{{ $news_val->id }}">
-                                    {{ Illuminate\Support\Str::limit($news_val->title, $limit = 10, $end = '...') }}
+                                    {{ Illuminate\Support\Str::limit($news_val->title, $limit = 30, $end = '......') }}
                                 </h6>
                                 <p class="index-news-line"></p>
                                 <div class="index-news-date-parent d-flex justify-content-between">
@@ -320,10 +320,11 @@
                                     </div>
                                     <div class="d-none d-sm-none d-md-block media-body ">
                                         <h6 class="media-heading ">
-                                            {{$active_val->title}}
+                                            {{ Illuminate\Support\Str::limit($active_val->title, $limit = 30, $end = '......') }}
                                         </h6>
                                         <p class="text-muted">
-                                            {{$active_val->details}} . . .                                        </p>
+                                            {{ Illuminate\Support\Str::limit($active_val->details, $limit = 128, $end = '......') }}
+                                                                       </p>
                                     </div>
                                 </div>
                             </div>

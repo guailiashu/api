@@ -134,7 +134,7 @@
 				                </div>
 				                <div class="media-body ">
 				                    <h6 class="media-heading mt-3">
-                                        {{$page_val->name}}
+                                        {{ Illuminate\Support\Str::limit($page_val->name, $limit = 36, $end = '......') }}
 				                    </h6>
 				                    <p class="text-muted">
                                         {{$page_val->created_at}}
