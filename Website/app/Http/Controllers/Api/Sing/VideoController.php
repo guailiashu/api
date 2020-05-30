@@ -10,9 +10,9 @@ use App\Models\Sing\Video;
 class VideoController extends Controller
 {
     //最新直播课程
-    public function getNew(Request $request ,$type_id)
+    public function getNew(Request $request)
     {
-        $id = $type_id;
+        $id = $request->input('type_id');
         $new_data = Video::orderBy('updated_at','desc')
             ->where('navigation_id',$id)
             ->limit(4)
@@ -22,9 +22,11 @@ class VideoController extends Controller
     }
 
     //详情
-    public function getDetail(Request $request ,$video_id)
+    public function getDetail(Request $request )
     {
-        $detail_data = Video::where('id',$video_id)->first();
+        $id = $request->input('video_id');
+
+        $detail_data = Video::where('id',$id)->first();
 
         return response()->json($detail_data);
     }

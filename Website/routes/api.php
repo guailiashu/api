@@ -35,15 +35,15 @@ Route::namespace('Api')->group(function (){
 
 Route::namespace('Api\Sing')->prefix('sing')->group(function (){
     Route::get('navigation','HomeController@getNavigation');//导航栏
-    Route::post('banner/{type_id}','HomeController@getBanner');//banner图
+    Route::post('banner','HomeController@getBanner');//banner图
 
     /**
      * 视频板块
      */
     Route::prefix('video')->group(function (){
 
-        Route::post('new/{type_id}','VideoController@getNew');//最新直播课程
-        Route::post('detail/{video_id}','VideoController@getDetail');//详情
+        Route::post('new','VideoController@getNew');//最新直播课程
+        Route::post('detail','VideoController@getDetail');//详情
     });
 });
 

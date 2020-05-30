@@ -19,9 +19,9 @@ class HomeController extends Controller
     }
 
     //获取轮播图，分类数据
-    public function getBanner(Request $request,$type_id)
+    public function getBanner(Request $request)
     {
-        $id = $type_id;
+        $id = $request->input('type_id');
 
         $banner_data = Banner::where('navigation_id',$id)->first();
 
