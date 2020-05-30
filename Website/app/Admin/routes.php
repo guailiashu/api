@@ -12,6 +12,8 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('admin.home');
 
+
+
     /**
      * 一级栏目
      */
@@ -33,5 +35,18 @@ Route::group([
     $router->resource('home/school/info',School\SchoolController::class);//分校
     $router->resource('home/school/image',School\ImageController::class);//分校图片
 
+
+
+    /**
+     * 梦想学院
+     */
+    Route::namespace('Sing')->group(function ($router){
+
+        $router->resource('sing/navigation',NavigationController::class);//导航栏
+        $router->resource('sing/banner',BannerController::class);//轮播图数据
+        $router->resource('sing/video',VideoController::class);//视频管理
+
+
+    });
 });
 
