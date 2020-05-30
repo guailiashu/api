@@ -41,8 +41,9 @@ class Kernel extends HttpKernel
 
         'api' => [
             'throttle:60,1',
+            'cors',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \Medz\Cors\Laravel\Middleware\ShouldGroup::class,
+
         ],
     ];
 

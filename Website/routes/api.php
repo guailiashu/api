@@ -40,7 +40,7 @@ Route::namespace('Api\Sing')->prefix('sing')->group(function (){
     /**
      * 视频板块
      */
-    Route::prefix('video')->middleware('cors')->group(function (){
+    Route::prefix('video')->group(function (){
 
         Route::post('new/{type_id}','VideoController@getNew');//最新直播课程
         Route::post('detail/{video_id}','VideoController@getDetail');//详情
