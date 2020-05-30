@@ -47,6 +47,7 @@
     </header>
     <!--------------------轮播图-begin------------------------------>
     @include('home.layouts._banner')
+
     <!--------------------轮播图-end------------------------------>
 </div>
 <!-- 研博新闻内容 -->
@@ -120,7 +121,7 @@
                                                 </div>
                                                 <div class="media-body ">
                                                     <h6 class="media-heading mt-3" alt="{{ $data_val->id }}">
-                                                        {{ Illuminate\Support\Str::limit($news_val->title, $limit = 30, $end = '......') }}
+                                                        {{ Illuminate\Support\Str::limit($data_val->title, $limit = 30, $end = '......') }}
                                                     </h6>
                                                     <p class="text-muted">
                                                         {{ $data_val->updated_at}}

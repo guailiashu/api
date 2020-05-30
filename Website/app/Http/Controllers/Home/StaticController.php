@@ -24,7 +24,8 @@ class StaticController extends Controller
     {
 
         $mag = $this->getNavigation();//获取导航栏数据
-        $banner = $this->getBanner();//轮播图
+        $banner_pc = $this->getBanner(1);//轮播图-pc
+        $banner_move = $this->getBanner(2);//轮播图-移动端
 
         //获取页面展示数据
         foreach ($mag as $key=>$val){
@@ -73,7 +74,7 @@ class StaticController extends Controller
 //            dd($home_mage);
       return View('home.index')
           ->with('column',$mag)
-          ->with('banner',$banner)
+          ->with('banner_pc',$banner_pc)->with('banner_move',$banner_move)
           ->with('home',$home_mage);
     }
 
@@ -81,7 +82,8 @@ class StaticController extends Controller
     public function ybSchool()
     {
         $mag = $this->getNavigation();//获取导航栏数据
-        $banner = $this->getBanner();//轮播图
+        $banner_pc = $this->getBanner(1);//轮播图-pc
+        $banner_move = $this->getBanner(2);//轮播图-移动端
 
         $school_data = DB::table('home_schools')
             ->orderBy('id','desc')
@@ -89,7 +91,7 @@ class StaticController extends Controller
 
         return View('home.ybSchool')
             ->with('column',$mag)
-            ->with('banner',$banner)
+            ->with('banner_pc',$banner_pc)->with('banner_move',$banner_move)
             ->with('schools',$school_data);
     }
 
@@ -121,7 +123,8 @@ class StaticController extends Controller
             ->paginate(6);
 
         $mag = $this->getNavigation();//获取导航栏数据
-        $banner = $this->getBanner();//轮播图
+        $banner_pc = $this->getBanner(1);//轮播图-pc
+        $banner_move = $this->getBanner(2);//轮播图-移动端
 
 //dd($education_adds_data);
         return View('home.education')
@@ -129,7 +132,7 @@ class StaticController extends Controller
             ->with('edu_address',$education_data)//二级地区数据
             ->with('data',$education_adds_data)//对应三级联动的“高校”数据
             ->with('popular_data',$popular_data)
-            ->with('banner',$banner)
+            ->with('banner_pc',$banner_pc)->with('banner_move',$banner_move)
             ->with('column',$mag);//导航栏
 
     }
@@ -159,13 +162,14 @@ class StaticController extends Controller
             ->get();
 
         $mag = $this->getNavigation();//获取导航栏数据
-        $banner = $this->getBanner();//轮播图
+        $banner_pc = $this->getBanner(1);//轮播图-pc
+        $banner_move = $this->getBanner(2);//轮播图-移动端
 
-//        dd($news_data);
+//        dd($banner_move);
 
         return View('home.news')
                 ->with('column',$mag) //导航栏
-                ->with('banner',$banner)
+                ->with('banner_pc',$banner_pc)->with('banner_move',$banner_move)
                 ->with('data',$news_data) //新闻数据
                 ->with('type_data',$news_type); //分类数据
     }
@@ -184,11 +188,12 @@ class StaticController extends Controller
 //        dd($page_date);
 
         $mag = $this->getNavigation();//获取导航栏数据
-        $banner = $this->getBanner();//轮播图
+        $banner_pc = $this->getBanner(1);//轮播图-pc
+        $banner_move = $this->getBanner(2);//轮播图-移动端
 
         return View('home.active')
                 ->with('data',$page_date)
-                ->with('banner',$banner)
+                ->with('banner_pc',$banner_pc)->with('banner_move',$banner_move)
                 ->with('column',$mag);
 
     }
@@ -208,12 +213,13 @@ class StaticController extends Controller
 //        dd($about_data);
 
         $mag = $this->getNavigation();//获取导航栏数据
-        $banner = $this->getBanner();//轮播图
+        $banner_pc = $this->getBanner(1);//轮播图-pc
+        $banner_move = $this->getBanner(2);//轮播图-移动端
 
         return View('home.about')
             ->with('about_data',$about_data)//企业文化
             ->with('courses_data',$about_courses_data)//发展历程
-            ->with('banner',$banner)
+            ->with('banner_pc',$banner_pc)->with('banner_move',$banner_move)
             ->with('column',$mag);
 
     }
@@ -241,7 +247,8 @@ class StaticController extends Controller
 
 
         $mag = $this->getNavigation();//获取导航栏数据
-        $banner = $this->getBanner();//轮播图
+        $banner_pc = $this->getBanner(1);//轮播图-pc
+        $banner_move = $this->getBanner(2);//轮播图-移动端
 
         //因为路由带参数，导致页面渲染中路径变化，需要修改路由
         foreach( $mag as $key=>$val)
@@ -257,7 +264,7 @@ class StaticController extends Controller
         return View('home.schoolDetail')
             ->with('column',$Detail_route)
             ->with('school',$school_data)
-            ->with('banner',$banner)
+            ->with('banner_pc',$banner_pc)->with('banner_move',$banner_move)
             ->with('school_data',$school_db_data);
     }
 
@@ -279,7 +286,8 @@ class StaticController extends Controller
 
 
         $mag = $this->getNavigation();//获取导航栏数据
-        $banner = $this->getBanner();//轮播图
+        $banner_pc = $this->getBanner(1);//轮播图-pc
+        $banner_move = $this->getBanner(2);//轮播图-移动端
 
         //因为路由带参数，导致页面渲染中路径变化，需要修改路由
         foreach( $mag as $key=>$val)
@@ -292,7 +300,7 @@ class StaticController extends Controller
 //dd($school_data);
         return View('home.eduDetail')
             ->with('column',$Detail_route)//导航栏数据
-            ->with('banner',$banner)
+            ->with('banner_pc',$banner_pc)->with('banner_move',$banner_move)
             ->with('data',$school_data);//学校详情
     }
 
@@ -305,21 +313,24 @@ class StaticController extends Controller
         $data = News::where('id',$newId)->first();//新闻数据
 
         $mag = $this->getNavigation();//获取导航栏数据
-        $banner = $this->getBanner();//轮播图
+        $banner_pc = $this->getBanner(1);//轮播图-pc
+        $banner_move = $this->getBanner(2);//轮播图-移动端
 
-//        dd($data);
+
         return view('home.newsDetail')
             ->with('data',$data)   //新闻
-            ->with('banner',$banner)
+            ->with('banner_pc',$banner_pc)->with('banner_move',$banner_move)
             ->with('column',$mag); //导航栏
 
     }
 
 
     //轮播图数据
-    public function getBanner()
+    public function getBanner($type_id)
     {
-        $banner_data = Banner::where('hot',1)->get();
+        $banner_data = Banner::where('hot',1)
+            ->where('type_id',$type_id)
+            ->get();
 
         return $banner_data;
 //        return view('home.layouts._banner')->with('data',$data);
