@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="lib/css/bootstrap.css">
         <link rel="stylesheet" href="css/index.css" id ='css-style-sheet'>
-            
+        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">   
         
         <meta name="renderer" content="webkit"/>
         <meta name="force-rendering" content="webkit"/>
@@ -111,14 +111,14 @@
             <!--------------------头部-end------------------------------>
 
             <!--------------------轮播图-begin------------------------------>
-            <section id="lk_carousel" class="carousel slide" data-ride="carousel">
+            <section id="lk_carousel" class="carousel slide d-none d-sm-block" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<li data-target="#lk_carousel" data-slide-to="0" class="active"></li>
 					<li data-target="#lk_carousel" data-slide-to="1"></li>
 					<li data-target="#lk_carousel" data-slide-to="2"></li>
 				</ol>
                 <!-- 背景图  pc端 -->
-				<div class="carousel-inner d-none d-sm-block">
+				<div class="carousel-inner  ">
 					<div class="carousel-item active">
 						<img src="images/slide_01_900x410.jpg" class="d-block w-100" alt="...">
 					</div>
@@ -129,8 +129,23 @@
 						<img src="images/slide_03_900x410.jpg" class="d-block w-100" alt="...">
 					</div>
                 </div>
+				<a class="carousel-control-prev" href="#lk_carousel" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#lk_carousel" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+            </section>
+            <section id="lk_carousel_mobail" class="carousel slide d-block d-sm-none" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#lk_carousel_mobail" data-slide-to="0" class="active"></li>
+					<li data-target="#lk_carousel_mobail" data-slide-to="1"></li>
+					<li data-target="#lk_carousel_mobail" data-slide-to="2"></li>
+				</ol>
                 <!-- 背景图  移动端375px -->
-				<div class="carousel-inner d-block d-sm-none">
+				<div class="carousel-inner ">
 					<div class="carousel-item active">
 						<img src="images/slide_01_900x410.jpg" class="d-block w-100" alt="...">
 					</div>
@@ -141,17 +156,16 @@
 						<img src="images/slide_03_900x410.jpg" class="d-block w-100" alt="...">
 					</div>
 				</div>		
-				<a class="carousel-control-prev" href="#lk_carousel" role="button" data-slide="prev">
+				<a class="carousel-control-prev" href="#lk_carousel_mobail" role="button" data-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="sr-only">Previous</span>
 				</a>
-				<a class="carousel-control-next" href="#lk_carousel" role="button" data-slide="next">
+				<a class="carousel-control-next" href="#lk_carousel_mobail" role="button" data-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="sr-only">Next</span>
 				</a>
 			</section>
             <!--------------------轮播图-end------------------------------>
-
 
             <!-- 动画效果 -->
             <div class="full-video">
@@ -416,12 +430,12 @@
         <!--------------------学历教育-end------------------------------>
 
         <!--------------------研博新闻-begin------------------------------>
-        <section id="lk_ybnews">
+        <section id="lk_edu_news">
             <!--标题-->
             <div class="container d-flex justify-content-center align-items-center  mt-4 mb-3">
                 <h2>研博新闻</h2>
                 <!-- <div class="line d-none d-sm-none d-md-block"></div>
-                <div class="more"><a class="toYbnew" href="news.html">查看更多</a></div>	 -->
+                <div class="more"><a class="toEdunew" href="news.html">查看更多</a></div>	 -->
                     
             </div>
             <!--内容-->
@@ -460,7 +474,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 col-lg-4">
-                        <div class="media d-flex flex-column   news">
+                        <div class="media d-flex flex-column     news">
                             <div class="media-left index-news-content-img">
                                 <img src="images/ad.jpg" alt="" class="media-object  img-fluid "
                                     >
@@ -476,13 +490,11 @@
                         </div>
                     </div>
                 
-                
-                
                 </div>
                 <div class="d-flex justify-content-center">
                     <a class='index-scan-more ' href="news.html">更多</a>
                 </div>
-                
+                <!-- <a class='index-scan-more d-flex justify-content-center' href="news.html">更多</a> -->
             </div>
         </section>
         <!--------------------研博新闻-end------------------------------>
@@ -690,16 +702,22 @@
             $(function () {
                 let _height = $(window).height(); //获取当前窗口的高度,赋值给轮播图
                 let _width = $(window).width();
+               
                 if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
                     $(".full-video").hide()
+                    // $('.pc-carousel-inner').css({'display':'none'})
+                    //$('#lk_carousel').empty('.pc-carousel-inner')
+                   
                 } else {
                 // 动画
                 
                     setTimeout(function () {
                 
                         $(".full-video").fadeOut(2000);;
-                
+                       
                     }, 3000);
+                   
+                    // location.reload() 
                 }
                 
                 
@@ -753,7 +771,10 @@
         </script>
         <script type="text/javascript">
             let body = document.querySelector('body');
+            let pcCarouselInner= '';
             if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                pcCarouselInner = $('.pc-carousel-inner').detach()
+                    console.log(pcCarouselInner)
                 $(function(){
                     $('#lk_header .collapse').hide()   
                     // $('#lk_header .collapse').css("background-color", "lightblue")   
@@ -766,6 +787,7 @@
             }else{
                 // $('#lk_header .collapse').css("background-color", "none") 
                 $('.mobile_nav').hide()
+                $('#lk_carousel').prepend(pcCarouselInner)
             }
                     
             // 判断触摸滑动事件

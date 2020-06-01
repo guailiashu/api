@@ -156,7 +156,7 @@
 
         @foreach($column as $name)
                     <div class="index1">
-                        <a {{url($name['c_route'])}}>{{$name['column']}}</a>
+                        <a href={{url($name['c_route'])}}>{{$name['column']}}</a>
                     </div>
         @endforeach
 
