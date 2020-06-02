@@ -7,13 +7,15 @@ use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Illuminate\Auth\AuthenticationException;
 use App\Http\Requests\Api\SocialAuthorizationRequest;
+use Laravel\Socialite\Facades\Socialite;
+
 
 class AuthorizationsController extends Controller
 {
     //
     public function socialStore($type, SocialAuthorizationRequest $request)
     {
-        $driver = \Socialite::driver($type);
+        $driver = Socialite::driver($type);
 
         try {
             if ($code = $request->code) {

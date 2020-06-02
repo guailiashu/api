@@ -50,6 +50,5 @@ Route::namespace('Api\Sing')->prefix('sing')->group(function (){
     /**
      * 第三方登录
      */
-
     Route::get('test','IntoController@testInto');
 });
