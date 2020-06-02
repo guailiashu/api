@@ -70,7 +70,7 @@ class ActiveController extends AdminController
         $form->text('name', __('活动名'));
         $form->image('image', __('图片上传'))->uniqueName();
         $form->text('title', __('标题'));
-        $form->textarea('details', __('内容'));
+        $form->editor('details', __('内容'));
 
         return $form;
     }

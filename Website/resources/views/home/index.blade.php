@@ -319,11 +319,11 @@
                                         <img src={{'storage/'.$active_val->image  }} alt="" class="media-object  img-fluid ">
                                     </div>
                                     <div class="d-none d-sm-none d-md-block media-body ">
-                                        <h6 class="media-heading ">
-                                            {{ Illuminate\Support\Str::limit($active_val->title, $limit = 30, $end = '......') }}
+                                        <h6 class="media-heading "  alt="{{ $active_val->id }}">
+                                            {{ Illuminate\Support\Str::limit($active_val->name, $limit = 32, $end = '......') }}
                                         </h6>
                                         <p class="text-muted">
-                                            {{ Illuminate\Support\Str::limit($active_val->details, $limit = 128, $end = '......') }}
+                                            {{ Illuminate\Support\Str::limit($active_val->title, $limit = 128, $end = '......') }}
                                                                        </p>
                                     </div>
                                 </div>
@@ -448,7 +448,10 @@
 
             $('.active').click(function () {
                 {{--$(location).attr('href', {{route('home/active')}});--}}
-                    window.location.href="{{route('home/active')}}";
+                {{--    window.location.href="{{route('home/active')}}";--}}
+                let url= "{{url('activeDetail')}}"
+                let picAlt =  $(this).find('.media-heading').attr('alt')
+                window.location.href = encodeURI(url +'/'+ picAlt);
             })
 
 

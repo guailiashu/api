@@ -25,7 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  */
 Route::namespace('Api')->group(function (){
 
-    Route::get('eduction/adds/{id?}','InfoController@GetEducationAdds');//学历：NavigationController    地区接口（联动）
+    Route::get('eduction/adds/{id?}','IntoController@GetEducationAdds');//学历：NavigationController    地区接口（联动）
 });
 
 
@@ -45,6 +45,11 @@ Route::namespace('Api\Sing')->prefix('sing')->group(function (){
         Route::post('new','VideoController@getNew');//最新直播课程
         Route::post('detail','VideoController@getDetail');//详情
     });
+
+
+    /**
+     * 第三方登录
+     */
+
+    Route::get('test','IntoController@testInto');
 });
-
-

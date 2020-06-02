@@ -306,6 +306,26 @@ class StaticController extends Controller
 
 
 
+    //公益详情页
+    public function activeDetail(Request $request)
+    {
+       $active_id = $request->activeId;
+
+
+       $data = DB::table('home_actives')
+           ->where('id',$active_id)
+           ->first();
+
+        $mag = $this->getNavigation();//获取导航栏数据
+        $banner_pc = $this->getBanner(1);//轮播图-pc
+        $banner_move = $this->getBanner(2);//轮播图-移动端
+
+       return view('home.activeDetail')
+           ->with('data',$data)
+           ->with('banner_pc',$banner_pc)->with('banner_move',$banner_move)
+           ->with('column',$mag); //导航栏
+    }
+
     //新闻详情
     public function newDetail(Request $request,$newId)
     {
@@ -335,6 +355,8 @@ class StaticController extends Controller
         return $banner_data;
 //        return view('home.layouts._banner')->with('data',$data);
     }
+
+
 
     //导航栏数据封装
     public function getNavigation()

@@ -78,9 +78,6 @@ class NewsController extends AdminController
         $form->text('title', __('标题'));
         $form->select('type_id', __('新闻类型'))->options(News::getSelect());
         $form->editor('details','详情');
-//        $form->
-//        $form->textarea('details', __('详情'));
-
         return $form;
     }
 }

@@ -119,7 +119,7 @@
 
 		<section id="yb_active2">
 
-				<!--  研博新闻内容 -->
+				<!--  研博公益内容 -->
 				<!--内容-->
 				<div class="container ">
 				    <div class="row">
@@ -133,7 +133,7 @@
 				                       >
 				                </div>
 				                <div class="media-body ">
-				                    <h6 class="media-heading mt-3">
+				                    <h6 class="media-heading mt-3" alt="{{ $page_val->id }}">
                                         {{ Illuminate\Support\Str::limit($page_val->name, $limit = 36, $end = '......') }}
 				                    </h6>
 				                    <p class="text-muted">
@@ -163,14 +163,9 @@
 {{--            --}}
 {{--        </div>--}}
 
-		<!--------------------尾部-begin------------------------------>
-		<footer id="lk_footer">
-		    <div class="container ">
-		    	Copyright © 2017 研博教育集团 版权所有 桂ICP备17001896号-3
-				<!-- <h3>地址:湖北省武汉市洪山区珞瑜路889-1号30楼（整层）</h3> -->
-		    </div>
-		</footer>
-		<!--------------------尾部-end------------------------------>
+        <!--------------------尾部-begin------------------------------>
+        @include('home.layouts._footer')
+        <!--------------------尾部-end------------------------------>
 
 		<script src="lib/js/jquery-3.3.1.js"></script>
 		<script src="lib/js/popper.js"></script>
@@ -260,6 +255,12 @@
 						// $('.collapse').collapse('hide')
 						 $('.mobile_nav').fadeOut("slow");
 					})
+
+            $('.flex-column').click(function () {
+                let url= "{{url('activeDetail')}}"
+                let picAlt =  $(this).find('.media-heading').attr('alt')
+                window.location.href = encodeURI(url +'/'+ picAlt);
+            })
 		</script>
 	</body>
 </html>

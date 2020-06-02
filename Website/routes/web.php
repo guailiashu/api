@@ -55,6 +55,8 @@ Route::namespace('Home')->group(function (){
 
     Route::get('eduDetail/{eduId}/{schoolName}','StaticController@eduDetail')->name('home/eduDetail');//学历-对应学校详情
 
+    Route::get('activeDetail/{activeId}','StaticController@activeDetail')->name('home/activeDetail');//公益详情页
+
 
 
 
