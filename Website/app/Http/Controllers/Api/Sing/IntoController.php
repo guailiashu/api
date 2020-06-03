@@ -14,7 +14,7 @@ class IntoController extends Controller
 
         $data = $request->all();
 
-        $code = $request->input('code');
+        $code = $request->code;
 
         return response()->json($code);
     }
