@@ -12,7 +12,7 @@ use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
 
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail,JWTSubject
 {
     use Notifiable;
 

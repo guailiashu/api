@@ -7,19 +7,22 @@ use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Illuminate\Auth\AuthenticationException;
 use App\Http\Requests\Api\SocialAuthorizationRequest;
-use Laravel\Socialite\Facades\Socialite;
-
+use App\Http\Controllers\Controller;
 
 class AuthorizationsController extends Controller
 {
     //
-    public function socialStore($type, SocialAuthorizationRequest $request)
+    public function socialStore($type,SocialAuthorizationRequest $request)
     {
-        $driver = Socialite::driver($type);
+
+        $driver = \Socialite::driver($type);
 
         try {
+
             if ($code = $request->code) {
+
                 $response = $driver->getAccessTokenResponse($code);
+
                 $token = Arr::get($response, 'access_token');
             } else {
                 $token = $request->access_token;
@@ -33,6 +36,7 @@ class AuthorizationsController extends Controller
         } catch (\Exception $e) {
             throw new AuthenticationException('参数错误，未获取用户信息');
         }
+
 
         switch ($type) {
             case 'weixin':
@@ -57,7 +61,27 @@ class AuthorizationsController extends Controller
                 break;
         }
 
-        return response()->json(['token' => $user->id]);
+        $token= auth('api')->login($user);
+
+
+        $user_data = User::first();
+        $data=[
+            'id'=>$user_data->id,
+            'name'=>$user_data->name,
+            'avatar'=>$user_data->avatar,
+        ];
+
+        return $this->respondWithToken($token,$data)->setStatusCode(201);
+    }
+
+    protected function respondWithToken($token,$data=null)
+    {
+        return response()->json([
+            'access_token' => $token,
+            'token_type' => 'Bearer',
+            'expires_in' => auth('api')->factory()->getTTL() * 60,
+            'data'=>$data,
+        ]);
     }
 
 }

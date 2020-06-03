@@ -25,7 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  */
 Route::namespace('Api')->group(function (){
 
-    Route::get('eduction/adds/{id?}','IntoController@GetEducationAdds');//学历：NavigationController    地区接口（联动）
+    Route::get('eduction/adds/{id?}','InfoController@GetEducationAdds');//学历：NavigationController    地区接口（联动）
 });
 
 
@@ -37,6 +37,10 @@ Route::namespace('Api\Sing')->prefix('sing')->group(function (){
     Route::get('navigation','HomeController@getNavigation');//导航栏
     Route::post('banner','HomeController@getBanner');//banner图
 
+    //
+    Route::get('testInto','IntoController@testInto');
+
+
     /**
      * 视频板块
      */
@@ -47,8 +51,30 @@ Route::namespace('Api\Sing')->prefix('sing')->group(function (){
     });
 
 
-    /**
-     * 第三方登录
-     */
-    Route::get('test','IntoController@testInto');
+
 });
+
+/**
+ * 第三方登录
+ */
+Route::namespace('Api')->group(function (){
+    Route::get('authTest','InfoController@testInto');
+
+    //微信登录
+    Route::post('socials/{social_type}/authorizations', 'AuthorizationsController@socialStore')
+        ->where('social_type', 'weixin')
+        ->name('api.socials.authorizations.store');
+
+//jwt
+//    Route::middleware('admin.refresh')->group(function (){
+//
+//        //当前用户信息
+//        Route::get('/users/info','InfoController@testInfo')->name('users.info');
+//
+//    });
+});
+
+
+
+
+
